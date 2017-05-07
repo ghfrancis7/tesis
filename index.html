@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>SIS.GES.</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+	<header class="bdheader">
+    	Sistema de Gestion<br>
+    </header>
+	<div class="body">
+    </div>
+	<div class="header">
+		<div>
+			<span>
+				<br>Login<br>
+			</span>
+		</div>
+	</div>
+    <form id="frmLogin" action="./Login PHP/login.php" method="POST">
+		<div class="login">
+			<input type="text" placeholder="username" name="user" id="usr"><br>
+			<input type="password" placeholder="password" name="password" id="pwd" onkeydown = "if (event.keyCode == 13)
+            	document.getElementById('button').click()"><br>
+			<input id="button" type="button" onClick="document.getElementById('frmLogin').submit()" value="Login">
+		</div>
+    </form>
+</body>
+</html>
