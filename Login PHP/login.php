@@ -16,22 +16,27 @@
     	exit();
 	}
 	
-	$consulta = "SELECT `UsuNombre`,`UsuApellido` FROM  `Usuario` WHERE  `UsuCuenta` =  $user AND `UsuPassword` = $pwd";
+	$consulta = "SELECT `UsuNombre`,`UsuApellido`,`UsuRol` FROM  `Usuario` WHERE  `UsuCuenta` =  $user AND `UsuPassword` = $pwd";
 
 	$result = $mysqli -> query($consulta);
 	$row_cnt = $result -> num_rows;
 
 	if ($row_cnt == 1){
 		while ($fila = $result->fetch_row()) {
-        	$username = "$fila[0] $fila[1]";
-			setcookie("misitio","$username",time()+3600);
-			setcookie("valor",true);
-			header ("Location:./SesionIniciada.php");
+        	$nombre = "$fila[0] $fila[1]";
     	}
+			setcookie("usuario","$nombre",time()+3600);
+			session_start ();
+			$_SESSION["user"]=$_POST["user"];
+			$rol = $fila[2];
+			if ($rol == 0 ){
+				header("location:../Post_Inicio/Admin/sesionAdmin.html");
+			} else {
+				header("location:../Post_Inicio/Tecnico/sesionTecnico.html");
+			}
 		$result->close();
 	}else{
-		setcookie("valor",false);
-		header ("Location:./SesionIniciada.php");
+		header ("Location:../index.html");
 	}
 $mysqli->close();
 ?>
