@@ -5,8 +5,8 @@
 	$pwd = "'".$pwd."'";
 	
 	$servername = "127.0.0.1";
-	$username = "admin";
-	$password = "admin";
+	$username = "root";
+	$password = "";
 	$database = "dbtesis";
 
 	$mysqli = new mysqli($servername, $username, $password, $database);
@@ -30,9 +30,9 @@
 			$_SESSION["user"]=$_POST["user"];
 			$rol = $fila[2];
 			if ($rol == 0 ){
-				header("location:../Post_Inicio/Admin/sesionAdmin.html");
+				header("location:../Post_Inicio/Admin/sesionAdmin.php");
 			} else {
-				header("location:../Post_Inicio/Tecnico/sesionTecnico.html");
+				header("location:../Post_Inicio/Tecnico/sesionTecnico.php");
 			}
 		$result->close();
 	}else{

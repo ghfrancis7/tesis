@@ -25,11 +25,6 @@ body{
 	z-index: 0;
 }
 
-.bdheader{
-	text-align: justify;
-	margin: auto;
-}
-
 .header{
 	position: relative;
 	z-index: 2;
@@ -39,7 +34,7 @@ body{
 }
 
 .header div{
-	float: none;
+	float: left;
 	color: #000;
 	font-family: 'Exo', sans-serif;
 	font-size: 35px;
