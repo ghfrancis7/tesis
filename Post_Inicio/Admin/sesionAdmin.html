@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>SIS-GES</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="../../CSS/style.css">
+</head>
+
+<body>
+	<div class="background">
+    </div>
+    <div class="header">
+        <header>
+        	<table width="100%">
+                <tr>
+                    <td width="25%" align="left"><img src="../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
+                    <td width="50%">Sistema de Gestion</td>
+                    <td width="25%"><input id="button" type="button" onClick="" value="Logout"></td>
+                </tr>
+        	</table>
+        </header>
+    </div>
+	<div class="body">
+    	<?php
+            $idUsuario = $_COOKIE["idUsuario"];
+            $usuario = $_COOKIE["usuario"];
+            echo "Bienvenido".$usuario."<br>";
+            echo "Su ID es: ".$idUsuario."<br>";
+        ?>
+	</div>
+</body>
+</html>
