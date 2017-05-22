@@ -7,16 +7,26 @@
 </head>
 
 <body>
-	<div class="body">
+	<div class="background">
     </div>
-	<div class="header">
+    <div class="header">
+        <header>
+        	<table width="100%">
+                <tr>
+                    <td width="25%" align="left"><img src="Images/GrupoAcademico.jpg" style="width:100px;height:100px;"></td>
+                    <td width="50%">Sistema de Gestion</td>
+                    <td width="25%"></td>
+                </tr>
+        	</table>
+        </header>
+    </div>
+	<div class="body">
 		<div>
-			Sistema de Gestion<br>
-			<span>
-				<br>Login<br>
-			</span>
+			<br><br>Log<span>in</span>
+            <br>
 		</div>
 	</div>
+    <div>
     <form id="frmLogin" action="./Login PHP/login.php" method="POST">
 		<div class="login">
 			<input type="text" placeholder="username" name="user" id="usr"><br>
@@ -25,5 +35,6 @@
 			<input id="button" type="button" onClick="document.getElementById('frmLogin').submit()" value="Login">
 		</div>
     </form>
+    </div>
 </body>
 </html>
