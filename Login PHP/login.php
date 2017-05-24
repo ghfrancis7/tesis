@@ -26,16 +26,17 @@
         	$nombre = "$fila[0] $fila[1]";
 			$IDUsuario = "$fila[3]";
     	}
+			
 			//Setea cookies que seran usadas en paginas post inicio de sesion
-			setcookie("usuario","$nombre",time()+3600);
-			setcookie("idUsuario", "$IDUsuario", time() + 3600); 
+			setcookie("name", $nombre, time()+86400,"/tesis/");
+			setcookie("idUser", $IDUsuario, time()+86400,"/tesis/"); 
 			
 			session_start ();
 			$_SESSION["user"]=$_POST["user"];
 			
 			$rol = $fila[2];
 			if ($rol == 0 ){
-				header("location:../Post_Inicio/Admin/sesionAdmin.html");
+				header("location:../Post_Inicio/Admin/sesionAdmin.php");
 			} else {
 				header("location:../Post_Inicio/Tecnico/sesionTecnico.php");
 			}

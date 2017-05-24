@@ -7,6 +7,12 @@
 </head>
 
 <body>
+	<?php
+		$idUsuario = $_COOKIE["idUsuario"];
+		$usuario = $_COOKIE["usuario"];
+		echo "Bienvenido".$usuario."<br>";
+		echo "Su ID es: ".$idUsuario."<br>";
+	?>
 	<div class="background">
     </div>
     <div class="header">
@@ -21,12 +27,7 @@
         </header>
     </div>
 	<div class="body">
-    	<?php
-            $idUsuario = $_COOKIE["idUsuario"];
-            $usuario = $_COOKIE["usuario"];
-            echo "Bienvenido".$usuario."<br>";
-            echo "Su ID es: ".$idUsuario."<br>";
-        ?>
+    	
 	</div>
 </body>
 </html>
