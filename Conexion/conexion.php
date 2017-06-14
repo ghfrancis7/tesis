@@ -34,13 +34,17 @@ class conexion{
 			$_SESSION['nom'] = $row['UsuNombre'];
 			$_SESSION['ape'] = $row['UsuApellido'];
 			
-			if ((strnatcasecmp($row['UsuEstado'],"activo") == 0) and $row['UsuRol'] == 0){
-				header("location:../Post_Inicio/Admin/sesionAdmin.php");
+			if (strnatcasecmp($row['UsuEstado'],"activo") == 0) {
+				if (strnatcasecmp($row['UsuRol'],"admin") == 0){
+					header("location:../Post_Inicio/sesionAdmin.php");
+				} else if(strnatcasecmp($row['UsuRol'],"tecn") == 0) {
+					header("location:../Post_Inicio/sesionTecn.php");
+				}
 			} else {
-				header("location:../Post_Inicio/Tecnico/sesionTecnico.php");
+				header("location:../Login PHP/UserInactivo.php");
 			}
 		} else {
-			echo "Usuario o Password incorrectos";
+			header("location:../Login PHP/UserPassFail.php");
 		}
 	}
 }
