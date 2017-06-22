@@ -2,12 +2,21 @@
 <h1>lalalalal</h1>
 <?php 
 	$controlador = new controladorUsuario();
+  $resultado = $controlador->index();
+  
 	if(isset($_GET['IDUsuario'])){
 		$row = $controlador->ver($_GET['IDUsuario']);
 	}else{
-		header('Location: index.php');
+		//header('Location: index.php');
 	}
+
  ?>
+
+<?php while($row = mysql_fetch_array($resultado)): ?>
+  <tr>
+    <td><?php echo $row['IDUsuario']; ?> </td>
+ </tr>  
+ <?php endwhile; ?>
 
  <b>IDUsuario:</b> <?php echo $row['IDUsuario']; ?>
  <br>

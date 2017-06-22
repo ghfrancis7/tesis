@@ -11,10 +11,12 @@
 		//metodos
 
 		public function __construct(){
-			
+			$usuario=new Usuario();
 		}
 
 		public function index(){
+			$usuario=new Usuario();
+
 			$resultado=$this->usuario->listar();
 			return $resultado;
 		}

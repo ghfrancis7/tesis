@@ -36,7 +36,7 @@
 				<li> <a href="">Productos</a></li>
 
 					<ul><a href="">Alta Pedido Cotizacion</a></ul>
-					<ul><a href="">Lista Productos en Venta</a></ul>
+					<ul><a href="?cargar=ver_productos">Lista Productos en Venta</a></ul>
 
 			</ul>
 	
