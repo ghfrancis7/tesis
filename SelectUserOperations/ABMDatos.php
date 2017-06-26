@@ -8,7 +8,7 @@
 
 <body>
 	<?php
-    $usuario="";
+	$usuario="";
     $idUsuario=1;
         session_start();
         if (!isset($_SESSION['id'])){
@@ -48,7 +48,7 @@
 				</li>
 				<li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic new-window"></span> Clientes</a>
 					<ul>
-						<li><a href="../SelectUserOperations/ABMDatos.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Datos</a></li>
+						<li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Datos</a></li>
                         <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic magnifying-glass"></span><span class="iconic user"></span> Consulta Datos</a></li>
                         <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Stock</a></li>
 						<li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic magnifying-glass"></span><span class="iconic box"></span> Consulta Stock</a></li>
@@ -70,5 +70,29 @@
 			<div class="clearfix"></div>
         </nav>
 	</div>
+    <div class="buttons">
+        	<table>
+                <tr>
+                    <td width="33%" align="center">
+                    <form id="Crear" action="../mvc/vista/crear.php" method="get">
+                    	<input name="return" type="hidden" value="<?php 'cargar'?>" />
+                        <input id="button" type="button" onClick="document.getElementById('Crear').submit()" value="Crear"/>
+                    </form>
+                    </td>
+                    <td width="34%" align="center">
+                    <form id="Modificar" action="#" method="post">
+                        <input name="return" type="hidden" value="<?php 'Modificar'?>" />
+                        <input id="button" type="button" onClick="document.getElementById('Modificar').submit()" value="Modificar"/>
+                    </form>
+                    </td>
+                    <td width="33%" align="center">
+                    <form id="Eliminar" action="#" method="post">
+                        <input name="return" type="hidden" value="<?php 'Eliminar'?>" />
+                        <input id="button" type="button" onClick="document.getElementById('Eliminar').submit()" value="Eliminar"/>
+                    </form>
+                    </td>
+                </tr>
+        	</table>
+    </div>
 </body>
 </html>

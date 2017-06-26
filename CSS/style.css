@@ -267,6 +267,41 @@ nav {
 
 /* 
 --------------------------------------------------------------------
+                        Menu Butons
+--------------------------------------------------------------------
+*/
+
+.buttons table{
+	width: 700px;
+	margin: auto;
+	float: none;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 35px;
+	font-weight: 200;
+}
+.buttons input[type=button]{
+	
+	width: auto;
+	height: auto;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #333;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+	opacity: 0.25;
+}
+.buttons input[type=button]:hover{
+	opacity: 0.6;
+}
+
+/* 
+--------------------------------------------------------------------
                         Iconic Styles 
 --------------------------------------------------------------------
 */

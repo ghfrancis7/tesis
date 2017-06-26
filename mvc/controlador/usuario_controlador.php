@@ -1,6 +1,6 @@
 <?php 
 
-	include_once("modelo/Usuario.php");
+	include_once("../modelo/Usuario.php");
 
 	class controladorUsuario{
 
@@ -46,7 +46,7 @@
 
 	}
 
-	//require_once("vista/usuario_vista.php");
+
 
 
 
