@@ -20,47 +20,30 @@ include_once("../controlador/usuario_controlador.php");
 
 <h3>Crear un nuevo usuario</h3>
 <hr>
-<form action="" method="post">
-	<label>UsuNombre</label> <br>
-	<input type="text" name="UsuNombre">
+<form id="frmCrear" action="" method="post">
+	<input type="text" placeholder="Nombre" name="UsuNombre">
 	<br><br>
-	<label>UsuApellido</label> <br>
-	<input type="text" name="UsuApellido" requrired>
+	<input type="text" placeholder="Apellido" name="UsuApellido" requrired>
 	<br><br>
-	<label>UsuDNI</label> <br>
-	<input type="text" name="UsuDNI" requrired>
+	<input type="text" placeholder="DNI" name="UsuDNI" requrired>
 	<br><br>
-	<label>UsuDireccion</label> <br>
-	<input type="text" name="UsuDireccion" requrired>
+	<input type="text" placeholder="Direccion" name="UsuDireccion" requrired>
 	<br><br>
-	<label>UsuTelefono</label> <br>
-	<input type="text" name="UsuTelefono" requrired>
+	<input type="text" placeholder="Telefono" name="UsuTelefono" requrired>
 	<br><br>
-	<label>UsuMail</label> <br>
-	<input type="text" name="UsuMail" requrired>
+	<input type="text" placeholder="Mail" name="UsuMail" requrired>
 	<br><br>
-	<label>UsuFechaNacimiento</label> <br>
-	<input type="text" name="UsuFechaNacimiento" requrired>
+	<input type="text" placeholder="Fecha Nacimiento" name="UsuFechaNacimiento" requrired>
 	<br><br>
-	<label>UsuLocalidadOpera</label> <br>
-	<input type="text" name="UsuLocalidadOpera" requrired>
+	<input type="text" placeholder="Localidad Opera" name="UsuLocalidadOpera" requrired>
 	<br><br>
-	<label>UsuCuenta</label> <br>
-	<input type="text" name="UsuCuenta" requrired>
+	<input type="text" placeholder="Fecha Ingreso" name="UsuFechaIngreso" requrired>
 	<br><br>
-	<label>UsuPassword</label> <br>
-	<input type="text" name="UsuPassword" requrired>
+	<input type="text" placeholder="Fecha Egreso" name="UsuFechaEgreso" requrired>
 	<br><br>
-	<label>UsuFechaIngreso</label> <br>
-	<input type="text" name="UsuFechaIngreso" requrired>
+	<input type="text" placeholder="Estado" name="UsuEstado" requrired>
 	<br><br>
-	<label>UsuFechaEgreso</label> <br>
-	<input type="text" name="UsuFechaEgreso" requrired>
-	<br><br>
-	<label>UsuEstado</label> <br>
-	<input type="text" name="UsuEstado" requrired>
-	<br><br>
-	<input type="submit" name="enviar" value="Crear">
+    <input id="button" type="button" onClick="document.getElementById('frmCrear').submit()" value="Crear">
 
 		<ul>
 			<li><a href="index.php">Inicio</a></li>
