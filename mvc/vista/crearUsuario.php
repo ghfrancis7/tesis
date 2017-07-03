@@ -22,27 +22,31 @@ include_once("../controlador/usuario_controlador.php");
 <hr>
 <form id="frmCrear" action="" method="post">
 	<input type="text" placeholder="Nombre" name="UsuNombre">
-	<br><br>
+	<br />
 	<input type="text" placeholder="Apellido" name="UsuApellido" requrired>
-	<br><br>
+	<br />
 	<input type="text" placeholder="DNI" name="UsuDNI" requrired>
-	<br><br>
+	<br />
 	<input type="text" placeholder="Direccion" name="UsuDireccion" requrired>
-	<br><br>
+	<br />
 	<input type="text" placeholder="Telefono" name="UsuTelefono" requrired>
-	<br><br>
+	<br />
 	<input type="text" placeholder="Mail" name="UsuMail" requrired>
-	<br><br>
+	<br />
 	<input type="text" placeholder="Fecha Nacimiento" name="UsuFechaNacimiento" requrired>
-	<br><br>
+	<br />
 	<input type="text" placeholder="Localidad Opera" name="UsuLocalidadOpera" requrired>
-	<br><br>
-	<input type="text" placeholder="Fecha Ingreso" name="UsuFechaIngreso" requrired>
-	<br><br>
+	<br />
+    <input type="text" placeholder="Cuenta Usuario" name="UsuCuenta" requrired>
+	<br />
+   	<input type="text" placeholder="Password Usuario" name="UsuPassword" requrired>
+	<br />
+    <input type="text" placeholder="Fecha Ingreso" name="UsuFechaIngreso" requrired>
+	<br />
 	<input type="text" placeholder="Fecha Egreso" name="UsuFechaEgreso" requrired>
-	<br><br>
+	<br />
 	<input type="text" placeholder="Estado" name="UsuEstado" requrired>
-	<br><br>
+	<br />
     <input id="button" type="button" onClick="document.getElementById('frmCrear').submit()" value="Crear">
 
 		<ul>
