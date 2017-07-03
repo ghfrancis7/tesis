@@ -14,18 +14,18 @@
 			$usuario=new Usuario();
 		}
 
-		public function index(){
+		public function listarUsuarios(){
 			$usuario=new Usuario();
 
-			$resultado=$this->usuario->listar();
+			$resultado=$this->usuario->listarUsuarios();
 			return $resultado;
 		}
 
-		public function crear($UsuNombre,$UsuApellido,$UsuDNI,$UsuDireccion,$UsuTelefono,$UsuMail,$UsuFechaNacimiento,$UsuLocalidadOpera,$UsuCuenta,$UsuPassword,$UsuFechaIngreso,$UsuFechaEgreso,$UsuEstado){
+		public function crearUsuario($UsuNombre,$UsuApellido,$UsuDNI,$UsuDireccion,$UsuTelefono,$UsuMail,$UsuFechaNacimiento,$UsuLocalidadOpera,$UsuCuenta,$UsuPassword,$UsuFechaIngreso,$UsuFechaEgreso,$UsuEstado){
 			
 			$usuario=new Usuario();
 			
-			$resultado=$usuario->crear($UsuNombre, $UsuApellido, $UsuDNI, $UsuDireccion, $UsuTelefono, $UsuMail, $UsuFechaNacimiento, $UsuLocalidadOpera, $UsuCuenta,$UsuPassword, $UsuFechaIngreso, $UsuFechaEgreso, $UsuEstado);
+			$resultado=$usuario->crearUsuario($UsuNombre, $UsuApellido, $UsuDNI, $UsuDireccion, $UsuTelefono, $UsuMail, $UsuFechaNacimiento, $UsuLocalidadOpera, $UsuCuenta,$UsuPassword, $UsuFechaIngreso, $UsuFechaEgreso, $UsuEstado);
 			return $resultado;
 
 		}
@@ -46,7 +46,7 @@
 
 	}
 
-
+	//require_once("vista/usuario_vista.php");
 
 
 

@@ -1,6 +1,6 @@
 <?php 
 
-include_once("modelo/Producto.php");
+include_once("../modelo/Producto.php");
 
 	$controlador = new Producto();
 	$sql= $controlador->listarProducto();
@@ -8,6 +8,7 @@ include_once("modelo/Producto.php");
  ?> 
 <table border="1"> 
  	<thead>
+ 		<th>ProductoID</th>
  		<th>ProductoNombre</th>
  		<th>ProductoPrecio</th>
  		<th>ProductoFechaAltaDB</th>
@@ -15,29 +16,19 @@ include_once("modelo/Producto.php");
  		<th>ProductoEstado</th>
  	</thead>
  	<tbody>
- 	<?php 
+ <?php  
  		foreach($sql as $row){ ?>
+ 		<tr>
+ 			<td><?php echo "{$row['IDProducto']}"; ?></td>
  			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
  			<td><?php echo "{$row['ProductoPrecio']}"; ?></td>
  			<td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
  			<td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
  			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
-
-		
- <?php } /* while($row = mysqli_fetch_array($sql)){ ?>
- 		<br>
- 		<br>
-		Nombre: <?php echo "{$row['ProductoNombre']}"; ?>
-		<br>
-		Precio:<?php echo "{$row['ProductoPrecio']}";?>
-		<br>
-		Fecha de Alta:<?php echo "{$row['ProductoFechaAltaDB']}";?>
-		<br>
-		Fecha de Baja:<?php echo "{$row['ProductoFechaBajaDB']}";?>
-		<br>
-		Estado:<?php echo "{$row['ProductoEstado']}";}?>
-		<br>
-		*/
-		?>
+ 			<?php /* <td><a href="?cargar=editar_producto&IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar</a></td>
+ 			*/?>
+ 			<td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar</a></td>
+ 		</tr>
+<?php } ?>
 			</tbody>
  </table>

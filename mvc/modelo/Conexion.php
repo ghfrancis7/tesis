@@ -1,13 +1,44 @@
 <?php 
 
 	class Conexion{
+		
+		public $mysql=null;
 
-		private $host;
-		private $user;
-		private $pass;
-		private $db;
+		 function __construct(){
 
-		public function __construct(){
+			$this->mysql = $this->conectar();
+
+		
+		}
+
+		public function conectar(){
+
+			$host = "127.0.0.1";
+			$user = "root";
+			$pw ="";
+			$db = "dbtesis";
+			$charset="utf8";
+			$opt = [PDO::ATTR_DEFAULT_FETCH_MODE =>PDO::FETCH_ASSOC];
+			$pdo = new pdo("mysql:host={$host};dbname={$db};charset={$charset}",$user,$pw,$opt);
+			$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+			return $pdo;
+
+		}
+	}
+
+ ?>
+
+ <?php 
+			
+			//if ($this->conexion->connect_errno){
+			//die("Fallo al tratar de conectar con MySQL: (".$this->conexion->connect_errno.")");
+		//}
+
+		
+
+			
+
+		/*public function __construct(){
 
 			$this->host="localhost";
 			$this->user="root";
@@ -27,7 +58,5 @@
 			$consulta= mysql_query($sql);
 			return $consulta;
 		}
-
-	}
-
- ?>
+*/
+	?>

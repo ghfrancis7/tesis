@@ -5,9 +5,21 @@
 			
 			switch($vista):
 
-				case "crear";
+					case "crearUsuario";
 					include_once('vista/' . $vista . '.php');
 					case "ver_usuario";
+					include_once('vista/' . $vista . '.php');
+					case "crearProducto";
+					include_once('vista/' . $vista . '.php');
+					case "crearCliente";
+					include_once('vista/' . $vista . '.php');
+					case "ver_producto";
+					include_once('vista/' . $vista . '.php');
+					case "ver_cliente";
+					include_once('vista/' . $vista . '.php');
+					case "editar_cliente";
+					include_once('vista/' . $vista . '.php');
+					case "editar_producto";
 					include_once('vista/' . $vista . '.php');
 					break;
 					

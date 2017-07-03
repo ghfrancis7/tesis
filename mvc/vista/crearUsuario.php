@@ -1,6 +1,6 @@
 <?php 
 
-include_once("controlador/usuario_controlador.php");
+include_once("../controlador/usuario_controlador.php");
 
 	$controlador = new controladorUsuario();
 	if(isset($_POST['enviar'])){

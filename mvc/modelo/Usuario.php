@@ -46,7 +46,7 @@ include_once("Conexion.php");
 
 		}
 
-		public function crear($UsuNombre,$UsuApellido,$UsuDNI,$UsuFechaNacimiento,$UsuDireccion,$UsuTelefono,$UsuMail,$UsuLocalidadOpera,$UsuCuenta,$UsuPassword,$UsuFechaIngreso,$UsuFechaEgreso,$UsuEstado){
+		public function crearUsuario($UsuNombre,$UsuApellido,$UsuDNI,$UsuFechaNacimiento,$UsuDireccion,$UsuTelefono,$UsuMail,$UsuLocalidadOpera,$UsuCuenta,$UsuPassword,$UsuFechaIngreso,$UsuFechaEgreso,$UsuEstado){
 
 			$sql2="SELECT * FROM Usuario Where IDUsuario = '($this->IDUsuario)'";
 			$resultado = $this->con->consultaRetorno($sql2);
