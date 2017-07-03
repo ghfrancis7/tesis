@@ -1,5 +1,5 @@
 <?php 
-include_once("controlador/cliente_controlador.php");
+include_once("../controlador/cliente_controlador.php");
 
 	$controlador = new controladorCliente();
 	if(isset($_POST['enviar'])){

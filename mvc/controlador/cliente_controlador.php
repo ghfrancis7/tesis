@@ -1,6 +1,6 @@
 <?php 
 
-include_once("modelo/Cliente.php");
+include_once("../modelo/Cliente.php");
 
 	class controladorCliente{
 

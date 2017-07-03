@@ -46,7 +46,7 @@ include_once("Conexion.php");
 	public function crearCliente($ClienteNombre,$ClienteCuit,$ClienteDireccion,$ClienteTelefono,$ClienteCantidadPlantas,$ClienteFechaAlta,$ClienteFechaBaja,$ClienteEstado){
 
 			$sql2="SELECT * FROM Cliente Where IDCliente = '($this->IDCliente)'";
-			$resultado = $this->con->consultaRetorno($sql2);
+			//$resultado = $this->con->consultaRetorno($sql2);
 			$num=mysql_num_rows($resultado);
 
 			if ($num !=0) {
