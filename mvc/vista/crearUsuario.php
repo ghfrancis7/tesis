@@ -19,7 +19,8 @@
             $idUsuario = $_SESSION['id'];
         }
 		//Determina dia actual
-		$today = date( "d/m/Y", mktime());
+		date_default_timezone_set ("America/Argentina/Buenos_Aires");
+		$today = date( "d/m/Y");
 		//Formulario
 	
     ?>
