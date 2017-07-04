@@ -2,6 +2,31 @@
 
 include_once("Conexion.php");
 
+		$pdo=new Conexion();
+		$ClienteNombre= $_POST['ClienteNombre'];
+		$ClienteCuit= $_POST['ClienteCuit'];
+		$ClienteDireccion= $_POST['ClienteDireccion'];
+		$ClienteTelefono= $_POST['ClienteTelefono'];
+		$ClienteCantidadPlantas= $_POST['ClienteCantidadPlantas'];
+		$ClienteFechaAlta= $_POST['ClienteFechaAlta'];
+		$ClienteFechaBaja= $_POST['ClienteFechaBaja'];
+		$ClienteEstado= $_POST['ClienteEstado'];
+
+		$pdo->mysql->beginTransaction();
+		$pst = $pdo->mysql->prepare("INSERT INTO cliente values (:ClienteNombre,:ClienteCuit,:ClienteDireccion,:ClienteTelefono,:ClienteCantidadPlantas,:ClienteFechaAlta,:ClienteFechaBaja,:ClienteEstado");
+		$pst->bindParam(":ClienteNombre",$ClienteNombre,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteCuit",$ClienteCuit,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteDireccion",$ClienteDireccion,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteTelefono",$ClienteTelefono,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteCantidadPlantas",$ClienteCantidadPlantas,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteFechaAlta",$ClienteFechaAlta,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteFechaBaja",$ClienteFechaBaja,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteEstado",$ClienteEstado,PDO::PARAM_STR);
+
+		$pst->execute();
+
+
+
 	class Cliente{
 
 		public $IDCliente;
@@ -15,11 +40,10 @@ include_once("Conexion.php");
 		public $ClienteFechaBaja;
 		public $ClienteEstado;
 
-		private $con;
-
+		
 	public function __construct(){
 
-		$this->con = new Conexion();
+		
 
 	}
 
@@ -43,46 +67,35 @@ include_once("Conexion.php");
 			return $cliente;
 		}
 
-	public function crearCliente($ClienteNombre,$ClienteCuit,$ClienteDireccion,$ClienteTelefono,$ClienteCantidadPlantas,$ClienteFechaAlta,$ClienteFechaBaja,$ClienteEstado){
+	public function crearCliente(){
 
-			$sql2="SELECT * FROM Cliente Where IDCliente = '($this->IDCliente)'";
-			//$resultado = $this->con->consultaRetorno($sql2);
-			$num=mysql_num_rows($resultado);
+		$pdo=new Conexion();
+		$ClienteNombre= $_POST['ClienteNombre'];
+		$ClienteCuit= $_POST['ClienteCuit'];
+		$ClienteDireccion= $_POST['ClienteDireccion'];
+		$ClienteTelefono= $_POST['ClienteTelefono'];
+		$ClienteCantidadPlantas= $_POST['ClienteCantidadPlantas'];
+		$ClienteFechaAlta= $_POST['ClienteFechaAlta'];
+		$ClienteFechaBaja= $_POST['ClienteFechaBaja'];
+		$ClienteEstado= $_POST['ClienteEstado'];
 
-			if ($num !=0) {
+		$pdo->mysql->beginTransaction();
+		$pst = $pdo->mysql->prepare("INSERT INTO cliente values (:ClienteNombre,:ClienteCuit,:ClienteDireccion,:ClienteTelefono,:ClienteCantidadPlantas,:ClienteFechaAlta,:ClienteFechaBaja,:ClienteEstado");
+		$pst->bindParam(":ClienteNombre",$ClienteNombre,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteCuit",$ClienteCuit,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteDireccion",$ClienteDireccion,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteTelefono",$ClienteTelefono,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteCantidadPlantas",$ClienteCantidadPlantas,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteFechaAlta",$ClienteFechaAlta,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteFechaBaja",$ClienteFechaBaja,PDO::PARAM_STR);
+		$pst->bindParam(":ClienteEstado",$ClienteEstado,PDO::PARAM_STR);
 
-				return false;
+		$pst->execute();
 
-			}else{
 
-				$sql="INSERT INTO Cliente (ClienteNombre,ClienteCuit,ClienteDireccion,ClienteTelefono,ClienteCantidadPlantas,ClienteFechaAlta,ClienteFechaBaja,ClienteEstado)
-			VALUES ('$ClienteNombre', '$ClienteCuit', '$ClienteDireccion', '$ClienteTelefono', '$ClienteCantidadPlantas','$ClienteFechaAlta','$ClienteFechaBaja','$ClienteEstado')";
-
-				$this->con->consultaSimple($sql);
-				return true;
-			}
+				}
 
 }
-			public function ver(){
-
-			$sql="SELECT * FROM Cliente WHERE IDCliente ='($this->IDCliente)' LIMIT 1";
-			$resultado = $this->con->consultaRetorno($sql);
-			$row =mysql_fetch_assoc($resultado);
-
-			//set
-			$this->IDCliente = $row['IDCliente'];
-			$this->ClienteNombre = $row['ClienteNombre'];
-			$this->ClienteCuit = $row['ClienteCuit'];
-			$this->ClienteDireccion = $row['ClienteDireccion'];
-			$this->ClienteTelefono = $row['ClienteTelefono'];
-			$this->ClienteCantidadPlantas = $row['ClienteCantidadPlantas'];
-			$this->ClienteFechaAlta = $row['ClienteFechaAlta'];
-			$this->ClienteFechaBaja = $row['ClienteFechaBaja'];
-			$this->ClienteEstado = $row['ClienteEstado'];
-
-			return $row;
-
-		}
-	}
+	
 
  ?>

@@ -46,5 +46,29 @@
 			<div class="clearfix"></div>
         </nav>
 	</div>
+    <div class="buttons">
+        	<table>
+                <tr>
+                    <td width="33%" align="center">
+                    <form id="Crear" action="../mvc/vista/crearUsuario.php" method="get">
+                    	<input  type="hidden" value="<?php 'cargar'?>" />
+                        <input id="button" type="button" onClick="document.getElementById('Crear').submit()" value="Crear"/>
+                    </form>
+                    </td>
+                    <td width="34%" align="center">
+                    <form id="Modificar" action="#" method="post">
+                        <input name="return" type="hidden" value="<?php 'Modificar'?>" />
+                        <input id="button" type="button" onClick="document.getElementById('Modificar').submit()" value="Modificar"/>
+                    </form>
+                    </td>
+                    <td width="33%" align="center">
+                    <form id="Eliminar" action="#" method="post">
+                        <input name="return" type="hidden" value="<?php 'Eliminar'?>" />
+                        <input id="button" type="button" onClick="document.getElementById('Eliminar').submit()" value="Eliminar"/>
+                    </form>
+                    </td>
+                </tr>
+        	</table>
+    </div>
 </body>
 </html>

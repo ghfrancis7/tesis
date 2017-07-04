@@ -1,4 +1,5 @@
 <?php 
+/* 
 include_once("../controlador/cliente_controlador.php");
 
 	$controlador = new controladorCliente();
@@ -9,13 +10,13 @@ include_once("../controlador/cliente_controlador.php");
 		}else{
 			echo"Ya existe el Cliente";
 		}
-	}
+	}*/
+?>
 
- ?>
 
  <br>
 <h3>Crear un nuevo Cliente</h3>
-<form action="" method="post">
+<form action="guardarCliente.php" method="post">
 	<label>ClienteNombre</label> <br>
 	<input type="text" name="ClienteNombre">
 	<br><br>

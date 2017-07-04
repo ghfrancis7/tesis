@@ -48,7 +48,7 @@
 				</li>
 				<li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic new-window"></span> Clientes</a>
 					<ul>
-						<li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Datos</a></li>
+						<li><a href="../SelectUserOperations/ABMDatos.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Datos</a></li>
                         <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic magnifying-glass"></span><span class="iconic user"></span> Consulta Datos</a></li>
                         <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Stock</a></li>
 						<li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic magnifying-glass"></span><span class="iconic box"></span> Consulta Stock</a></li>
@@ -74,7 +74,11 @@
         	<table>
                 <tr>
                     <td width="33%" align="center">
+<<<<<<< HEAD
                     <form id="Crear" action="../mvc/vista/crearCliente.php" method="get">
+=======
+                    <form id="Crear" action="#" method="get">
+>>>>>>> 6cf835081cd4f717a2d623f1c239d87efe79f10f
                     	<input  type="hidden" value="<?php 'cargar'?>" />
                         <input id="button" type="button" onClick="document.getElementById('Crear').submit()" value="Crear"/>
                     </form>
