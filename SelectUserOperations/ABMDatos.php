@@ -74,11 +74,8 @@
         	<table>
                 <tr>
                     <td width="33%" align="center">
-<<<<<<< HEAD
                     <form id="Crear" action="../mvc/vista/crearCliente.php" method="get">
-=======
                     <form id="Crear" action="#" method="get">
->>>>>>> 6cf835081cd4f717a2d623f1c239d87efe79f10f
                     	<input  type="hidden" value="<?php 'cargar'?>" />
                         <input id="button" type="button" onClick="document.getElementById('Crear').submit()" value="Crear"/>
                     </form>
