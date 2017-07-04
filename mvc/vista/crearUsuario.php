@@ -21,17 +21,7 @@
 		//Determina dia actual
 		$today = date( "d/m/Y", mktime());
 		//Formulario
-	include_once("../controlador/usuario_controlador.php");
-
-	$controlador = new controladorUsuario();
-	if(isset($_POST['enviar'])){
-		$r=$controlador->crearUsuario($_POST['UsuNombre'],$_POST['UsuApellido'],$_POST['UsuDNI'],$_POST['UsuDireccion'],$_POST['UsuTelefono'],$_POST['UsuMail'],$_POST['UsuFechaNacimiento'],$_POST['UsuLocalidadOpera'],$_POST['UsuCuenta'],$_POST['UsuPassword'],$_POST['UsuFechaIngreso'],$_POST['UsuFechaEgreso'],$_POST['UsuEstado']);
-		if($r){
-			echo "Se ha registrado un nuevo usuario";
-		}else{
-			echo"Ya existe";
-		}
-	}
+	
     ?>
 	<div class="background">
     </div>
@@ -65,7 +55,7 @@
     <table width="100%">
 		<tr>
 			<td width="40%">
-            <form id="frmCrear" action="" method="post">
+            <form id="frmCrear" action="guardarUsuario.php" method="post">
                 <input type="text" placeholder="Nombre" name="UsuNombre">
                 <br />
                 <input type="text" placeholder="Apellido" name="UsuApellido" requrired>
@@ -84,7 +74,7 @@
                 <form>
                 <input type="text" placeholder="Mail" name="UsuMail" requrired>
                 <br />
-                <input type="text" placeholder="Fecha Nacimiento" name="UsuFechaNacimiento" requrired>
+                <input type="date" placeholder="Fecha Nacimiento" name="UsuFechaNacimiento" requrired>
                 <br />
                 <input type="text" placeholder="Localidad Opera" name="UsuLocalidadOpera" requrired>
                 <br />

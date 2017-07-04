@@ -41,7 +41,7 @@
 			<ul class="menu">
 				<li><a href="../Post_Inicio/sesionAdmin.php"><span class="iconic home"></span> Home</a></li>
 				<li><a href="../SelectUserOperations/ABMUsuario.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Usuarios</a></li>
-                <li><a href="../UnderConstruction/UnderConstrAdmin.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
+                <li><a href="../mvc/vista/crearProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
 			</ul>
 			<div class="clearfix"></div>
         </nav>
@@ -56,7 +56,7 @@
                     </form>
                     </td>
                     <td width="34%" align="center">
-                    <form id="Modificar" action="#" method="post">
+                    <form id="Modificar" action="../mvc/vista/ver_usuario.php" method="post">
                         <input name="return" type="hidden" value="<?php 'Modificar'?>" />
                         <input id="button" type="button" onClick="document.getElementById('Modificar').submit()" value="Modificar"/>
                     </form>

@@ -22,12 +22,12 @@ include_once("Conexion.php");
 		private $UsuFechaEgreso;
 		private $UsuEstado;
 
-		private $con;
+		private $pdo;
 
 
 	//metodos
 		public function __construct(){
-			$this-> con = new Conexion();
+			$pdo = new Conexion();
 
 		}
 		public function set($atributo,$contenido){
@@ -38,12 +38,16 @@ include_once("Conexion.php");
 			return $this->$atributo;
 		}
 
-		public function listar(){
+		public function listarUsuario(){
 
-			$sql="SELECT * FROM Usuario";
-			$resultado= $this->con->consultaRetorno($sql);
-			return $resultado;
+				 $pdo = new Conexion();
 
+				 $q="SELECT * FROM usuario";
+
+					$usuario = $pdo->mysql->query($q);
+		
+				return $usuario;
+			
 		}
 
 		public function crearUsuario($UsuNombre,$UsuApellido,$UsuDNI,$UsuFechaNacimiento,$UsuDireccion,$UsuTelefono,$UsuMail,$UsuLocalidadOpera,$UsuCuenta,$UsuPassword,$UsuFechaIngreso,$UsuFechaEgreso,$UsuEstado){

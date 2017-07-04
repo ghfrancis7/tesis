@@ -6,7 +6,7 @@
 <body>
 
 
-<form method="post" action="actualizar_producto.php"></form>
+<form method="post" action="actualizar_producto.php">
 <?php 
 require("../modelo/Conexion.php");
 $pdo= new Conexion();
@@ -37,17 +37,18 @@ $producto = $datosProducto->fetch();
 </p>
 <p>
 	<label>ProductoFechaBajaDB</label>
-	<input type="text" name="ProductoFechaBajaDB" required="true" placeholder="Fecha de Baja" value="<?php echo $producto['ProductoFechaBajaDB']; ?>">
+	<input type="text" name="ProductoFechaBajaDB" placeholder="Fecha de Baja" value="<?php echo $producto['ProductoFechaBajaDB']; ?>">
 </p>
 <p>
 	<label>ProductoEstado</label>
 	<input type="text" name="ProductoEstado" required="true" placeholder="Estado" value="<?php echo $producto['ProductoEstado']; ?>">
 </p>
 
-<input type="button" name="modificar" value="Modificar">
+<input type="submit" name="modificar" value="Modificar">
 <input type="button" name="cancelar" value="Cancelar">
 
 
 
 </body>
 </html>
+</form>

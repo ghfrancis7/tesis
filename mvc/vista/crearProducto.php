@@ -1,38 +1,18 @@
-<?php 
-include_once("../controlador/producto_controlador.php");
-
-	$controlador = new controladorProducto();
-	if(isset($_POST['enviar'])){
-		$r=$controlador->crearProducto($_POST['ProductoNombre'],$_POST['ProductoPrecio'],$_POST['ProductoFechaAltaDB'],$_POST['ProductoFechaBajaDB'],$_POST['ProductoEstado']);
-		if($r){
-			echo "Se ha registrado un nuevo producto";
-		}else{
-			echo"Ya existe el producto";
-		}
-	}
-
- ?>
 
 <br>
 <h3>Crear un nuevo Producto</h3>
-<form action="" method="post">
-	<label>ProductoNombre</label> <br>
-	<input type="text" name="ProductoNombre">
+<form action="guardarProducto.php" method="post">
+	<input type="text" placeholder="ProductoNombre" name="ProductoNombre">
 	<br><br>
-	<label>ProductoPrecio</label> <br>
-	<input type="text" name="ProductoPrecio">
+	<input type="text" placeholder="ProductoPrecio" name="ProductoPrecio">
 	<br><br>
-	<label>ProductoFechaAltaDB</label> <br>
 	<input type="date" name="ProductoFechaAltaDB">
 	<br><br>
-	<label>ProductoFechaBajaDB</label> <br>
-	<input type="date" name="ProductoFechaBajaDB">
+	<input type="date" placeholder="ProductoFechaBajaDB" name="ProductoFechaBajaDB">
 	<br><br>
-	<label>ProductoEstado</label> <br>
-	<input type="text" name="ProductoEstado">
+	<input type="text" placeholder="ProductoEstado" name="ProductoEstado">
 	<br><br>
-	<input type="submit" name="enviar" value="Crear">
-	<ul>
-			<li><a href="index.php">Inicio</a></li>
-		</ul>
+	<input type="submit" name="enviar" value="Crear Producto">
+	<input type="button" value="Atras" onclick="history.back(-1)" />
+	
 </form>
