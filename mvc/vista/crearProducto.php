@@ -1,4 +1,3 @@
-
 <br>
 <h3>Crear un nuevo Producto</h3>
 <form action="guardarProducto.php" method="post">

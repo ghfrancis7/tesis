@@ -66,12 +66,12 @@
                 <br />
                 <input type="text" placeholder="Telefono" name="UsuTelefono" requrired>
                 <br />
-                </form>
+                
             </td>
             <td width="20%">
             </td>
             <td width="40%">
-                <form>
+                
                 <input type="text" placeholder="Mail" name="UsuMail" requrired>
                 <br />
                 <input type="date" placeholder="Fecha Nacimiento" name="UsuFechaNacimiento" requrired>
@@ -85,14 +85,14 @@
                 <input type="hidden" value="<?php ''?>" name="UsuFechaEgreso" requrired>
                 <input type="hidden" value="<?php 'activo'?>" name="UsuEstado" requrired>
                 <br />
-                </form>
+                
             </td>
 		</tr>
         <tr>
             <td width="25%">
             </td>
         	<td width="50%">
-            	<form>
+            	
                 <input id="button" type="button" onClick="document.getElementById('frmCrear').submit()" value="Crear">
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
