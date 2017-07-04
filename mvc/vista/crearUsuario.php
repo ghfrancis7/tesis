@@ -55,6 +55,7 @@
     <div class="formularios">
     <table width="100%">
 		<tr>
+
 			<td width="40%">
             <form id="frmCrear" action="guardarUsuario.php" method="post">
                 <input type="text" placeholder="Nombre" name="UsuNombre">
@@ -92,12 +93,8 @@
         <tr>
             <td width="25%">
             </td>
-        	<td width="50%">
-            	
+        	<td width="50%">            	
                 <input id="button" type="button" onClick="document.getElementById('frmCrear').submit()" value="Crear">
-                <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                </ul>
             </form>
             </td>
             <td width="25%">
