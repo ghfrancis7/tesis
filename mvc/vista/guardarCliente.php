@@ -26,7 +26,7 @@
 
 		$pst->execute();
 		$pdo->mysql->commit() ;
-		header();
+		
 			
 		} catch (Exception $e) {
 			$pdo->mysql->rollback();
