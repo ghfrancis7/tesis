@@ -168,6 +168,58 @@ body{
 	outline: none;
 }
 
+/*Estilo Formularios*/
+.formularios{
+	position: relative;
+	width: 700px;
+	text-align: center;
+	z-index: 2;
+	margin: 0 auto;
+}
+
+.formularios input[type=text]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+}
+
+.formularios input[type=button]{
+	width: 150px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #333;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+	opacity: 0.25;
+}
+
+.formularios input[type=button]:hover{
+	opacity: 0.2;
+}
+
+.formularios input[type=text]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.formularios input[type=button]:focus{
+	outline: none;
+}
+
+/*-----------Barra Menu---------------*/
 ::-webkit-input-placeholder{
    color: rgba(255,255,255,0.6);
 }
