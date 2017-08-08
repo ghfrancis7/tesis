@@ -33,8 +33,12 @@
  			}
 }
  			 
-		if ($UsuCuenta=="" OR $UsuPassword=="") {
-			echo"<script type=\"text/javascript\">alert('No ingreso ninguna cuenta y/o contraseña'); window.location='crearUsuario.php';</script>"; 
+		if ($UsuCuenta=="") {
+			echo"<script type=\"text/javascript\">alert('No ingreso una cuenta'); window.location='crearUsuario.php';</script>"; 
+		}elseif($UsuPassword==""){
+			echo"<script type=\"text/javascript\">alert('No ingreso contraseña'); window.location='crearUsuario.php';</script>"; 
+		}elseif($UsuNombre==""){
+			echo"<script type=\"text/javascript\">alert('No ingreso un nombre de usuario'); window.location='crearUsuario.php';</script>"; 
 		}elseif($accused=="true"){
 			echo"<script type=\"text/javascript\">alert('Este usuario ya existe'); window.location='crearUsuario.php';</script>"; 
 		}elseif ($dniused=="true") {

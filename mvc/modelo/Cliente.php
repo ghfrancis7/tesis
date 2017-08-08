@@ -1,6 +1,6 @@
 <?php 
 
-		require("Conexion.php");
+		include_once("Conexion.php");
 	class Cliente{
 
 		public $IDCliente;

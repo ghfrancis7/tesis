@@ -11,11 +11,11 @@
 require("../modelo/Conexion.php");
 $pdo= new Conexion();
 
-$IDProducto = $_GET['IDProducto'];
-$datosProducto = $pdo->mysql->prepare("SELECT * FROM producto where IDProducto = :IDProducto");
-$datosProducto->bindParam(":IDProducto", $IDProducto, PDO::PARAM_INT);
-$datosProducto->execute();
-$producto = $datosProducto->fetch();
+	$IDProducto = $_GET['IDProducto'];
+	$datosProducto = $pdo->mysql->prepare("SELECT * FROM producto where IDProducto = :IDProducto");
+	$datosProducto->bindParam(":IDProducto", $IDProducto, PDO::PARAM_INT);
+	$datosProducto->execute();
+	$producto = $datosProducto->fetch();
 
  ?>
 

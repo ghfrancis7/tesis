@@ -14,29 +14,29 @@
 	$ClienteEstado = $_POST['ClienteEstado'];
 
 
-try {
+	try { 
 
-		$pdo->mysql->beginTransaction();
-		$pst = $pdo->mysql->prepare("UPDATE cliente set ClienteNombre = :ClienteNombre, ClienteCuit = :ClienteCuit, ClienteDireccion =:ClienteDireccion, ClienteTelefono =:ClienteTelefono, ClienteCantidadPlantas =:ClienteCantidadPlantas, ClienteFechaAlta=:ClienteFechaAlta , ClienteFechaBaja=:ClienteFechaBaja , ClienteEstado=:ClienteEstado where IDCliente = :IDCliente");
-		$pst->bindParam(":IDCliente",$IDCliente,PDO::PARAM_STR);
-		$pst->bindParam(":ClienteNombre",$ClienteNombre,PDO::PARAM_STR);
-		$pst->bindParam(":ClienteCuit",$ClienteCuit,PDO::PARAM_STR);
-		$pst->bindParam(":ClienteDireccion",$ClienteDireccion,PDO::PARAM_STR);
-		$pst->bindParam(":ClienteTelefono",$ClienteTelefono,PDO::PARAM_STR);
-		$pst->bindParam(":ClienteCantidadPlantas",$ClienteCantidadPlantas,PDO::PARAM_STR);
-		$pst->bindParam(":ClienteFechaAlta",$ClienteFechaAlta,PDO::PARAM_STR);
-		$pst->bindParam(":ClienteFechaBaja",$ClienteFechaBaja,PDO::PARAM_STR);
-		$pst->bindParam(":ClienteEstado",$ClienteEstado,PDO::PARAM_STR);
+			$pdo->mysql->beginTransaction();
+			$pst = $pdo->mysql->prepare("UPDATE cliente set ClienteNombre = :ClienteNombre, ClienteCuit = :ClienteCuit, ClienteDireccion =:ClienteDireccion, ClienteTelefono =:ClienteTelefono, ClienteCantidadPlantas =:ClienteCantidadPlantas, ClienteFechaAlta=:ClienteFechaAlta , ClienteFechaBaja=:ClienteFechaBaja , ClienteEstado=:ClienteEstado where IDCliente = :IDCliente");
+			$pst->bindParam(":IDCliente",$IDCliente,PDO::PARAM_STR);
+			$pst->bindParam(":ClienteNombre",$ClienteNombre,PDO::PARAM_STR);
+			$pst->bindParam(":ClienteCuit",$ClienteCuit,PDO::PARAM_STR);
+			$pst->bindParam(":ClienteDireccion",$ClienteDireccion,PDO::PARAM_STR);
+			$pst->bindParam(":ClienteTelefono",$ClienteTelefono,PDO::PARAM_STR);
+			$pst->bindParam(":ClienteCantidadPlantas",$ClienteCantidadPlantas,PDO::PARAM_STR);
+			$pst->bindParam(":ClienteFechaAlta",$ClienteFechaAlta,PDO::PARAM_STR);
+			$pst->bindParam(":ClienteFechaBaja",$ClienteFechaBaja,PDO::PARAM_STR);
+			$pst->bindParam(":ClienteEstado",$ClienteEstado,PDO::PARAM_STR);
 
-		
-		$pst->execute();
+			
+			$pst->execute();
 
-		$pdo->mysql->commit();
-			header("Location:ver_cliente.php");
-		
-	} catch (Exception $e) {
-			$pdo->mysql->rollback();
-				echo "No se pudo modificar";
-		
-}
- ?>
+			$pdo->mysql->commit();
+				header("Location:ver_cliente.php");
+			
+		} catch (Exception $e) {
+				$pdo->mysql->rollback();
+					echo "No se pudo modificar";
+			
+	}
+	 ?>

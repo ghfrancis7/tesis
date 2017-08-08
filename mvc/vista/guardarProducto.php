@@ -1,9 +1,6 @@
 <?php 
 
-
-
-
-	require("../modelo/Conexion.php");
+	require_once("../modelo/Conexion.php");
 	include_once("../modelo/Producto.php");
 
 		$controlador = new Producto();
@@ -25,9 +22,11 @@
  				$nombreused='true';
  			}
 }
-if ($nombreused=="true") {
+		if ($nombreused=="true") {
 			echo"<script type=\"text/javascript\">alert('Ya hay otro producto con este nombre'); window.location='crearProducto.php';</script>"; 
-		}else{
+		}elseif ($ProductoNombre==""){
+			echo"<script type=\"text/javascript\">alert('No ingreso el nombre del producto'); window.location='crearProducto.php';</script>"; 
+		}else {
 
 	try {
 
@@ -50,5 +49,5 @@ if ($nombreused=="true") {
 			echo "No se pudo agregar el cliente";
 		
 	}
-}
+	}
 		?>
