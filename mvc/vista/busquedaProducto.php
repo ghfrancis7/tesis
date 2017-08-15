@@ -27,13 +27,13 @@ include_once("../modelo/Producto.php");
  			<td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
  			<td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
  			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
- 			<?php /* <td><a href="?cargar=editar_producto&IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar</a></td>
- 			*/?>
+ 		
  			<td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar Producto</a></td>
- 			
  			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
-
  		</tr>
+ 		
 <?php } ?>
 			</tbody>
  </table>
+
+ <input type="button" value="Atras" onclick="history.back(-1)" />

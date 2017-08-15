@@ -39,7 +39,9 @@ include_once("../modelo/Cliente.php");
  			*/?>
  			<td><a href="editar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Modificar Cliente</a></td>
  			<td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Eliminar Cliente</a></td>
+ 			<input type="button" value="Atras" onclick="history.back(-1)" />
  		</tr>
 <?php } ?>
 			</tbody>
  </table>
+ 		<input type="button" value="Atras" onclick="history.back(-1)" />
