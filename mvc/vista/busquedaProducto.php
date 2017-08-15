@@ -3,19 +3,12 @@
 include_once("../modelo/Producto.php");
 
 	$controlador = new Producto();
-	$sql= $controlador->listarProducto();
+	$IDProducto= $_GET['buscar'];
+	$sql= $controlador->buscarProducto($IDProducto);
 
  ?> 
 
- <form action="busquedaProducto.php" method ="get">
-
-		<label>Buscar: <input type="text" name="buscar" ></label>
-			<br>
-		<input type="submit"name="Buscar" values"Buscar">
-
-	</form>
-	
-<table border="1"> 
+ <table border="1"> 
  	<thead>
  		<th>ProductoID</th>
  		<th>ProductoNombre</th>

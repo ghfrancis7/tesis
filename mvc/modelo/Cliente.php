@@ -35,6 +35,17 @@
 				return $cliente;
 			
 		}
+		public function buscarCliente($buscar){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM cliente WHERE IDCliente ='$buscar' OR ClienteNombre='$buscar' OR ClienteCuit = '$buscar'";
+
+					$producto = $pdo->mysql->query($q);
+		
+				return $producto;
+			
+		}
 
 		public function set($atributo,$contenido){
 			$this->atributo=$contenido;

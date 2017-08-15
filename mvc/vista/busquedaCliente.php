@@ -3,19 +3,11 @@
 include_once("../modelo/Cliente.php");
 
 	$controlador = new Cliente();
-	$sql= $controlador->listarCliente();
+	$IDCliente= $_GET['buscar'];
+	$sql= $controlador->buscarCliente($IDCliente);
 
  ?> 
 
-
- <form action="../modelo/Cliente.php" method ="get">
-
-		<label>Buscar: <input type="text" name="buscar" ></label>
-			<br>
-		<input type="submit"name="Buscar" values"Buscar">
-
-	</form>
-	
 	
 <table border="1"> 
  	<thead>

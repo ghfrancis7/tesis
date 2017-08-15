@@ -47,6 +47,7 @@ include_once("../modelo/Usuario.php");
  			<?php /* <td><a href="?cargar=editar_producto&IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar</a></td>
  			*/?>
  			<td><a href="editar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Modificar Usuario</a></td>
+ 			<td><a href="eliminar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Eliminar Usuario</a></td>
  		</tr>
 <?php } ?>
 			</tbody>
