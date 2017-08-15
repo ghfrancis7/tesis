@@ -24,7 +24,7 @@
 		//Formulario
 	
     ?>
-	<div class="background">
+	<div class="backgroundTable">
     </div>
     <div class="header">
         <header>
@@ -55,7 +55,6 @@
     <div class="formularios">
     <table width="100%">
 		<tr>
-
 			<td width="40%">
             <form id="frmCrear" action="guardarUsuario.php" method="post">
                 <input type="text" placeholder="Nombre" name="UsuNombre">
@@ -68,12 +67,10 @@
                 <br />
                 <input type="text" placeholder="Telefono" name="UsuTelefono" requrired>
                 <br />
-                
             </td>
             <td width="20%">
             </td>
             <td width="40%">
-                
                 <input type="text" placeholder="Mail" name="UsuMail" requrired>
                 <br />
                 <input type="date" placeholder="Fecha Nacimiento" name="UsuFechaNacimiento" requrired>
@@ -87,7 +84,6 @@
                 <input type="hidden" value="<?php ''?>" name="UsuFechaEgreso" requrired>
                 <input type="hidden" value="<?php 'activo'?>" name="UsuEstado" requrired>
                 <br />
-                
             </td>
 		</tr>
         <tr>

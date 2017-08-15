@@ -18,7 +18,7 @@
             $idUsuario = $_SESSION['id'];
         }
     ?>
-	<div class="background">
+	<div class="backgroundTable">
     </div>
     <div class="header">
         <header>
@@ -56,15 +56,13 @@
                     </form>
                     </td>
                     <td width="34%" align="center">
-                    <form id="Modificar" action="../mvc/vista/ver_usuario.php" method="post">
-                        <input name="return" type="hidden" value="<?php 'Modificar'?>" />
+                    <form id="Modificar" action="../mvc/vista/modifica_usuario.php" method="post">
                         <input id="button" type="button" onClick="document.getElementById('Modificar').submit()" value="Modificar"/>
                     </form>
                     </td>
                     <td width="33%" align="center">
-                    <form id="Eliminar" action="#" method="post">
-                        <input name="return" type="hidden" value="<?php 'Eliminar'?>" />
-                        <input id="button" type="button" onClick="document.getElementById('Eliminar').submit()" value="Eliminar"/>
+                    <form id="Estado" action="../mvc/vista/estado_usuario.php" method="post">
+                        <input id="button" type="button" onClick="document.getElementById('Estado').submit()" value="Activo/Inactivo"/>
                     </form>
                     </td>
                 </tr>

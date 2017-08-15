@@ -216,6 +216,7 @@ body{
 	font-weight: 400;
 	padding: 6px;
 	margin-top: 10px;
+	opacity: 0.25;
 }
 
 .formularios input[type=text]:focus{
@@ -469,3 +470,26 @@ a.iconic:hover {
 .iconic.check-alt:before { content: "Y"; }
 .iconic.beaker:before { content: "z"; }
 .iconic.beaker-alt:before { content: "Z"; }
+
+/****************************************************/
+/*Formato Tablas*/
+.backgroundTable{
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	right: -40px;
+	bottom: -40px;
+	width: auto;
+	height: auto;
+	background-image: url('../Images/BackgroundTable.jpg');
+	background-size: cover;
+	z-index: 0;
+}
+
+.tablas{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	z-index: 2;
+	margin: 0 auto;
+}
