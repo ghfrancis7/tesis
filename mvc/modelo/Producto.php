@@ -33,6 +33,17 @@ include_once("Conexion.php");
 				return $producto;
 			
 		}
+		public function buscarProducto($buscar){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM producto WHERE IDProducto ='$buscar' OR ProductoNombre ='$buscar' OR ProductoPrecio = '$buscar'";
+
+					$producto = $pdo->mysql->query($q);
+		
+				return $producto;
+			
+		}
 
 
 
