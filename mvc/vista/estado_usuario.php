@@ -67,6 +67,7 @@
 			<th>Fecha Ingreso</th>
 			<th>Fecha Egreso</th>
 			<th>Estado</th>
+            <th>Cambiar Estado</th>
 		</thead>
 		<tbody>
  			<?php  
@@ -86,7 +87,7 @@
  				<td><?php echo "{$row['UsuFechaIngreso']}"; ?></td>
  				<td><?php echo "{$row['UsuFechaEgreso']}"; ?></td>
  				<td><?php echo "{$row['UsuEstado']}"; ?></td>
-				<td><a href="editar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Modificar </a></td>
+				<td><a href="#"> Activo/Inactivo </a></td>
  			</tr>
 			<?php } ?>
 		</tbody>

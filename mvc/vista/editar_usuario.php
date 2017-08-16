@@ -65,39 +65,38 @@
 		<tr>
 			<td width="40%">
             <form id="frmeditar" method="post" action="actualizar_usuario.php">
-	            
                 <label>Nombre</label>
                 <input type="text" name="UsuNombre" required value="<?php echo $usuario['UsuNombre']; ?>">
-
+				<br/>
                 <label>Apellido</label>
                 <input type="text" name="UsuApellido" required value="<?php echo $usuario['UsuApellido']; ?>">
-
-                <label>DNI</label>
-                <input type="text" name="UsuDNI" required placeholder="Fecha de Alta" value="<?php echo $usuario['UsuDNI']; ?>">
-
+				<br/>
+                <label>Documento</label>
+                <input type="text" name="UsuDNI" required value="<?php echo $usuario['UsuDNI']; ?>">
+				<br/>
                 <label>Direccion</label>
-                <input type="text" name="UsuDireccion" placeholder="Fecha de Baja" value="<?php echo $usuario['UsuDireccion']; ?>">
-
+                <input type="text" name="UsuDireccion" value="<?php echo $usuario['UsuDireccion']; ?>">
+				<br/>
                 <label>Telefono</label>
-                <input type="text" name="UsuTelefono" required placeholder="Estado" value="<?php echo $usuario['UsuTelefono']; ?>">
+                <input type="text" name="UsuTelefono" required value="<?php echo $usuario['UsuTelefono']; ?>">
 			</td>
             <td width="20%">
             </td>
             <td width="40%">
                 <label>Mail</label>
-                <input type="text" name="UsuMail" placeholder="Fecha de Baja" value="<?php echo $usuario['UsuMail']; ?>">
-
+                <input type="text" name="UsuMail" value="<?php echo $usuario['UsuMail']; ?>">
+				<br/>
                 <label>Fecha Nac.</label>
-                <input type="text" name="UsuFechaNacimiento" placeholder="Fecha de Baja" value="<?php echo $usuario['UsuFechaNacimiento']; ?>">
-
+                <input type="text" name="UsuFechaNacimiento" value="<?php echo $usuario['UsuFechaNacimiento']; ?>">
+				<br/>
                 <label>Zona Laboral</label>
-                <input type="text" name="UsuLocalidadOpera" placeholder="Fecha de Baja" value="<?php echo $usuario['UsuLocalidadOpera']; ?>">
-
+                <input type="text" name="UsuLocalidadOpera" value="<?php echo $usuario['UsuLocalidadOpera']; ?>">
+				<br/>
                 <label>Cuenta</label>
-                <input type="text" name="UsuCuenta" placeholder="Fecha de Baja" value="<?php echo $usuario['UsuCuenta']; ?>">
-
+                <input type="text" name="UsuCuenta" value="<?php echo $usuario['UsuCuenta']; ?>">
+				<br/>
                 <label>Password</label>
-                <input type="password" name="UsuPassword" placeholder="Fecha de Baja" value="<?php echo $usuario['UsuPassword']; ?>">
+                <input type="text" name="UsuPassword" value="<?php echo $usuario['UsuPassword']; ?>">
 			</td>
 		</tr>
 		<tr>
@@ -108,7 +107,7 @@
 			<td width="10%">
 			</td>
             <td width="45%">
-            	<form id="frmcancel" method="post" action="../mvc/vista/modifica_usuario.php">
+            	<form id="frmcancel" method="post" action="ver_usuario.php">
             	<input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Cancel">
                 </form>
             </td>
