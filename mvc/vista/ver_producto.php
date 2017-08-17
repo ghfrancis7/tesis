@@ -52,8 +52,8 @@ include_once("../modelo/Producto.php");
 
  		<?php
  			}
- 			}else{ ?>
- 			<tr>
+ 			}elseif ($bandera="true") { ?>
+ 				<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoPrecio']}"; ?></td>
@@ -66,6 +66,9 @@ include_once("../modelo/Producto.php");
 	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
 
  		</tr>
+ 		<?php
+ 			}{ ?>
+ 			
  		<?php
  		}
  			?>
