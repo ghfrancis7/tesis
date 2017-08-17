@@ -60,7 +60,7 @@
 
 
 	<input type="submit" name="modificar" value="Modificar">
-	<input type="button" name="cancelar" value="Cancelar">
+ 	<input type="button" value="Cancelar" onclick="history.back(-1)" />
 
 
 
