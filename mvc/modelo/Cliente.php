@@ -28,6 +28,7 @@
 
 				 $pdo = new Conexion();
 
+
 				 $q="SELECT * FROM cliente";
 
 					$cliente = $pdo->mysql->query($q);

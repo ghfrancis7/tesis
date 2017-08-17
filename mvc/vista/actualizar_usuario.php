@@ -14,15 +14,13 @@
 		$UsuLocalidadOpera = $_POST['UsuLocalidadOpera'];
 		$UsuCuenta = $_POST['UsuCuenta'];
 		$UsuPassword = $_POST['UsuPassword'];
-		$UsuFechaIngreso = $_POST['UsuFechaIngreso'];
-		$UsuFechaEgreso = $_POST['UsuFechaEgreso'];
-		$UsuEstado = $_POST['UsuEstado'];
 
 
-try {
+
+	//try {
 
 		$pdo->mysql->beginTransaction();
-		$pst = $pdo->mysql->prepare("UPDATE usuario set UsuNombre = :UsuNombre, UsuApellido = :UsuApellido, UsuDNI =:UsuDNI, UsuDireccion =:UsuDireccion, UsuTelefono =:UsuTelefono, UsuMail=:UsuMail , UsuFechaNacimiento=:UsuFechaNacimiento , UsuLocalidadOpera=:UsuLocalidadOpera, UsuCuenta=:UsuCuenta , UsuPassword=:UsuPassword , UsuFechaIngreso=:UsuFechaIngreso , UsuFechaEgreso=:UsuFechaEgreso , UsuEstado=:UsuEstado where IDUsuario = :IDUsuario");
+		$pst = $pdo->mysql->prepare("UPDATE usuario set UsuNombre = :UsuNombre, UsuApellido = :UsuApellido, UsuDNI =:UsuDNI, UsuDireccion =:UsuDireccion, UsuTelefono =:UsuTelefono, UsuMail=:UsuMail , UsuFechaNacimiento=:UsuFechaNacimiento , UsuLocalidadOpera=:UsuLocalidadOpera, UsuCuenta=:UsuCuenta , UsuPassword=:UsuPassword where IDUsuario = :IDUsuario");
 		$pst->bindParam(":IDUsuario",$IDUsuario,PDO::PARAM_STR);
 		$pst->bindParam(":UsuNombre",$UsuNombre,PDO::PARAM_STR);
 		$pst->bindParam(":UsuApellido",$UsuApellido,PDO::PARAM_STR);
@@ -34,9 +32,6 @@ try {
 		$pst->bindParam(":UsuLocalidadOpera",$UsuLocalidadOpera,PDO::PARAM_STR);
 		$pst->bindParam(":UsuCuenta",$UsuCuenta,PDO::PARAM_STR);
 		$pst->bindParam(":UsuPassword",$UsuPassword,PDO::PARAM_STR);
-		$pst->bindParam(":UsuFechaIngreso",$UsuFechaIngreso,PDO::PARAM_STR);
-		$pst->bindParam(":UsuFechaEgreso",$UsuFechaEgreso,PDO::PARAM_STR);
-		$pst->bindParam(":UsuEstado",$UsuEstado,PDO::PARAM_STR);
 
 
 		$pst->execute();
@@ -44,9 +39,9 @@ try {
 		$pdo->mysql->commit();
 			header("Location:ver_usuario.php");
 		
-	} catch (Exception $e) {
-			$pdo->mysql->rollback();
-				echo "No se pudo modificar";
+	//} catch (Exception $e) {
+	//		$pdo->mysql->rollback();
+	//			echo "No se pudo modificar";
 		
-}
+//}
  ?>

@@ -8,14 +8,14 @@
 
 <form method="post" action="actualizar_producto.php">
 <?php 
-require("../modelo/Conexion.php");
-$pdo= new Conexion();
+	require("../modelo/Conexion.php");
+	$pdo= new Conexion();
 
-	$IDProducto = $_GET['IDProducto'];
-	$datosProducto = $pdo->mysql->prepare("SELECT * FROM producto where IDProducto = :IDProducto");
-	$datosProducto->bindParam(":IDProducto", $IDProducto, PDO::PARAM_INT);
-	$datosProducto->execute();
-	$producto = $datosProducto->fetch();
+		$IDProducto = $_GET['IDProducto'];
+		$datosProducto = $pdo->mysql->prepare("SELECT * FROM producto where IDProducto = :IDProducto");
+		$datosProducto->bindParam(":IDProducto", $IDProducto, PDO::PARAM_INT);
+		$datosProducto->execute();
+		$producto = $datosProducto->fetch();
 
  ?>
 
@@ -45,7 +45,7 @@ $pdo= new Conexion();
 </p>
 
 <input type="submit" name="modificar" value="Modificar">
-<input type="button" name="cancelar" value="Cancelar">
+ <input type="button" value="Cancelar" onclick="history.back(-1)" />
 
 
 

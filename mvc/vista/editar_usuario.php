@@ -22,14 +22,7 @@
 		date_default_timezone_set ("America/Argentina/Buenos_Aires");
 		$today = date( "d/m/Y");
 		//Formulario
-		require("../modelo/Conexion.php");
-		$pdo= new Conexion();
 		
-		$IDUsuario = $_GET['IDUsuario'];
-		$datosUsuario = $pdo->mysql->prepare("SELECT * FROM usuario where IDUsuario = :IDUsuario");
-		$datosUsuario->bindParam(":IDUsuario", $IDUsuario, PDO::PARAM_INT);
-		$datosUsuario->execute();
-		$usuario = $datosUsuario->fetch();
 
     ?>
 	<div class="backgroundTable">
@@ -65,6 +58,23 @@
 		<tr>
 			<td width="40%">
             <form id="frmeditar" method="post" action="actualizar_usuario.php">
+<<<<<<< HEAD
+=======
+
+            <?php  
+            require("../modelo/Conexion.php");
+        $pdo= new Conexion();
+        
+        $IDUsuario = $_GET['IDUsuario'];
+        $datosUsuario = $pdo->mysql->prepare("SELECT * FROM usuario where IDUsuario = :IDUsuario");
+        $datosUsuario->bindParam(":IDUsuario", $IDUsuario, PDO::PARAM_INT);
+        $datosUsuario->execute();
+        $usuario = $datosUsuario->fetch();
+        ?>
+	            <label>ID Usuario</label>
+                <input type="text" name="IDUsuario" value="<?php echo $usuario['IDUsuario']; ?>"readonly=true >
+
+>>>>>>> 109a32a55fd9174158b98be32fcfa133042be362
                 <label>Nombre</label>
                 <input type="text" name="UsuNombre" required value="<?php echo $usuario['UsuNombre']; ?>">
 				<br/>
@@ -101,7 +111,9 @@
 		</tr>
 		<tr>
 			<td width="45%">
+
             	<input id="button" type="button" onClick="document.getElementById('frmeditar').submit()" value="Modificar">
+
                 </form>
 			</td>
 			<td width="10%">
@@ -109,6 +121,7 @@
             <td width="45%">
             	<form id="frmcancel" method="post" action="ver_usuario.php">
             	<input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Cancel">
+
                 </form>
             </td>
         </tr>

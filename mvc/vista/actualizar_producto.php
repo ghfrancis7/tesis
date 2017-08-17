@@ -2,12 +2,12 @@
 
 	require ("../modelo/Conexion.php");
 		$pdo = new Conexion();
-		$IDProducto = $_POST['IDProducto'];
-		$ProductoNombre = $_POST['ProductoNombre'];
-		$ProductoPrecio = $_POST['ProductoPrecio'];
-		$ProductoFechaAltaDB = $_POST['ProductoFechaAltaDB'];
-		$ProductoFechaBajaDB = $_POST['ProductoFechaBajaDB'];
-		$ProductoEstado = $_POST['ProductoEstado'];
+			$IDProducto = $_POST['IDProducto'];
+			$ProductoNombre = $_POST['ProductoNombre'];
+			$ProductoPrecio = $_POST['ProductoPrecio'];
+			$ProductoFechaAltaDB = $_POST['ProductoFechaAltaDB'];
+			$ProductoFechaBajaDB = $_POST['ProductoFechaBajaDB'];
+			$ProductoEstado = $_POST['ProductoEstado'];
 
 		try {
 
@@ -30,8 +30,5 @@
 					echo "No se pudo modificar";
 			
 		}
-
-			
-
 
 		 ?>
