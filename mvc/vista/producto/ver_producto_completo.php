@@ -50,7 +50,7 @@
 			<div class="clearfix"></div>
         </nav>
 	</div>
-    <div class="tablas">
+    <div class="tablas" style="text-align:center;">
 	<table width="60%" border="1" style="margin: 0 auto;"> 
 		<tr><td width="60%">
 		<form id="find" action="busquedaProducto.php" method ="get">
@@ -60,22 +60,20 @@
 		</form>
         </td></tr>
 	</table>
-    <br/>
-
+    <br>
 	<table width="60%" border="1" style="margin: 0 auto;"> 
  		<thead>
- 			<th>ID</th>
- 			<th>Nombre</th>
- 			<th>Precio</th>
- 			<th>Fecha de Alta en DB</th>
- 			<th>Fecha de Baja en DB</th>
- 			<th>Activo/Inactivo</th>
+ 			<th>ProductoID</th>
+ 			<th>ProductoNombre</th>
+ 			<th>ProductoPrecio</th>
+ 			<th>ProductoFechaAltaDB</th>
+ 			<th>ProductoFechaBajaDB</th>
+ 			<th>ProductoEstado</th>
  			<th></th>
 		</thead>
  		<tbody>
 		<?php
- 		foreach($sql as $row){ 
-				if (strcasecmp($row['ProductoEstado'],"Activo") == 0) { ?>
+ 		foreach($sql as $row){?>
  				<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
@@ -86,21 +84,19 @@
 	 			<td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar Producto</a></td>
 	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
  				</tr>
- 		<?php
- 				}
-		}?>
+ 		<?php }?>
 		</tbody>
 	</table>
     </div><br><br>
-<div class="header" style="text-align:center;">
+	<div class="tablas" style="text-align:center;">
 	<table width="60%" style="margin: 0 auto;"><tbody>
 		<tr><td>
-		<form id="veractivo" action="ver_producto_inactivo.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Producto Inactivo"/>
+		<form id="veractivo" action="ver_producto.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Productos Activo"/>
 		</form>
         </td><td>
-        <form id="vertodo" action="ver_producto_completo.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Productos"/>
+        <form id="verinactivo" action="ver_producto_inactivo.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinactivo').submit()" value="Ver Productos Inactivos"/>
 		</form>
         </td></tr>
 	</tbody></table>
