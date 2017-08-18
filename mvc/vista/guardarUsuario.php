@@ -23,6 +23,7 @@
 		$UsuPassword= $_POST['UsuPassword'];
 		$UsuFechaIngreso= $_POST['UsuFechaIngreso'];
 		$UsuFechaEgreso= $_POST['UsuFechaEgreso'];
+		$UsuRol= $_POST['UsuRol'];
 		$UsuEstado= $_POST['UsuEstado'];
 
 		foreach($sql as $row){
@@ -46,7 +47,7 @@
 		}else {
 
 		$pdo->mysql->beginTransaction();
-			$pst = $pdo->mysql->prepare("INSERT INTO usuario (UsuNombre, UsuApellido,UsuDNI,UsuDireccion,UsuTelefono,UsuMail,UsuFechaNacimiento,UsuLocalidadOpera,UsuCuenta,UsuPassword,UsuFechaIngreso,UsuFechaEgreso,UsuEstado) VALUES (:UsuNombre,:UsuApellido,:UsuDNI,:UsuDireccion,:UsuTelefono,:UsuMail,:UsuFechaNacimiento,:UsuLocalidadOpera,:UsuCuenta,:UsuPassword,:UsuFechaIngreso,:UsuFechaEgreso,:UsuEstado)");
+			$pst = $pdo->mysql->prepare("INSERT INTO usuario (UsuNombre, UsuApellido,UsuDNI,UsuDireccion,UsuTelefono,UsuMail,UsuFechaNacimiento,UsuLocalidadOpera,UsuCuenta,UsuPassword,UsuFechaIngreso,UsuFechaEgreso,UsuEstado,UsuRol) VALUES (:UsuNombre,:UsuApellido,:UsuDNI,:UsuDireccion,:UsuTelefono,:UsuMail,:UsuFechaNacimiento,:UsuLocalidadOpera,:UsuCuenta,:UsuPassword,:UsuFechaIngreso,:UsuFechaEgreso,:UsuEstado,:UsuRol)");
 			$pst->bindParam(":UsuNombre",$UsuNombre,PDO::PARAM_STR);
 			$pst->bindParam(":UsuApellido",$UsuApellido,PDO::PARAM_STR);
 			$pst->bindParam(":UsuDNI",$UsuDNI,PDO::PARAM_STR);
@@ -60,6 +61,7 @@
 			$pst->bindParam(":UsuFechaIngreso",$UsuFechaIngreso,PDO::PARAM_STR);
 			$pst->bindParam(":UsuFechaEgreso",$UsuFechaEgreso,PDO::PARAM_STR);
 			$pst->bindParam(":UsuEstado",$UsuEstado,PDO::PARAM_STR);
+			$pst->bindParam(":UsuRol",$UsuRol,PDO::PARAM_STR);
 
 		$pst->execute();
 		$pdo->mysql->commit() ;
