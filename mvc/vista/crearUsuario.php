@@ -77,6 +77,12 @@
                 <br />
                 <input type="text" placeholder="Localidad Opera" name="UsuLocalidadOpera" requrired>
                 <br />
+                <input list="rol" name="UsuRol">
+  					<datalist id="rol">
+    					<option value="admin">Administrador</option>
+						<option value="tecn">Tecnico</option>
+					</datalist>
+                <br />
                 <input type="text" placeholder="Cuenta Usuario" name="UsuCuenta" requrired>
                 <br />
                 <input type="text" placeholder="Password Usuario" name="UsuPassword" requrired>
