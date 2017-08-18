@@ -63,10 +63,6 @@
 
 	            <label>ID Usuario</label>
                 <input type="text" name="IDUsuario" value="<?php echo $usuario['IDUsuario']; ?>"readonly=true >
-				<br/>
-
-	            <label>ID Usuario</label>
-                <input type="text" name="IDUsuario" value="<?php echo $usuario['IDUsuario']; ?>"readonly=true >
 
                 <label>Nombre</label>
                 <input type="text" name="UsuNombre" required value="<?php echo $usuario['UsuNombre']; ?>">
