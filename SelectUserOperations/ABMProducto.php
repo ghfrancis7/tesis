@@ -59,7 +59,6 @@
                     </td>
                     <td width="45%" align="center">
                     <form id="Modificar" action="../mvc/vista/producto/ver_producto.php" method="post">
-                    	<input type="hidden" name="band" value="false">
                         <input id="button" type="button" onClick="document.getElementById('Modificar').submit()" value="Modificar/Eliminar"/>
                     </form>
                     </td>
