@@ -33,7 +33,7 @@
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
                     <td width="50%">Logueado como: <?php echo $usuario?><br>Rol: Administrador</td>
                     <td width="25%">
-                    <form id="frmLogin" action="../../Login PHP/logout.php" method="post">
+                    <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
                         <input id="button" type="button" onClick="document.getElementById('frmLogin').submit()" value="Sign Out"/>
                     </form>
@@ -57,41 +57,53 @@
 		<tr>
 			<td width="40%">
             <form id="frmCrear" action="guardarUsuario.php" method="post">
-                <input type="text" placeholder="Nombre" name="UsuNombre">
+            	<label>Nombre</label>
+                <input type="text" name="UsuNombre">
                 <br />
-                <input type="text" placeholder="Apellido" name="UsuApellido" requrired>
+                <label>Apellido</label>
+                <input type="text" name="UsuApellido" requrired>
                 <br />
-                <input type="text" placeholder="DNI" name="UsuDNI" requrired>
+                <label>DNI</label>
+                <input type="text" name="UsuDNI" requrired>
                 <br />
-                <input type="text" placeholder="Direccion" name="UsuDireccion" requrired>
+                <label>Direccion</label>
+                <input type="text" name="UsuDireccion" requrired>
                 <br />
-                <input type="text" placeholder="Telefono" name="UsuTelefono" requrired>
+                <label>Telefono</label>
+                <input type="text" name="UsuTelefono" requrired>
                 <br />
             </td>
             <td width="20%">
             </td>
             <td width="40%">
-                <input type="text" placeholder="Mail" name="UsuMail" requrired>
+            	<label>Mail</label>
+                <input type="text" name="UsuMail" requrired>
                 <br />
-                <input type="date" placeholder="Fecha Nacimiento" name="UsuFechaNacimiento" requrired>
+                <label>Fecha Nacimiento</label>
+                <input type="date" name="UsuFechaNacimiento" requrired>
                 <br />
-                <input type="text" placeholder="Localidad Opera" name="UsuLocalidadOpera" requrired>
+                <label>Zona en que Opera</label>
+                <input type="text" name="UsuLocalidadOpera" requrired>
                 <br />
-                <select name="UsuRol">
-					<option value="admin">Administrador</option>
-					<option value="tecn">Tecnico</option>
-                </select>
+                <label>Cuenta</label>
+                <input type="text" name="UsuCuenta" requrired>
                 <br />
-                <input type="text" placeholder="Cuenta Usuario" name="UsuCuenta" requrired>
-                <br />
-                <input type="text" placeholder="Password Usuario" name="UsuPassword" requrired>
+                <label>Password</label>
+                <input type="text" name="UsuPassword" requrired>
                 <input type="hidden" value="<?php echo $today;?>" name="UsuFechaIngreso" requrired>
                 <input type="hidden" value="<?php echo '';?>" name="UsuFechaEgreso" requrired>
                 <input type="hidden" value="<?php echo 'Activo';?>" name="UsuEstado" requrired>
                 <br />
             </td>
-		</tr>
-        <tr>
+		</tr><tr>
+        <label>Rol de Usuario</label>
+            <div class="styled-select" style="margin:0 auto;">
+                <select name="UsuRol">
+					<option value="admin">Administrador</option>
+					<option value="tecn">Tecnico</option>
+                </select>
+            </div>
+        </tr><tr>
             <td width="40%">
             <input id="button" type="button" onClick="document.getElementById('frmCrear').submit()" value="Crear">
             </form>

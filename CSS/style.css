@@ -531,3 +531,26 @@ a.iconic:hover {
 .tablas input[type=button]:focus{
 	outline: none;
 }
+
+/*****************************************************/
+/* Estilo Lista desplegable */
+
+.styled-select {
+	height: 30px;
+	overflow: hidden;
+	width: 250px;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+}
+
+.styled-select select {
+	background: transparent;
+	border: none;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	height: 30px;
+	padding: 6px; /* If you add too much padding here, the options won't show in IE */
+	width: 250px;
+}
