@@ -87,7 +87,7 @@
                 <input type="text" placeholder="Password Usuario" name="UsuPassword" requrired>
                 <input type="hidden" value="<?php echo $today;?>" name="UsuFechaIngreso" requrired>
                 <input type="hidden" value="<?php echo '';?>" name="UsuFechaEgreso" requrired>
-                <input type="hidden" value="<?php echo 'activo';?>" name="UsuEstado" requrired>
+                <input type="hidden" value="<?php echo 'Activo';?>" name="UsuEstado" requrired>
                 <br />
             </td>
 		</tr>
