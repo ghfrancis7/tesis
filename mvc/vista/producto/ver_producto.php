@@ -21,9 +21,6 @@
 		include_once("../../modelo/Producto.php");
 		$controlador = new Producto();
 		$sql= $controlador->listarProducto();
-		if (isset($_POST["band"])){
-		$bandera=$_POST["band"];
-		}
     ?>
 	<div class="backgroundTable">
     </div>
@@ -74,7 +71,6 @@
  			<th>ProductoEstado</th>
  			<th><a>
 				<form id="bandera" method="post" action="ver_producto.php">
-                	<input type="hidden" name="band" value="true">
 					<input id="button" type="button" onClick="document.getElementById('bandera').submit()" value="Ver Inactivos">
 				</form>
 			</a></th>
@@ -82,7 +78,6 @@
  		<tbody>
 		<?php
  		foreach($sql as $row){ 
- 			if (strcasecmp($bandera,"false")) {
 				if ($row['ProductoEstado']=="Activo") { ?>
  				<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
@@ -96,20 +91,7 @@
  				</tr>
  		<?php
  				}
- 			}elseif (strcasecmp($bandera,"true")) { ?>
- 				<tr>
-	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoPrecio']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
-	 			<td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar Producto</a></td>
-	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
- 				</tr>
- 			<?php
- 			}
-		} ?>
+		}?>
 		</tbody>
 	</table>
     </div>
