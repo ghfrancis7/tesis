@@ -6,7 +6,6 @@
 	<link href="../../CSS/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<<<<<<< HEAD
 <body>
 	<?php
     $usuario="";
@@ -88,7 +87,8 @@
  				<td><?php echo "{$row['UsuFechaEgreso']}"; ?></td>
  				<td><?php echo "{$row['UsuEstado']}"; ?></td>
 				<td><a href="editar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Modificar </a>
-				<td><a href="eliminar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Cambiar Estado </a></td>
+				<td><a href="eliminar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del usuario?');">Cambiar Estado</a></td>
+
  			</tr>
 			<?php } ?>
 		</tbody>

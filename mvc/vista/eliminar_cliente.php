@@ -3,7 +3,7 @@
 	require ("../modelo/Conexion.php");
 	$pdo = new Conexion();
 	$IDCliente = $_GET['IDCliente'];
-	//$ProductoFechaBajaDB= date('m/d/Y');
+	$ClienteFechaBaja= date('m/d/Y');
 
 		try {
 
@@ -16,6 +16,7 @@
 
 						if ($cliente['ClienteEstado']=="Inactivo") {
 							$ClienteEstado="Activo";
+							$ClienteFechaBaja="";
 						}elseif ($cliente['ClienteEstado']=="Activo") {
 							$ClienteEstado="Inactivo";
 						}
