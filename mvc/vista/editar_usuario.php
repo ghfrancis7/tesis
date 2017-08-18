@@ -19,7 +19,7 @@
 		date_default_timezone_set ("America/Argentina/Buenos_Aires");
 		$today = date( "d/m/Y");
 		//Formulario
-		require("../modelo/Conexion.php");
+		include_once("../modelo/Conexion.php");
 		$pdo= new Conexion();
 		$IDUsuario = $_GET['IDUsuario'];
 		$datosUsuario = $pdo->mysql->prepare("SELECT * FROM usuario where IDUsuario = :IDUsuario");
@@ -65,17 +65,6 @@
                 <input type="text" name="IDUsuario" value="<?php echo $usuario['IDUsuario']; ?>"readonly=true >
 				<br/>
 
-
-            <?php  
-            require("../modelo/Conexion.php");
-        $pdo= new Conexion();
-        
-        $IDUsuario = $_GET['IDUsuario'];
-        $datosUsuario = $pdo->mysql->prepare("SELECT * FROM usuario where IDUsuario = :IDUsuario");
-        $datosUsuario->bindParam(":IDUsuario", $IDUsuario, PDO::PARAM_INT);
-        $datosUsuario->execute();
-        $usuario = $datosUsuario->fetch();
-        ?>
 	            <label>ID Usuario</label>
                 <input type="text" name="IDUsuario" value="<?php echo $usuario['IDUsuario']; ?>"readonly=true >
 
