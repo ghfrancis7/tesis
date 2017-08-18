@@ -87,7 +87,8 @@
  				<td><?php echo "{$row['UsuFechaIngreso']}"; ?></td>
  				<td><?php echo "{$row['UsuFechaEgreso']}"; ?></td>
  				<td><?php echo "{$row['UsuEstado']}"; ?></td>
-				<td><a href="editar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Modificar </a></td>
+				<td><a href="editar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Modificar </a>
+				<td><a href="eliminar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Cambiar Estado </a></td>
  			</tr>
 			<?php } ?>
 		</tbody>

@@ -58,8 +58,7 @@
 		<tr>
 			<td width="40%">
             <form id="frmeditar" method="post" action="actualizar_usuario.php">
-<<<<<<< HEAD
-=======
+
 
             <?php  
             require("../modelo/Conexion.php");
@@ -74,7 +73,6 @@
 	            <label>ID Usuario</label>
                 <input type="text" name="IDUsuario" value="<?php echo $usuario['IDUsuario']; ?>"readonly=true >
 
->>>>>>> 109a32a55fd9174158b98be32fcfa133042be362
                 <label>Nombre</label>
                 <input type="text" name="UsuNombre" required value="<?php echo $usuario['UsuNombre']; ?>">
 				<br/>
