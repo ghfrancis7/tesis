@@ -47,7 +47,7 @@
 			<ul class="menu">
 				<li><a href="../../Post_Inicio/sesionAdmin.php"><span class="iconic home"></span> Home</a></li>
 				<li><a href="../../SelectUserOperations/ABMUsuario.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Usuarios</a></li>
-                <li><a href="../../mvc/vista/crearProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
+                <li><a href="../../SelectUserOperations/ABMProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
 			</ul>
 			<div class="clearfix"></div>
         </nav>
@@ -87,13 +87,16 @@
             </td>
 		</tr>
         <tr>
-            <td width="25%">
-            </td>
-        	<td width="50%">            	
-                <input id="button" type="button" onClick="document.getElementById('frmCrear').submit()" value="Crear">
+            <td width="40%">
+            <input id="button" type="button" onClick="document.getElementById('frmCrear').submit()" value="Crear">
             </form>
             </td>
-            <td width="25%">
+        	<td width="20%">
+            </td>
+            <td width="40%">
+            <form id="frmcancel" method="post" action="../../Post_Inicio/sesionAdmin.php">
+				<input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Cancel">
+			</form>
             </td>
         </tr>
     </table>

@@ -41,7 +41,7 @@
 			<ul class="menu">
 				<li><a href="../Post_Inicio/sesionAdmin.php"><span class="iconic home"></span> Home</a></li>
 				<li><a href="../SelectUserOperations/ABMUsuario.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Usuarios</a></li>
-                <li><a href="../mvc/vista/crearProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
+                <li><a href="../SelectUserOperations/ABMProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
 			</ul>
 			<div class="clearfix"></div>
         </nav>
@@ -49,20 +49,17 @@
     <div class="buttons">
         	<table>
                 <tr>
-                    <td width="33%" align="center">
+                    <td width="45%" align="center">
                     <form id="Crear" action="../mvc/vista/crearUsuario.php" method="get">
                     	<input  type="hidden" value="<?php 'cargar'?>" />
                         <input id="button" type="button" onClick="document.getElementById('Crear').submit()" value="Crear"/>
                     </form>
                     </td>
-                    <td width="34%" align="center">
-                    <form id="Modificar" action="../mvc/vista/modifica_usuario.php" method="post">
-                        <input id="button" type="button" onClick="document.getElementById('Modificar').submit()" value="Modificar"/>
-                    </form>
+                    <td width="10%" align="center">
                     </td>
-                    <td width="33%" align="center">
-                    <form id="Estado" action="../mvc/vista/estado_usuario.php" method="post">
-                        <input id="button" type="button" onClick="document.getElementById('Estado').submit()" value="Activo/Inactivo"/>
+                    <td width="45%" align="center">
+					<form id="Modificar" action="../mvc/vista/ver_usuario.php" method="post">
+                        <input id="button" type="button" onClick="document.getElementById('Modificar').submit()" value="Modificar/Eliminar"/>
                     </form>
                     </td>
                 </tr>

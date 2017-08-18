@@ -6,7 +6,6 @@
 	<link href="../../CSS/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<<<<<<< HEAD
 <body>
 	<?php
     $usuario="";
@@ -46,7 +45,7 @@
 			<ul class="menu">
 				<li><a href="../../Post_Inicio/sesionAdmin.php"><span class="iconic home"></span> Home</a></li>
 				<li><a href="../../SelectUserOperations/ABMUsuario.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Usuarios</a></li>
-                <li><a href="crearProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
+                <li><a href="../../SelectUserOperations/ABMProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
 			</ul>
 			<div class="clearfix"></div>
         </nav>
@@ -88,6 +87,7 @@
  				<td><?php echo "{$row['UsuFechaEgreso']}"; ?></td>
  				<td><?php echo "{$row['UsuEstado']}"; ?></td>
 				<td><a href="editar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Modificar </a></td>
+                <td><a href="eliminar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Cambiar Estado </a></td>
  			</tr>
 			<?php } ?>
 		</tbody>
@@ -95,57 +95,3 @@
 	</div>
 </body>
 </html>
-=======
-include_once("../modelo/Usuario.php");
-
-	$controlador = new Usuario();
-	$sql= $controlador->listarUsuario();
-
- ?> 
-<table border="1"> 
- 	<thead>
- 		<th>IDUsuario</th>
- 		<th>UsuNombre</th>
- 		<th>UsuApellido</th>
- 		<th>UsuDNI</th>
- 		<th>UsuDireccion</th>
- 		<th>UsuTelefono</th>
- 		<th>UsuMail</th>
- 		<th>UsuFechaNacimiento</th>
- 		<th>UsuLocalidadOpera</th>
- 		<th>UsuCuenta</th>
- 		<th>UsuPassword</th>
- 		<th>UsuFechaIngreso</th>
- 		<th>UsuFechaEgreso</th>
- 		<th>UsuEstado</th>
-
-
- 	</thead>
- 	<tbody>
- <?php  
- 		foreach($sql as $row){ ?>
- 		<tr>
- 			<td><?php echo "{$row['IDUsuario']}"; ?></td>
- 			<td><?php echo "{$row['UsuNombre']}"; ?></td>
- 			<td><?php echo "{$row['UsuApellido']}"; ?></td>
- 			<td><?php echo "{$row['UsuDNI']}"; ?></td>
- 			<td><?php echo "{$row['UsuDireccion']}"; ?></td>
- 			<td><?php echo "{$row['UsuTelefono']}"; ?></td>
- 			<td><?php echo "{$row['UsuMail']}"; ?></td>
- 			<td><?php echo "{$row['UsuFechaNacimiento']}"; ?></td>
- 			<td><?php echo "{$row['UsuLocalidadOpera']}"; ?></td>
- 			<td><?php echo "{$row['UsuCuenta']}"; ?></td>
- 			<td><?php echo "{$row['UsuPassword']}"; ?></td>
- 			<td><?php echo "{$row['UsuFechaIngreso']}"; ?></td>
- 			<td><?php echo "{$row['UsuFechaEgreso']}"; ?></td>
- 			<td><?php echo "{$row['UsuEstado']}"; ?></td>
-
- 			<?php /* <td><a href="?cargar=editar_producto&IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar</a></td>
- 			*/?>
- 			<td><a href="editar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Modificar Usuario</a></td>
- 			<td><a href="eliminar_usuario.php?IDUsuario=<?php echo $row['IDUsuario'] ?>"> Eliminar Usuario</a></td>
- 		</tr>
-<?php } ?>
-			</tbody>
- </table>
->>>>>>> 3a932261d8489b2d3dd3d2ab4c10b1d44d2aa70e
