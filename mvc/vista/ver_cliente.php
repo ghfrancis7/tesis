@@ -7,7 +7,7 @@ include_once("../modelo/Cliente.php");
 
  ?> 
 
- <form action="../modelo/Cliente.php" method ="get">
+ <form action="busquedaCliente.php" method ="get">
 
 		<label>Buscar: <input type="text" name="buscar" ></label>
 			<br>

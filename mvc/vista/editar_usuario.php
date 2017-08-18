@@ -63,9 +63,27 @@
 		<tr>
 			<td width="40%">
             <form id="frmeditar" method="post" action="actualizar_usuario.php">
+<<<<<<< HEAD
 	            <label>ID Usuario</label>
                 <input type="text" name="IDUsuario" value="<?php echo $usuario['IDUsuario']; ?>"readonly=true >
 				<br/>
+=======
+
+
+            <?php  
+            require("../modelo/Conexion.php");
+        $pdo= new Conexion();
+        
+        $IDUsuario = $_GET['IDUsuario'];
+        $datosUsuario = $pdo->mysql->prepare("SELECT * FROM usuario where IDUsuario = :IDUsuario");
+        $datosUsuario->bindParam(":IDUsuario", $IDUsuario, PDO::PARAM_INT);
+        $datosUsuario->execute();
+        $usuario = $datosUsuario->fetch();
+        ?>
+	            <label>ID Usuario</label>
+                <input type="text" name="IDUsuario" value="<?php echo $usuario['IDUsuario']; ?>"readonly=true >
+
+>>>>>>> daa129a7c4152c19f8d2ef75f1425936c5576513
                 <label>Nombre</label>
                 <input type="text" name="UsuNombre" required value="<?php echo $usuario['UsuNombre']; ?>">
 				<br/>

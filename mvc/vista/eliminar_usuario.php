@@ -3,7 +3,7 @@
 	require ("../modelo/Conexion.php");
 	$pdo = new Conexion();
 	$IDUsuario = $_GET['IDUsuario'];
-	//$ProductoFechaBajaDB= date('m/d/Y');
+	$UsuFechaEgreso= date('m/d/Y');
 
 		try {
 
@@ -16,8 +16,10 @@
 
 						if ($usu['UsuEstado']=="Inactivo") {
 							$UsuEstado="Activo";
+							$UsuFechaEgreso="";
 						}elseif ($usu['UsuEstado']=="Activo") {
 							$UsuEstado="Inactivo";
+
 						}
 
 				

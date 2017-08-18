@@ -35,11 +35,9 @@ include_once("../modelo/Cliente.php");
  			<td><?php echo "{$row['ClienteFechaAlta']}"; ?></td>
  			<td><?php echo "{$row['ClienteFechaBaja']}"; ?></td>
  			<td><?php echo "{$row['ClienteEstado']}"; ?></td>
- 			<?php /* <td><a href="?cargar=editar_producto&IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar</a></td>
- 			*/?>
+
  			<td><a href="editar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Modificar Cliente</a></td>
  			<td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Eliminar Cliente</a></td>
- 			<input type="button" value="Atras" onclick="history.back(-1)" />
  		</tr>
 <?php } ?>
 			</tbody>
