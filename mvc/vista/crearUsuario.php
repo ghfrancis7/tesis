@@ -77,18 +77,17 @@
                 <br />
                 <input type="text" placeholder="Localidad Opera" name="UsuLocalidadOpera" requrired>
                 <br />
-                <input list="rol" name="UsuRol">
-  					<datalist id="rol">
-    					<option value="admin">Administrador</option>
-						<option value="tecn">Tecnico</option>
-					</datalist>
+                <select name="UsuRol">
+					<option value="admin">Administrador</option>
+					<option value="tecn">Tecnico</option>
+                </select>
                 <br />
                 <input type="text" placeholder="Cuenta Usuario" name="UsuCuenta" requrired>
                 <br />
                 <input type="text" placeholder="Password Usuario" name="UsuPassword" requrired>
-                <input type="hidden" value="<?php $today?>" name="UsuFechaIngreso" requrired>
-                <input type="hidden" value="<?php ''?>" name="UsuFechaEgreso" requrired>
-                <input type="hidden" value="<?php 'activo'?>" name="UsuEstado" requrired>
+                <input type="hidden" value="<?php echo $today;?>" name="UsuFechaIngreso" requrired>
+                <input type="hidden" value="<?php echo '';?>" name="UsuFechaEgreso" requrired>
+                <input type="hidden" value="<?php echo 'activo';?>" name="UsuEstado" requrired>
                 <br />
             </td>
 		</tr>
