@@ -14,9 +14,6 @@
         session_start();
         if (!isset($_SESSION['id'])){
             header ("Location:../index.html");
-/*        } else {
-            $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
-            $idUsuario = $_SESSION['id'];*/
         }
 		//Determina dia actual
 		date_default_timezone_set ("America/Argentina/Buenos_Aires");
@@ -63,11 +60,10 @@
 		<tr>
 			<td width="40%">
             <form id="frmeditar" method="post" action="actualizar_usuario.php">
-<<<<<<< HEAD
+
 	            <label>ID Usuario</label>
                 <input type="text" name="IDUsuario" value="<?php echo $usuario['IDUsuario']; ?>"readonly=true >
 				<br/>
-=======
 
 
             <?php  
@@ -83,7 +79,6 @@
 	            <label>ID Usuario</label>
                 <input type="text" name="IDUsuario" value="<?php echo $usuario['IDUsuario']; ?>"readonly=true >
 
->>>>>>> daa129a7c4152c19f8d2ef75f1425936c5576513
                 <label>Nombre</label>
                 <input type="text" name="UsuNombre" required value="<?php echo $usuario['UsuNombre']; ?>">
 				<br/>
