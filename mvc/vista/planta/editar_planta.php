@@ -8,7 +8,7 @@
 
 <form method="post" action="actualizar_planta.php">
 <?php 
-	require("../modelo/Conexion.php");
+	require("../../modelo/Conexion.php");
 	$pdo= new Conexion();
 
 		$IDPlanta = $_GET['IDPlanta'];

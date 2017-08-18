@@ -1,13 +1,20 @@
 <?php 
 
-include_once("../modelo/Cliente.php");
+include_once("../../modelo/Cliente.php");
 
 	$controlador = new Cliente();
-	$IDCliente= $_GET['buscar'];
-	$sql= $controlador->buscarCliente($IDCliente);
+	$sql= $controlador->listarCliente();
 
  ?> 
 
+ <form action="busquedaCliente.php" method ="get">
+
+		<label>Buscar: <input type="text" name="buscar" ></label>
+			<br>
+		<input type="submit"name="Buscar" values"Buscar">
+
+	</form>
+	
 	
 <table border="1"> 
  	<thead>
@@ -35,11 +42,10 @@ include_once("../modelo/Cliente.php");
  			<td><?php echo "{$row['ClienteFechaAlta']}"; ?></td>
  			<td><?php echo "{$row['ClienteFechaBaja']}"; ?></td>
  			<td><?php echo "{$row['ClienteEstado']}"; ?></td>
-
+ 			
  			<td><a href="editar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Modificar Cliente</a></td>
  			<td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Eliminar Cliente</a></td>
  		</tr>
 <?php } ?>
 			</tbody>
  </table>
- 		<input type="button" value="Atras" onclick="history.back(-1)" />

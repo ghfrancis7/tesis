@@ -1,7 +1,7 @@
 <?php 
 
-	require_once("../modelo/Conexion.php");
-	include_once("../modelo/Producto.php");
+	require_once("../../modelo/Conexion.php");
+	include_once("../../modelo/Producto.php");
 
 		$controlador = new Producto();
 		$sql= $controlador->listarProducto();

@@ -1,6 +1,6 @@
 <?php 
 
-	require ("../modelo/Conexion.php");
+	require ("../../modelo/Conexion.php");
 		$pdo = new Conexion();
 			$IDPlanta = $_POST['IDPlanta'];
 			$PlantaNombre = $_POST['PlantaNombre'];

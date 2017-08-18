@@ -1,6 +1,6 @@
 	<?php 
 
-		require ("../modelo/Conexion.php");
+		require ("../../modelo/Conexion.php");
 		$pdo = new Conexion();
 		$IDPlanta = $_GET['IDPlanta'];
 		$PlantaFechaBaja= date('m/d/Y');

@@ -50,7 +50,7 @@
         	<table>
                 <tr>
                     <td width="45%" align="center">
-                    <form id="Crear" action="../mvc/vista/crearUsuario.php" method="get">
+                    <form id="Crear" action="../mvc/vista/usuario/crearUsuario.php" method="get">
                     	<input  type="hidden" value="<?php 'cargar'?>" />
                         <input id="button" type="button" onClick="document.getElementById('Crear').submit()" value="Crear"/>
                     </form>
@@ -58,7 +58,7 @@
                     <td width="10%" align="center">
                     </td>
                     <td width="45%" align="center">
-					<form id="Modificar" action="../mvc/vista/ver_usuario.php" method="post">
+					<form id="Modificar" action="../mvc/vista/usuario/ver_usuario.php" method="post">
                         <input id="button" type="button" onClick="document.getElementById('Modificar').submit()" value="Modificar/Eliminar"/>
                     </form>
                     </td>

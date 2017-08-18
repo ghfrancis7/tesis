@@ -9,7 +9,7 @@
 	<form method="post" action="actualizar_cliente.php">
 
 	<?php 
-	require("../modelo/Conexion.php");
+	require("../../modelo/Conexion.php");
 	$pdo= new Conexion();
 
 		$IDCliente = $_GET['IDCliente'];

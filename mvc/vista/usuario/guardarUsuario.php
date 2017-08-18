@@ -1,7 +1,7 @@
 <?php 
 
-		include_once("../modelo/Conexion.php");
-		include_once("../modelo/Usuario.php");
+		include_once("../../modelo/Conexion.php");
+		include_once("../../modelo/Usuario.php");
 
 	$controlador = new Usuario();
 	$sql= $controlador->listarUsuario();

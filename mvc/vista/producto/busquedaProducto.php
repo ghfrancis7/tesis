@@ -1,6 +1,6 @@
 <?php 
 
-include_once("../modelo/Producto.php");
+include_once("../../modelo/Producto.php");
 
 	$controlador = new Producto();
 	$IDProducto= $_GET['buscar'];

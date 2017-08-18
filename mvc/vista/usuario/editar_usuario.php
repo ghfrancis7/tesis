@@ -3,7 +3,7 @@
 <head>
 	<title>SIS.GES.</title>
 	<meta charset="UTF-8"/>
-	<link rel="stylesheet" href="../../CSS/style.css">
+	<link rel="stylesheet" href="../../../CSS/style.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     $idUsuario=1;
         session_start();
         if (!isset($_SESSION['id'])){
-            header ("Location:../index.html");
+            header ("Location:../../index.html");
         }
 		//Determina dia actual
 		date_default_timezone_set ("America/Argentina/Buenos_Aires");
@@ -33,7 +33,7 @@
         <header>
         	<table width="100%">
                 <tr>
-                    <td width="25%" align="left"><img src="../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
+                    <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
                     <td width="50%">Logueado como: <?php echo $_SESSION['nom']." ".$_SESSION['ape']?><br>Rol: Administrador</td>
                     <td width="25%">
                     <form id="frmLogin" action="../../Login PHP/logout.php" method="post">

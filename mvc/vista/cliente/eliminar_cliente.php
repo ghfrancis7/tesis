@@ -1,6 +1,6 @@
 <?php 
 
-	require ("../modelo/Conexion.php");
+	require ("../../modelo/Conexion.php");
 	$pdo = new Conexion();
 	$IDCliente = $_GET['IDCliente'];
 	$ClienteFechaBaja= date('m/d/Y');

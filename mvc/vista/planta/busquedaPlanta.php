@@ -1,6 +1,6 @@
 <?php 
 
-include_once("../modelo/Planta.php");
+include_once("../../modelo/Planta.php");
 
 	$controlador = new Planta();
 	$IDPlanta= $_GET['buscar'];

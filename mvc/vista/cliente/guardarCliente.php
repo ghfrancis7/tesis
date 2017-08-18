@@ -1,7 +1,7 @@
 <?php 
 
-		require_once("../modelo/Conexion.php");
-		include_once("../modelo/Cliente.php");
+		require_once("../../modelo/Conexion.php");
+		include_once("../../modelo/Cliente.php");
 
 		$controlador = new Cliente();
 		$sql= $controlador->listarCliente();

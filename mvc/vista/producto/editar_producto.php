@@ -8,7 +8,7 @@
 
 <form method="post" action="actualizar_producto.php">
 <?php 
-	require("../modelo/Conexion.php");
+	require("../../modelo/Conexion.php");
 	$pdo= new Conexion();
 
 		$IDProducto = $_GET['IDProducto'];
