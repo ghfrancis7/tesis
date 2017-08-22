@@ -86,9 +86,7 @@ include_once("../../modelo/Cliente.php");
  	</thead>
  	<tbody>
  <?php  
- 		foreach($sql as $row){
- 		
- 			if (strcasecmp($row['ClienteEstado'],"Activo") == 0) { ?>
+ 		foreach($sql as $row){ ?>
  			<tr>
  			<td><?php echo "{$row['IDCliente']}"; ?></td>
  			<td><?php echo "{$row['ClienteNombre']}"; ?></td>
@@ -103,19 +101,19 @@ include_once("../../modelo/Cliente.php");
  			<td><a href="editar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Modificar Cliente</a></td>
  			<td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del cliente?');"> Eliminar Cliente</a></td>
  		</tr>
- 		<?php } } ?>
+ 		<?php } ?>
  		</tbody>
 	</table>
     </div><br><br>
 <div class="header" style="text-align:center;">
 	<table width="60%" style="margin: 0 auto;"><tbody>
 		<tr><td>
-		<form id="veractivo" action="ver_cliente_inactivo.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Clientes Inactivo"/>
+		<form id="veractivo" action="ver_producto_inactivo.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Producto Inactivo"/>
 		</form>
         </td><td>
-        <form id="vertodo" action="ver_cliente_completo.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Clientes"/>
+        <form id="vertodo" action="ver_producto_completo.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Productos"/>
 		</form>
         </td></tr>
 	</tbody></table>

@@ -88,19 +88,6 @@
  				</tr>
  		<?php
 
- 				}else{ ?>
- 					<tr>
-	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoPrecio']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
-	 			<td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar Producto</a></td>
-	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del producto?');"> Eliminar Producto</a></td>
- 				</tr>
- 				<?php 
-
  				}
 		}?>
 		</tbody>

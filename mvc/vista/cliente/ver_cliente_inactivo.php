@@ -88,7 +88,7 @@ include_once("../../modelo/Cliente.php");
  <?php  
  		foreach($sql as $row){
  		
- 			if (strcasecmp($row['ClienteEstado'],"Activo") == 0) { ?>
+ 			if (strcasecmp($row['ClienteEstado'],"Inactivo") == 0) { ?>
  			<tr>
  			<td><?php echo "{$row['IDCliente']}"; ?></td>
  			<td><?php echo "{$row['ClienteNombre']}"; ?></td>
@@ -110,8 +110,8 @@ include_once("../../modelo/Cliente.php");
 <div class="header" style="text-align:center;">
 	<table width="60%" style="margin: 0 auto;"><tbody>
 		<tr><td>
-		<form id="veractivo" action="ver_cliente_inactivo.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Clientes Inactivo"/>
+		<form id="veractivo" action="ver_cliente.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Cliente Activo"/>
 		</form>
         </td><td>
         <form id="vertodo" action="ver_cliente_completo.php" method="post">

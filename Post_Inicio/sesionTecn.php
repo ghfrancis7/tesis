@@ -63,7 +63,7 @@
 				<li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic cog"></span> Producto</a>
 					<ul>
 						<li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic document"></span> Alta Pedido Cotizacion</a></li>
-						<li><a href="../mvc/vista/ver_producto.php"><span class="iconic magnifying-glass"></span><span class="iconic info"></span> Lista Productos en Venta</a></li>
+						<li><a href="../mvc/vista/producto/ver_producto.php"><span class="iconic magnifying-glass"></span><span class="iconic info"></span> Lista Productos en Venta</a></li>
 					</ul>
 				</li>
 			</ul>

@@ -49,7 +49,7 @@
 				<li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic new-window"></span> Clientes</a>
 					<ul>
 						<li><a href="../SelectUserOperations/ABMDatos.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Datos</a></li>
-                        <li><a href="../mvc/vista/ver_cliente.php"><span class="iconic magnifying-glass"></span><span class="iconic user"></span> Consulta Datos</a></li>
+                        <li><a href="../mvc/vista/cliente/ver_cliente.php"><span class="iconic magnifying-glass"></span><span class="iconic user"></span> Consulta Datos</a></li>
                         <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Stock</a></li>
 						<li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic magnifying-glass"></span><span class="iconic box"></span> Consulta Stock</a></li>
 					</ul>
@@ -63,7 +63,7 @@
 				<li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic cog"></span> Producto</a>
 					<ul>
 						<li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic document"></span> Alta Pedido Cotizacion</a></li>
-						<li><a href="../mvc/vista/ver_producto.php"><span class="iconic magnifying-glass"></span><span class="iconic info"></span> Lista Productos en Venta</a></li>
+						<li><a href="../mvc/vista/producto/ver_producto.php"><span class="iconic magnifying-glass"></span><span class="iconic info"></span> Lista Productos en Venta</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -74,20 +74,20 @@
         	<table>
                 <tr>
                     <td width="33%" align="center">
-                    <form id="Crear" action="../mvc/vista/crearCliente.php" method="get">
+                    <form id="Crear" action="../mvc/vista/cliente/crearCliente.php" method="get">
                     <form id="Crear" action="#" method="get">
                     	<input  type="hidden" value="<?php 'cargar'?>" />
                         <input id="button" type="button" onClick="document.getElementById('Crear').submit()" value="Crear"/>
                     </form>
                     </td>
                     <td width="34%" align="center">
-                    <form id="Modificar" action="#" method="post">
+                    <form id="Modificar" action="../mvc/vista/cliente/editar_cliente.php" method="post">
                         <input name="return" type="hidden" value="<?php 'Modificar'?>" />
                         <input id="button" type="button" onClick="document.getElementById('Modificar').submit()" value="Modificar"/>
                     </form>
                     </td>
                     <td width="33%" align="center">
-                    <form id="Eliminar" action="#" method="post">
+                    <form id="Eliminar" action="../mvc/vista/cliente/eliminar_cliente.php" method="post">
                         <input name="return" type="hidden" value="<?php 'Eliminar'?>" />
                         <input id="button" type="button" onClick="document.getElementById('Eliminar').submit()" value="Eliminar"/>
                     </form>

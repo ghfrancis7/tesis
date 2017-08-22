@@ -30,7 +30,7 @@
 	</p>
 	<p>
 		<label>ClienteCuit</label>
-		<input type="text" name="ClienteCuit" required="true" value="<?php echo $cliente['ClienteCuit']; ?>">
+		<input type="text" name="ClienteCUIT" required="true" value="<?php echo $cliente['ClienteCUIT']; ?>">
 	</p>
 	<p>
 		<label>ClienteDireccion</label>
