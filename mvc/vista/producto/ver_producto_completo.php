@@ -18,12 +18,10 @@
             $idUsuario = $_SESSION['id'];
         }
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-include_once("../../modelo/Producto.php");
-
-	$controlador = new Producto();
-	$IDProducto= $_GET['buscar'];
-	$sql= $controlador->buscarProducto($IDProducto);
- ?> 
+		include_once("../../modelo/Producto.php");
+		$controlador = new Producto();
+		$sql= $controlador->listarProducto();
+    ?>
 	<div class="backgroundTable">
     </div>
     <div class="header">
@@ -53,47 +51,52 @@ include_once("../../modelo/Producto.php");
         </nav>
 	</div>
     <div class="tablas" style="text-align:center;">
-		<table width="60%" border="1" style="margin: 0 auto;"> 
-            <thead>
-                <th>ProductoID</th>
-                <th>ProductoNombre</th>
-                <th>ProductoPrecio</th>
-                <th>ProductoFechaAltaDB</th>
-                <th>ProductoFechaBajaDB</th>
-                <th>ProductoEstado</th>
-            </thead>
-            <tbody>
-			<?php  
-                foreach($sql as $row){ ?>
-                <tr>
-                    <td><?php echo "{$row['IDProducto']}"; ?></td>
-                    <td><?php echo "{$row['ProductoNombre']}"; ?></td>
-                    <td><?php echo "{$row['ProductoPrecio']}"; ?></td>
-                    <td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
-                    <td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
-                    <td><?php echo "{$row['ProductoEstado']}"; ?></td>
-                
-                    <td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar Producto</a></td>
-                    <td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
-                </tr>
-                
-        <?php } ?>
+	<table width="60%" border="1" style="margin: 0 auto;"> 
+		<tr><td width="60%">
+		<form id="find" action="busquedaProducto.php" method ="get">
+			<label>Buscar: <input type="text" name="buscar" ></label>
+            </td><td width="40%" valign="middle" class="buttons">
+			<input id="button" name="findButton" type="button" onClick="document.getElementById('find').submit()" value="Buscar">
+		</form>
+        </td></tr>
+	</table>
+    <br>
+	<table width="60%" border="1" style="margin: 0 auto;"> 
+ 		<thead>
+ 			<th>ProductoID</th>
+ 			<th>ProductoNombre</th>
+ 			<th>ProductoPrecio</th>
+ 			<th>ProductoFechaAltaDB</th>
+ 			<th>ProductoFechaBajaDB</th>
+ 			<th>ProductoEstado</th>
+ 			<th></th>
+		</thead>
+ 		<tbody>
+		<?php
+ 		foreach($sql as $row){?>
+ 				<tr>
+	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
+	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
+	 			<td><?php echo "{$row['ProductoPrecio']}"; ?></td>
+	 			<td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
+	 			<td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
+	 			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
+	 			<td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar Producto</a></td>
+	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
+ 				</tr>
+ 		<?php }?>
 		</tbody>
- </table>
+	</table>
     </div><br><br>
 	<div class="tablas" style="text-align:center;">
 	<table width="60%" style="margin: 0 auto;"><tbody>
-    <tr><td>
+		<tr><td>
 		<form id="veractivo" action="ver_producto.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Producto Activo"/>
-		</form>
-        </td><td>
-        <form id="vertodo" action="ver_producto_completo.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Productos"/>
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Productos Activo"/>
 		</form>
         </td><td>
         <form id="verinactivo" action="ver_producto_inactivo.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinactivo').submit()" value="Ver Producto Inactivo"/>
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinactivo').submit()" value="Ver Productos Inactivos"/>
 		</form>
         </td></tr>
 	</tbody></table>

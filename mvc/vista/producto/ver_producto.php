@@ -12,7 +12,7 @@
     $idUsuario=1;
         session_start();
         if (!isset($_SESSION['id'])){
-            header ("Location:../index.html");
+            header ("Location:../../../index.html");
         } else {
             $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
             $idUsuario = $_SESSION['id'];
@@ -21,7 +21,6 @@
 		include_once("../../modelo/Producto.php");
 		$controlador = new Producto();
 		$sql= $controlador->listarProducto();
-		
     ?>
 	<div class="backgroundTable">
     </div>
@@ -32,7 +31,7 @@
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
                     <td width="50%">Logueado como: <?php echo $usuario?><br>Rol: Administrador</td>
                     <td width="25%">
-                    <form id="frmLogin" action="../Login PHP/logout.php" method="post">
+                    <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
                         <input id="button" type="button" onClick="document.getElementById('frmLogin').submit()" value="Sign Out"/>
                     </form>
@@ -51,17 +50,18 @@
 			<div class="clearfix"></div>
         </nav>
 	</div>
-    <div class="tablas" style="text-align:center;">
-	<table border="1" style="margin: 0 auto;"> 
-		<tr><td>
+    <div class="tablas">
+	<table width="60%" border="1" style="margin: 0 auto;"> 
+		<tr><td width="60%">
 		<form id="find" action="busquedaProducto.php" method ="get">
 			<label>Buscar: <input type="text" name="buscar" ></label>
-            </td><td>
-			<input id="button" name="findButton" type="button" onClick="document.getElementById('find').submit()" values"Buscar">
+            </td><td width="40%" valign="middle" class="buttons">
+			<input id="button" name="findButton" type="button" onClick="document.getElementById('find').submit()" value="Buscar">
 		</form>
         </td></tr>
 	</table>
     <br/>
+<<<<<<< HEAD
 	<table border="1" style="margin: 0 auto;"> 
  		<thead>
  			<th>ProductoID</th>
@@ -72,11 +72,27 @@
  			<th>ProductoEstado</th>
  			<th><a>
 			</a></th>
+=======
+
+	<table width="60%" border="1" style="margin: 0 auto;"> 
+ 		<thead>
+ 			<th>ID</th>
+ 			<th>Nombre</th>
+ 			<th>Precio</th>
+ 			<th>Fecha de Alta en DB</th>
+ 			<th>Fecha de Baja en DB</th>
+ 			<th>Activo/Inactivo</th>
+ 			<th></th>
+>>>>>>> c2918ecb60d2818734b16dbd91706b210e42be5b
 		</thead>
  		<tbody>
 		<?php
  		foreach($sql as $row){ 
+<<<<<<< HEAD
 				if ($row['ProductoEstado']=="Activo") { ?>
+=======
+				if (strcasecmp($row['ProductoEstado'],"Activo") == 0) { ?>
+>>>>>>> c2918ecb60d2818734b16dbd91706b210e42be5b
  				<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
@@ -88,6 +104,7 @@
 	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
  				</tr>
  		<?php
+<<<<<<< HEAD
  				}else{ ?>
  					<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
@@ -101,11 +118,25 @@
  				</tr>
  				<?php 
 
+=======
+>>>>>>> c2918ecb60d2818734b16dbd91706b210e42be5b
  				}
-
 		}?>
 		</tbody>
 	</table>
+    </div><br><br>
+<div class="header" style="text-align:center;">
+	<table width="60%" style="margin: 0 auto;"><tbody>
+		<tr><td>
+		<form id="veractivo" action="ver_producto_inactivo.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Producto Inactivo"/>
+		</form>
+        </td><td>
+        <form id="vertodo" action="ver_producto_completo.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Productos"/>
+		</form>
+        </td></tr>
+	</tbody></table>
     </div>
 </body>
 </html>
