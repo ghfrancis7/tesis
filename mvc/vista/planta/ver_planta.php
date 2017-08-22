@@ -38,9 +38,8 @@ include_once("../../modelo/Planta.php");
  	<tbody>
  <?php  
  		foreach($sql as $row){ 
- 			//if ($bandera=="false") {
 
- 				//if ($row['PlantaEstado']=="Activo") { ?>
+ 		if (strcasecmp($row['PlantaEstado'],"Activo") == 0) { ?> ?>
  				<tr>
 	 			<td><?php echo "{$row['IDPlanta']}"; ?></td>
 	 			<td><?php echo "{$row['PlantaNombre']}"; ?></td>
@@ -57,33 +56,8 @@ include_once("../../modelo/Planta.php");
 	 			<td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>" onclick="return confirm('Estas seguro de cambiar el estado de la planta?');"> Eliminar Planta</a></td>
 
  		</tr>
-
  		<?php
  			}
- 			/*}elseif ($bandera="true") { ?>
- 				<tr>
-	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoPrecio']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
-
-	 			<td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar Producto</a></td>
-	 			
-	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
-
- 		</tr> */
- 	
- 		//	}{ ?>
- 			
- 		<?php
- 	//	}
  			?>
- 			
- 			
-
- 		
-<?php  ?>
 			</tbody>
  </table>
