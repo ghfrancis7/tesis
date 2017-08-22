@@ -43,7 +43,7 @@ include_once("Conexion.php");
 		
 				return $producto;
 			
-		}
+		
 		}
 	}
  ?>
