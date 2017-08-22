@@ -39,7 +39,7 @@ include_once("Conexion.php");
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM planta WHERE IDPlanta ='$buscar' OR PlantaNombre ='$buscar' OR PlantaLocalidad = '$buscar'";
+				 $q="SELECT * FROM planta WHERE IDPlanta LIKE '%$buscar%' OR PlantaNombre LIKE '%$buscar%' OR PlantaLocalidad LIKE '%$buscar%'";
 
 					$planta = $pdo->mysql->query($q);
 		

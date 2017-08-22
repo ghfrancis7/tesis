@@ -49,65 +49,16 @@ include_once("Conexion.php");
 				return $usuario;
 			
 		}
+		public function buscarUsuario($buscar){
 
-		public function crearUsuario($UsuNombre,$UsuApellido,$UsuDNI,$UsuFechaNacimiento,$UsuDireccion,$UsuTelefono,$UsuMail,$UsuLocalidadOpera,$UsuCuenta,$UsuPassword,$UsuFechaIngreso,$UsuFechaEgreso,$UsuEstado){
+				 $pdo = new Conexion();
 
-			$sql2="SELECT * FROM Usuario Where IDUsuario = '($this->IDUsuario)'";
-			$resultado = $this->con->consultaRetorno($sql2);
-			$num=mysql_num_rows($resultado);
+				 $q="SELECT * FROM usuario WHERE IDUsuario LIKE '%$buscar%' OR UsuNombre LIKE '%$buscar%' OR UsuDNI LIKE '%$buscar%' OR UsuTelefono LIKE '%$buscar%'OR UsuCuenta LIKE '%$buscar%'OR UsuLocalidadOpera LIKE '%$buscar%'";
 
-			if ($num !=0) {
-
-				return false;
-
-			}else{
-
-				$sql="INSERT INTO Usuario (UsuNombre,UsuApellido,UsuDNI,UsuFechaNacimiento,UsuDireccion,UsuTelefono,UsuMail,UsuLocalidadOpera,UsuCuenta,UsuPassword,UsuFechaIngreso,UsuFechaEgreso,UsuEstado)
-			VALUES ('$UsuNombre', '$UsuApellido', '$UsuDNI', '$UsuFechaNacimiento', '$UsuDireccion', '$UsuTelefono', '$UsuMail', '$UsuLocalidadOpera', '$UsuCuenta', '$UsuPassword', '$UsuFechaIngreso', '$UsuFechaEgreso', '$UsuEstado')";
-
-				$this->con->consultaSimple($sql);
-				return true;
-			}
-		}
-
-		public function eliminar(){
-
-			$sql="DELETE FROM Usuario WHERE IDUsuario='($this->IDUsuario)'";
-
-			$this->con->consultaSimple($sql);
-
-		}
+					$producto = $pdo->mysql->query($q);
 		
-		public function ver(){
-
-			$sql="SELECT * FROM Usuario WHERE IDUsuario ='($this->IDUsuario)' LIMIT 1";
-			$resultado = $this->con->consultaRetorno($sql);
-			$row =mysql_fetch_assoc($resultado);
-
-			//set
-			$this->IDUsuario = $row['IDUsuario'];
-			$this->IDRol = $row['IDRol'];
-			$this->IDPlanta = $row['IDPlanta'];
-			$this->IDTratamiento = $row['IDTratamiento'];
-			$this->UsuNombre = $row['UsuNombre'];
-			$this->UsuApellido = $row['UsuApellido'];
-			$this->UsuDNI = $row['UsuDNI'];
-			$this->UsuFechaNacimiento = $row['UsuFechaNacimiento'];
-			$this->UsuDireccion = $row['UsuDireccion'];
-			$this->UsuTelefono = $row['UsuTelefono'];
-			$this->UsuMail = $row['UsuMail'];
-			$this->UsuFechaIngreso = $row['UsuFechaIngreso'];
-			$this->UsuFechaEgreso = $row['UsuFechaEgreso'];
-			$this->UsuEstado = $row['UsuEstado'];
-
-			return $row;
-
-		}
-
-		public function editar(){
-			$sql ="UPDATE Usuario SET UsuNombre='(this->UsuNombre)', UsuApellido='(this->UsuApellido)',UsuDNI='(this->UsuDNI)',UsuFechaNacimiento='(this->UsuFechaNacimiento)',UsuDireccion='(this->UsuDireccion)',UsuTelefono='(this->UsuTelefono)',UsuMail='(this->UsuMail)',UsuLocalidadOpera='(this->UsuLocalidadOpera)',UsuCuenta='(this->UsuCuenta)',UsuPassword='(this->UsuPassword)',UsuFechaIngreso='(this->UsuFechaIngreso)',UsuFechaEgreso='(this->UsuFechaEgreso),UsuEstado='(this->UsuEstado)' WHERE IDUsuario = '($this->IDUsuario)'";
-			$this->con->consultaSimple($sql);
+				return $producto;
+			
 		}
 	}
-
  ?>
