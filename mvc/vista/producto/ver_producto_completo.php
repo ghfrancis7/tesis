@@ -63,12 +63,12 @@
     <br>
 	<table width="60%" border="1" style="margin: 0 auto;"> 
  		<thead>
- 			<th>ProductoID</th>
- 			<th>ProductoNombre</th>
- 			<th>ProductoPrecio</th>
- 			<th>ProductoFechaAltaDB</th>
- 			<th>ProductoFechaBajaDB</th>
- 			<th>ProductoEstado</th>
+ 			<th>ID</th>
+ 			<th>Nombre</th>
+ 			<th>Precio</th>
+ 			<th>Fecha de Alta en DB</th>
+ 			<th>Fecha de Baja en DB</th>
+ 			<th>Activo/Inactivo</th>
  			<th></th>
 		</thead>
  		<tbody>
