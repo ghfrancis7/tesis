@@ -54,7 +54,7 @@ include_once("../../modelo/Planta.php");
 
 	 			<td><a href="editar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Modificar Planta</a></td>
 	 			
-	 			<td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Eliminar Planta</a></td>
+	 			<td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>" onclick="return confirm('Estas seguro de cambiar el estado de la planta?');"> Eliminar Planta</a></td>
 
  		</tr>
 

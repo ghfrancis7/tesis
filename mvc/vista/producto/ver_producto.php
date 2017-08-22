@@ -62,7 +62,6 @@
         </td></tr>
 	</table>
     <br/>
-    <?php $bandera=0; ?>
 	<table border="1" style="margin: 0 auto;"> 
  		<thead>
  			<th>ProductoID</th>
@@ -72,16 +71,12 @@
  			<th>ProductoFechaBajaDB</th>
  			<th>ProductoEstado</th>
  			<th><a>
-
-				<form id="bandera" method="post" action="<?php $bandera=1; ?>">
-					<input id="button" type="button" onClick="document.getElementById('bandera').submit()" value="Ver Inactivos">
-				</form> 
 			</a></th>
 		</thead>
  		<tbody>
 		<?php
  		foreach($sql as $row){ 
-				if ($row['ProductoEstado']=="Activo" AND $bandera==0) { ?>
+				if ($row['ProductoEstado']=="Activo") { ?>
  				<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
@@ -102,7 +97,7 @@
 	 			<td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
 	 			<td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar Producto</a></td>
-	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
+	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del producto?');"> Eliminar Producto</a></td>
  				</tr>
  				<?php 
 

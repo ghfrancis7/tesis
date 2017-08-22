@@ -44,7 +44,7 @@ include_once("../../modelo/Cliente.php");
  			<td><?php echo "{$row['ClienteEstado']}"; ?></td>
  			
  			<td><a href="editar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Modificar Cliente</a></td>
- 			<td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Eliminar Cliente</a></td>
+ 			<td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del cliente?');"> Eliminar Cliente</a></td>
  		</tr>
 <?php } ?>
 			</tbody>
