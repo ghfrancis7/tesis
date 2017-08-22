@@ -61,19 +61,6 @@
         </td></tr>
 	</table>
     <br/>
-<<<<<<< HEAD
-	<table border="1" style="margin: 0 auto;"> 
- 		<thead>
- 			<th>ProductoID</th>
- 			<th>ProductoNombre</th>
- 			<th>ProductoPrecio</th>
- 			<th>ProductoFechaAltaDB</th>
- 			<th>ProductoFechaBajaDB</th>
- 			<th>ProductoEstado</th>
- 			<th><a>
-			</a></th>
-=======
-
 	<table width="60%" border="1" style="margin: 0 auto;"> 
  		<thead>
  			<th>ID</th>
@@ -83,16 +70,12 @@
  			<th>Fecha de Baja en DB</th>
  			<th>Activo/Inactivo</th>
  			<th></th>
->>>>>>> c2918ecb60d2818734b16dbd91706b210e42be5b
 		</thead>
  		<tbody>
 		<?php
  		foreach($sql as $row){ 
-<<<<<<< HEAD
-				if ($row['ProductoEstado']=="Activo") { ?>
-=======
+
 				if (strcasecmp($row['ProductoEstado'],"Activo") == 0) { ?>
->>>>>>> c2918ecb60d2818734b16dbd91706b210e42be5b
  				<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
@@ -104,7 +87,7 @@
 	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
  				</tr>
  		<?php
-<<<<<<< HEAD
+
  				}else{ ?>
  					<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
@@ -118,8 +101,6 @@
  				</tr>
  				<?php 
 
-=======
->>>>>>> c2918ecb60d2818734b16dbd91706b210e42be5b
  				}
 		}?>
 		</tbody>
