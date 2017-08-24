@@ -20,7 +20,7 @@
         }
 		//Determina dia actual
 		date_default_timezone_set ("America/Argentina/Buenos_Aires");
-		$today = date( "d/m/Y");
+		$today = date( "Y/m/d");
 		//Formulario
 	
     ?>
