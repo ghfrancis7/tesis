@@ -76,7 +76,7 @@
 	<div class="formularios">
     <table width="100%">
 		<tr>
-			<td width="40%">
+			<td width="60%">
 			<form id="frmcreacli" action="guardarCliente.php" method="post">
 			<label>Nombre</label><br/>
             <input type="text" name="ClienteNombre">
@@ -93,10 +93,9 @@
             <label>Cantidad de Plantas</label><br/>
             <input type="text" name="ClienteCantidadPlantas">
             <br/>
-            <label>Estado</label><br/>
             <input type="hidden" value="<?php echo $today;?>" name="ClienteFechaAlta" requrired>
             <input type="hidden" value="<?php echo NULL;?>" name="ClienteFechaBaja"requrired>
-			<input type="text" name="ClienteEstado">
+			<input type="hidden" value="<?php echo "Activo";?>" name="ClienteEstado">
             <br/>
             </td>
 		</tr>
