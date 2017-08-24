@@ -21,7 +21,7 @@
 		date_default_timezone_set ("America/Argentina/Buenos_Aires");
 		$today = date( "Y/m/d");
     ?>
-	<div class="background">
+	<div class="backgroundTable">
     </div>
     <div class="header">
         <header>
