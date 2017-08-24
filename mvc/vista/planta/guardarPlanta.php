@@ -46,7 +46,7 @@
 		$pst->execute();
 		$pdo->mysql->commit() ;
 
-		header("Location:crearPlanta.php");
+		echo"<script type=\"text/javascript\">alert('Se agrego la Planta Correctamente'); window.location='../planta/ver_planta.php';</script>";
 		
 	} catch (Exception $e) {
 		$pdo->mysql->rollback();

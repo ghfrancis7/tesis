@@ -29,7 +29,7 @@
         	<table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Logueado como: <?php echo $usuario?><br>Rol: Administrador</td>
+                    <td width="50%">Logueado como: <?php echo $usuario?><br>Rol:Tecnico</td>
                     <td width="25%">
                     <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -42,12 +42,36 @@
     </div>
 	<div class="wrap">
 		<nav>
-			<ul class="menu">
-				<li><a href="../../../Post_Inicio/sesionAdmin.php"><span class="iconic home"></span> Home</a></li>
-				<li><a href="../../../SelectUserOperations/ABMUsuario.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Usuarios</a></li>
-                <li><a href="../../../SelectUserOperations/ABMProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
-			</ul>
-			<div class="clearfix"></div>
+            <ul class="menu">
+                <li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic home"></span> Home</a></li>
+                <li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic book"></span> Agenda</a>
+                    <ul>
+                        <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic calendar"></span> Mensual</a></li>
+                        <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic calendar-alt"></span> Semanal</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic new-window"></span> Clientes</a>
+                    <ul>
+                        <li><a href="../mvc/vista/cliente/crearCliente.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> Crear</a></li>
+                        <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic magnifying-glass"></span><span class="iconic user"></span> Consulta Datos</a></li>
+                        <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Stock</a></li>
+                        <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic magnifying-glass"></span><span class="iconic box"></span> Consulta Stock</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic beaker"></span> Tratamiento</a>
+                    <ul>
+                        <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic beaker"></span> Nuevo</a></li>
+                        <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic magnifying-glass"></span><span class="iconic beaker"></span> Consulta</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic cog"></span> Producto</a>
+                    <ul>
+                        <li><a href="../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic document"></span> Alta Pedido Cotizacion</a></li>
+                        <li><a href="../mvc/vista/producto/ver_producto_tecnico.php"><span class="iconic magnifying-glass"></span><span class="iconic info"></span> Lista Productos en Venta</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
         </nav>
 	</div>
     <div class="tablas">
@@ -99,7 +123,7 @@ include_once("../../modelo/Cliente.php");
  			<td><?php echo "{$row['ClienteEstado']}"; ?></td>
  			
  			<td><a href="editar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Modificar Cliente</a></td>
- 			<td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del cliente?');"> Eliminar Cliente</a></td>
+ 			<td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del cliente?');"> Cambiar Estado</a></td>
  		</tr>
  		<?php } ?>
  		</tbody>
