@@ -82,7 +82,7 @@
             <input type="text" name="ClienteNombre">
 			<br/>
             <label>C. U. I. T.</label><br/>
-			<input type="text" name="ClienteCuit">
+			<input type="text" name="ClienteCUIT">
             <br/>
             <label>Direccion</label><br/>
             <input type="text" name="ClienteDireccion">
