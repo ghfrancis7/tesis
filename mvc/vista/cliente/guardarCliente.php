@@ -52,11 +52,12 @@
 			$pst->bindParam(":ClienteFechaAlta",$ClienteFechaAlta,PDO::PARAM_STR);
 			$pst->bindParam(":ClienteEstado",$ClienteEstado,PDO::PARAM_STR);	
 			$pst->execute();
-			echo "<script>alert('registro guardado')</script>" ;
 			$pdo->mysql->commit() ;
 			
+			echo"<script type=\"text/javascript\">alert('Se registro correctamente'); window.location='ver_cliente.php';</script>";
 			
-			header("Location:crearCliente.php");
+			
+			//header("Location:crearCliente.php");
 
 		
 				
