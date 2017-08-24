@@ -69,7 +69,7 @@
  			<th>Fecha de Alta en DB</th>
  			<th>Fecha de Baja en DB</th>
  			<th>Activo/Inactivo</th>
- 			<th></th>
+ 			
 		</thead>
  		<tbody>
 		<?php
@@ -83,7 +83,7 @@
 	 			<td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
 	 			<td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar Producto</a></td>
-	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
+	 			<td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"onclick="return confirm('Estas seguro de cambiar el estado del Producto?');"> Cambiar Estado</a></td>
  				</tr>
  		<?php
  				}
