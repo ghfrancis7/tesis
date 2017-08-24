@@ -52,9 +52,9 @@
 				<li><a href="../../../Post_Inicio/sesionTecn.php"><span class="iconic new-window"></span> Clientes</a>
 					<ul>
 						<li><a href="../mvc/vista/cliente/crearCliente.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> Crear</a></li>
-                        <li><a href="../../../UnderConstruction/UnderConstrTecn.php"><span class="iconic magnifying-glass"></span><span class="iconic user"></span> Consulta Datos</a></li>
-                        <li><a href="../../../UnderConstruction/UnderConstrTecn.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Stock</a></li>
-						<li><a href="../../../UnderConstruction/UnderConstrTecn.php"><span class="iconic magnifying-glass"></span><span class="iconic box"></span> Consulta Stock</a></li>
+                        <li><a href="ver_cliente.php"><span class="iconic magnifying-glass"></span><span class="iconic user"></span> Consulta Datos</a></li>
+                        <li><a href="../../../SelectUserOperations/ABMPlanta.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Planta</a></li>
+						<li><a href="../planta/ver_planta.php"><span class="iconic magnifying-glass"></span><span class="iconic box"></span> Consulta Stock</a></li>
 					</ul>
 				</li>
 				<li><a href="../../../Post_Inicio/sesionTecn.php"><span class="iconic beaker"></span> Tratamiento</a>

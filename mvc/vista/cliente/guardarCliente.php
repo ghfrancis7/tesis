@@ -54,12 +54,7 @@
 			$pst->execute();
 			$pdo->mysql->commit() ;
 			
-			echo"<script type=\"text/javascript\">alert('Se registro correctamente'); window.location='ver_cliente.php';</script>";
-			
-			
-			//header("Location:crearCliente.php");
-
-		
+			echo"<script type=\"text/javascript\">alert('Se registro correctamente'); window.location='../planta/crearPlanta.php';</script>";
 				
 			} catch (Exception $e) {
 				$pdo->mysql->rollback();
