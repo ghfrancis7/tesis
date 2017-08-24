@@ -108,8 +108,8 @@
                 		</form>
 						</td>
             			<td width="50%">
-                        <form id="frmcancel" method="post" action="ver_producto.php">
-                        <input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Cancel">
+                        <form id="frmcancel" method="post" action="../../../Post_Inicio/sesionTecn.php">
+                        <input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Cancelar">
                         </form>
                 		</td>
                     </tr>
