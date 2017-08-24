@@ -19,7 +19,7 @@
 		date_default_timezone_set ("America/Argentina/Buenos_Aires");
 		$today = date( "d/m/Y");
 		//Formulario
-		include_once("../modelo/Conexion.php");
+		include_once("../../modelo/Conexion.php");
 		$pdo= new Conexion();
 		$IDUsuario = $_GET['IDUsuario'];
 		$datosUsuario = $pdo->mysql->prepare("SELECT * FROM usuario where IDUsuario = :IDUsuario");
@@ -48,9 +48,9 @@
 	<div class="wrap">
 		<nav>
 			<ul class="menu">
-				<li><a href="../../Post_Inicio/sesionAdmin.php"><span class="iconic home"></span> Home</a></li>
-				<li><a href="../../SelectUserOperations/ABMUsuario.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Usuarios</a></li>
-                <li><a href="../../mvc/vista/crearProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
+				<li><a href="../../../Post_Inicio/sesionAdmin.php"><span class="iconic home"></span> Home</a></li>
+				<li><a href="../../../SelectUserOperations/ABMUsuario.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Usuarios</a></li>
+                <li><a href="../../../SelectUserOperations/ABMProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
 			</ul>
 			<div class="clearfix"></div>
         </nav>

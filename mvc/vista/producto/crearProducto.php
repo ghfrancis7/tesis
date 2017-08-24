@@ -31,7 +31,7 @@
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
                     <td width="50%">Logueado como: <?php echo $_SESSION['nom']." ".$_SESSION['ape']?><br>Rol: Administrador</td>
                     <td width="25%">
-                    <form id="frmLogin" action="../../Login PHP/logout.php" method="post">
+                    <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
                         <input id="button" type="button" onClick="document.getElementById('frmLogin').submit()" value="Sign Out"/>
                     </form>
@@ -57,27 +57,30 @@
         <tr><td>
         	<label>Numero de Serie</label><br/>
             <input type="text" name="ProductoNumeroSerie">
-		</td>
-        <td>
+			<br/>
 			<label>Nombre del Producto</label><br/>
 			<input type="text" name="ProductoNombre">
-		</td></tr>
-		<tr><td>
+            <br/>
         	<label>Precio del Producto</label><br/>
             <input type="text" name="ProductoPrecio">
-		</td>
-        <td>
+            <br/>
         	<label>Fecha de Alta</label><br/>
             <input type="date" name="ProductoFechaAltaDB">
             <input type="hidden" name="ProductoFechaBajaDB" requrired>
             <input type="hidden" value="Activo" name="ProductoEstado">
 		</td></tr>
-		<tr><td><input id="button" type="button" onClick="document.getElementById('frmnewprod').submit()" value="Acept">
-			</form></td>
-            <td>
-            <form id="frmcancel" method="post" action="../../Post_Inicio/sesionAdmin.php">
-				<input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Cancel">
-			</form>
+		<tr><td>
+        	<table width="100%" style="margin: 0 auto;">
+				<tr><td width="50%">
+        			<input id="button" type="button" onClick="document.getElementById('frmnewprod').submit()" value="Acept">
+					</form>
+                    </td>
+            		<td width="50%">
+                    <form id="frmcancel" method="post" action="../../../Post_Inicio/sesionAdmin.php">
+                        <input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Cancel">
+                    </form>
+				</td></tr>
+			</table>
         </td></tr>
     </table>
     </div>

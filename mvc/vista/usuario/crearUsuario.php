@@ -111,7 +111,7 @@
         	<td width="20%">
             </td>
             <td width="40%">
-            <form id="frmcancel" method="post" action="../../Post_Inicio/sesionAdmin.php">
+            <form id="frmcancel" method="post" action="../../../Post_Inicio/sesionAdmin.php">
 				<input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Cancel">
 			</form>
             </td>

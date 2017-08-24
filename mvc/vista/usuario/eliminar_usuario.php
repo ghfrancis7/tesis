@@ -3,7 +3,7 @@
 	require ("../../modelo/Conexion.php");
 	$pdo = new Conexion();
 	$IDUsuario = $_GET['IDUsuario'];
-	$UsuFechaEgreso= date('m/d/Y');
+	$UsuFechaEgreso= date('Y/m/d');
 
 		try {
 
@@ -13,20 +13,20 @@
 				$datosUsuario->bindParam(":IDUsuario", $IDUsuario, PDO::PARAM_INT);
 				$datosUsuario->execute();
 				$usu = $datosUsuario->fetch();	
-
-						if ($usu['UsuEstado']=="Inactivo") {
-							$UsuEstado="Activo";
-							$UsuFechaEgreso="";
-						}elseif ($usu['UsuEstado']=="Activo") {
-							$UsuEstado="Inactivo";
-
-						}
+				
+				if ($usu['UsuEstado']=="Inactivo") {
+					$UsuEstado="Activo";
+					$UsuFechaEgreso=NULL;
+				}elseif ($usu['UsuEstado']=="Activo") {
+					$UsuEstado="Inactivo";
+				}
 
 				
 				$pst = $pdo->mysql->prepare("UPDATE usuario set UsuEstado =:UsuEstado , UsuFechaEgreso =:UsuFechaEgreso where IDUsuario = :IDUsuario");
 				$pst->bindParam(":IDUsuario",$IDUsuario,PDO::PARAM_STR);
 				$pst->bindParam(":UsuEstado",$UsuEstado,PDO::PARAM_STR);
 				$pst->bindParam(":UsuFechaEgreso",$UsuFechaEgreso,PDO::PARAM_STR);
+
 				
 				$pst->execute();
 
