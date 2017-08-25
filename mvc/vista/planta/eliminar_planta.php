@@ -4,6 +4,7 @@
 		$pdo = new Conexion();
 		$IDPlanta = $_GET['IDPlanta'];
 		$PlantaFechaBaja= date('m/d/Y');
+		$PlantaFechaAlta= date('m/d/Y');
 
 	//try {
 
@@ -16,6 +17,19 @@
 
 				if ($prod['PlantaEstado']=="Inactivo") {
 					$PlantaEstado="Activo";
+
+					$pst = $pdo->mysql->prepare("INSERT INTO planta (PlantaNombre, PlantaLocalidad,PlantaDireccion,PlantaTelefono,PlantaEmail,PlantaFechaAlta,PlantaEstado) VALUES (:PlantaNombre,:PlantaLocalidad,:PlantaDireccion,:PlantaTelefono,:PlantaEmail,:PlantaFechaAlta,:PlantaEstado)");
+								$pst->bindParam(":PlantaNombre",$PlantaNombre,PDO::PARAM_STR);
+								$pst->bindParam(":PlantaLocalidad",$PlantaLocalidad,PDO::PARAM_STR);
+								$pst->bindParam(":PlantaDireccion",$PlantaDireccion,PDO::PARAM_STR);
+								$pst->bindParam(":PlantaTelefono",$PlantaTelefono,PDO::PARAM_STR);
+								$pst->bindParam(":PlantaEmail",$PlantaEmail,PDO::PARAM_STR);
+								$pst->bindParam(":PlantaFechaAlta",$PlantaFechaAlta,PDO::PARAM_STR);
+								$pst->bindParam(":PlantaEstado",$PlantaEstado,PDO::PARAM_STR);
+
+		$pst->execute();
+		$pdo->mysql->commit() ;
+
 				}elseif ($prod['PlantaEstado']=="Activo") {
 					$PlantaEstado="Inactivo";
 				}
