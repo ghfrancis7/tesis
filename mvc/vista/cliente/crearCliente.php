@@ -42,11 +42,11 @@
 	<div class="wrap">
 		<nav>
 			<ul class="menu">
-				<li><a href="../../../Post_Inicio/sesionTecn.php"><span class="iconic home"></span> Home</a></li>
-				<li><a href="../../../Post_Inicio/sesionTecn.php"><span class="iconic book"></span> Agenda</a>
+				<li><a href="../../../Post_Inicio/sesionTecn.php"><span class="iconic home"></span>Home</a></li>
+				<li><a href="../../../Post_Inicio/sesionTecn.php"><span class="iconic book"></span>Agenda</a>
 					<ul>
-						<li><a href="../../../UnderConstruction/UnderConstrTecn.php"><span class="iconic calendar"></span> Mensual</a></li>
-						<li><a href="../../../UnderConstruction/UnderConstrTecn.php"><span class="iconic calendar-alt"></span> Semanal</a></li>
+						<li><a href="../../../UnderConstruction/UnderConstrTecn.php"><span class="iconic calendar"></span>Mensual</a></li>
+						<li><a href="../../../UnderConstruction/UnderConstrTecn.php"><span class="iconic calendar-alt"></span>Semanal</a></li>
 					</ul>
 				</li>
 				<li><a href="../../../Post_Inicio/sesionTecn.php"><span class="iconic new-window"></span> Clientes</a>
