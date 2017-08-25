@@ -32,7 +32,7 @@
 	//try {
 
 			$pdo->mysql->beginTransaction();
-			$pst = $pdo->mysql->prepare("INSERT INTO producto (ProductoNombre, ProductoPrecio,ProductoNumeroSerie,ProductoFechaAltaDB,ProductoDescripcion,ProductoEstado) VALUES (:ProductoNombre,:ProductoPrecio,:ProductoNumeroSerie,:ProductoDescripcion,:ProductoFechaAltaDB,:ProductoEstado)");
+			$pst = $pdo->mysql->prepare("INSERT INTO producto (ProductoNombre, ProductoPrecio,ProductoNumeroSerie,ProductoFechaAltaDB,ProductoDescripcion,ProductoEstado) VALUES (:ProductoNombre,:ProductoPrecio,:ProductoNumeroSerie,:ProductoFechaAltaDB,:ProductoDescripcion,:ProductoEstado)");
 			$pst->bindParam(":ProductoNombre",$ProductoNombre,PDO::PARAM_STR);
 			$pst->bindParam(":ProductoPrecio",$ProductoPrecio,PDO::PARAM_STR);
 			$pst->bindParam(":ProductoNumeroSerie",$ProductoNumeroSerie,PDO::PARAM_STR);
@@ -41,7 +41,6 @@
 			$pst->bindParam(":ProductoEstado",$ProductoEstado,PDO::PARAM_STR);
 			
 	
-
 		$pst->execute();
 		$pdo->mysql->commit() ;
 

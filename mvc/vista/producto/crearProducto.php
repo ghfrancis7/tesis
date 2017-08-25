@@ -20,7 +20,7 @@
         }
 		//Determina dia actual
 		date_default_timezone_set ("America/Argentina/Buenos_Aires");
-		$today = date( "d/m/Y");
+		$today = date( "Y/m/d");
 		?>
 	<div class="backgroundTable">
     </div>
@@ -64,9 +64,10 @@
         	<label>Precio del Producto</label><br/>
             <input type="text" name="ProductoPrecio">
             <br/>
-        	<label>Fecha de Alta</label><br/>
-            <input type="date" name="ProductoFechaAltaDB">
-            <input type="hidden" name="ProductoFechaBajaDB" requrired>
+            <label>Descripcion de Producto</label><br/>
+            <input type="text" name="ProductoDescripcion">
+            <input type="hidden" value="<?php echo $today; ?>" name="ProductoFechaAltaDB">
+            <input type="hidden" value="<?php echo NULL; ?>" name="ProductoFechaBajaDB" requrired>
             <input type="hidden" value="Activo" name="ProductoEstado">
 		</td></tr>
 		<tr><td>
