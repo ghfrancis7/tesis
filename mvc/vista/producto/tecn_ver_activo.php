@@ -44,10 +44,10 @@
 		<nav>
 			<ul class="menu">
 				<li><a href="sesionTecn.php"><span class="iconic home"></span> Home</a></li>
-				<li><a href="../SelectUserOperations/Tecn_Agenda.php"><span class="iconic book"></span> Agenda</a></li>
-				<li><a href="../SelectUserOperations/Tecn_Cliente.php"><span class="iconic new-window"></span> Clientes</a></li>
-				<li><a href="../SelectUserOperations/Tecn_Tratamiento.php"><span class="iconic beaker"></span> Tratamiento</a></li>
-				<li><a href="../mvc/vista/producto/tecn_ver_activo.php"><span class="iconic cog"></span> Producto</a></li>
+				<li><a href="../../../SelectUserOperations/Tecn_Agenda.php"><span class="iconic book"></span> Agenda</a></li>
+				<li><a href="../../../SelectUserOperations/Tecn_Cliente.php"><span class="iconic new-window"></span> Clientes</a></li>
+				<li><a href="../../../SelectUserOperations/Tecn_Tratamiento.php"><span class="iconic beaker"></span> Tratamiento</a></li>
+				<li><a href="tecn_ver_activo.php"><span class="iconic cog"></span> Producto</a></li>
 			</ul>
 			<div class="clearfix"></div>
         </nav>
@@ -55,12 +55,12 @@
     <div class="tablas">
 	<table width="60%" border="1" style="margin: 0 auto;"> 
 		<tr><td width="60%">
-		<form id="find" action="busquedaProducto.php" method ="get">
+		<form id="find" action="tecn_busqueda.php" method ="get">
 			<label>Buscar: <input type="text" name="buscar" ></label>
             </td><td width="40%" valign="middle" class="buttons">
 			<input id="button" name="findButton" type="button" onClick="document.getElementById('find').submit()" value="Buscar">
 		</form>
-        </td></tr>
+      </td></tr>
 	</table>
     <br/>
 	<table width="60%" border="1" style="margin: 0 auto;"> 
