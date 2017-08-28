@@ -22,10 +22,10 @@
     </div>
     <div class="header">
         <header>
-        	<table width="100%">
+            <table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Logueado como: <?php echo $usuario?><br>Rol: Administrador</td>
+                    <td width="50%">Logueado como: <?php echo $usuario?><br>Rol: Tecnico</td>
                     <td width="25%">
                     <form id="frmLogin" action="../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -33,19 +33,21 @@
                     </form>
                     </td>
                 </tr>
-        	</table>
+            </table>
         </header>
     </div>
-	<div class="wrap">
-		<nav>
-			<ul class="menu">
-				<li><a href="../Post_Inicio/sesionAdmin.php"><span class="iconic home"></span> Home</a></li>
-				<li><a href="../SelectUserOperations/ABMUsuario.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Usuarios</a></li>
-                <li><a href="../SelectUserOperations/ABMProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
-			</ul>
-			<div class="clearfix"></div>
+    <div class="wrap">
+        <nav>
+            <ul class="menu">
+                <li><a href="sesionTecn.php"><span class="iconic home"></span> Home</a></li>
+                <li><a href="../SelectUserOperations/Tecn_Agenda.php"><span class="iconic book"></span> Agenda</a></li>
+                <li><a href="../SelectUserOperations/Tecn_Cliente.php"><span class="iconic new-window"></span> Clientes</a></li>
+                <li><a href="../SelectUserOperations/Tecn_Tratamiento.php"><span class="iconic beaker"></span> Tratamiento</a></li>
+                <li><a href="../SelectUserOperations/Tecn_Producto.php"><span class="iconic cog"></span> Producto</a></li>
+            </ul>
+            <div class="clearfix"></div>
         </nav>
-	</div>
+    </div>
     <div class="buttons">
         	<table>
                 <tr>
