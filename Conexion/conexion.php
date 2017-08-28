@@ -24,7 +24,7 @@ class conexion{
 		$this->usr = $user;
 		$this->pwd = $pass;
 		
-		$query = "SELECT IDUsuario, UsuNombre, UsuApellido, UsuCuenta, UsuPassword, UsuRol, UsuEstado FROM usuario WHERE UsuCuenta= '".$this->usr."' AND UsuPassword = '".$this->pwd."'";
+		$query = "SELECT IDUsuario, UsuNombre, UsuApellido, UsuCuenta, UsuPassword, UsuRol, UsuEstado FROM usuario WHERE UsuCuenta LIKE '".$this->usr."' AND UsuPassword LIKE '".$this->pwd."' AND UsuEstado LIKE 'Activo'";
 		
 		$consulta = $this->conexion->query($query);
 		
