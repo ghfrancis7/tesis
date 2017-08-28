@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 	<title>SIS.GES.</title>
 	<meta charset="UTF-8"/>
 	<link rel="stylesheet" href="../../../CSS/style.css">
