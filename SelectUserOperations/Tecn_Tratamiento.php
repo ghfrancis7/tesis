@@ -51,7 +51,7 @@
         	<table>
                 <tr>
                     <td width="45%" align="center">
-                    <form id="nuevo" action="#" method="GET">
+                    <form id="nuevo" action="../mvc/vista/tratamiento/crearTratamiento" method="GET">
                     	<input  type="hidden" value="<?php ?>" />
                         <input id="button" type="button" onClick="document.getElementById('nuevo').submit()" value="Nuevo"/>
                     </form>
@@ -59,7 +59,7 @@
                     <td width="10%" align="center">
                     </td>
                     <td width="45%" align="center">
-					<form id="consulta" action="#" method="GET">
+					<form id="consulta" action="../mvc/vista/tratamiento/ver_tratamiento.php" method="GET">
                         <input id="button" type="button" onClick="document.getElementById('consulta').submit()" value="Consulta"/>
                     </form>
                     </td>
