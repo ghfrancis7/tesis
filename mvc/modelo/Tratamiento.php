@@ -26,7 +26,7 @@ include_once("Conexion.php");
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM tratamiento";
+				 $q="SELECT * FROM tratamiento T INNER JOIN planta P ON T.IDTratamiento = P.IDPlanta";
 
 					$tratamiento = $pdo->mysql->query($q);
 		
@@ -36,7 +36,7 @@ include_once("Conexion.php");
 	public function nombrePlanta($idplanta){
 		 $pdo = new Conexion();
 
-				 $q="SELECT PlantaNombre FROM planta where IDPlanta LIKE '$idplanta'";
+				 $q="SELECT * FROM `tratamiento` WHERE IDPlanta = $idplanta";
 
 					$planta = $pdo->mysql->query($q);
 					

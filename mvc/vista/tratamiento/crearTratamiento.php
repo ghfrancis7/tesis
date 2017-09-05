@@ -1,6 +1,6 @@
 
  <br>
-<h3>Crear un nuevo Cliente</h3>
+<h3>Crear un nuevo Tratamiento</h3>
 <form action="guardarTratamiento.php" method="post">
 	<input type="text" placeholder="Nombre de Tratamiento" name="TrataNombre">
 	<br><br>

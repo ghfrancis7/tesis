@@ -28,21 +28,19 @@ include_once("../../modelo/Tratamiento.php");
  	</thead>
  		<tbody>
  	<?php
- 		foreach($sql as $row){ $planta=$controlador->nombrePlanta($row['IDPlanta']);
- 			$plantaa = (String)$planta['PlantaNombre'];
- 			?>
+ 		foreach($sql as $row){ ?>
 
-
- 			<tr>
+ 				<tr>
 		 		<td><?php echo "{$row['IDTratamiento']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNumAnalisis']}"; ?></td>
-		 		<td><?php echo $plantaa; ?></td>
+		 		<td><?php echo "{$row['PlantaNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataFecha']}"; ?></td>
-		 		<td><?php echo "{$row['TrataDescripcion']}"; ?></td>
+		 		<td><?php echo "{$row['TrataDescripcion']}";?></td>
 
 		 		<!--<td><a href="editar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Modificar Planta</a></td> -->
  			</tr>
+ 			
  			<?php } ?>
 		</tbody>
  </table>
