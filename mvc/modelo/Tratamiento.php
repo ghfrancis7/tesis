@@ -33,17 +33,6 @@ include_once("Conexion.php");
 				return $tratamiento;
 			
 		}
-	public function nombrePlanta($idplanta){
-		 $pdo = new Conexion();
-
-				 $q="SELECT * FROM `tratamiento` WHERE IDPlanta = $idplanta";
-
-					$planta = $pdo->mysql->query($q);
-					
-				return $planta;
-			
-
-	}	
 		public function buscarTratamiento($buscar){
 
 				 $pdo = new Conexion();

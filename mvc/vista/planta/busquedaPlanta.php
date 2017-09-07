@@ -63,8 +63,8 @@ include_once("../../modelo/Planta.php");
 		<input type="submit"name="Buscar" values"Buscar">
 
 	</form>
-	
-<table border="1"> 
+ <div class="tablas" style="text-align:center;">
+		<table width="60%" border="1" style="margin: 0 auto;"> 	
  	<thead>
  		<th>ID Planta</th>
  		<th>Nombre de Planta</th>
@@ -74,13 +74,8 @@ include_once("../../modelo/Planta.php");
  		<th>Email de la Panta</th>
  		<th>Fecha de baja de la Planta</th>
  		<th>Estado de la Planta</th>
+ 		 </form></a></th>
 
-
- 		<th><a <form id="bandera" method="post" action="<?php $bandera="true"; ?>"> 
- 		      <input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Ver Inactivos">
- 		      </form></a></th>
-
- 		
  	</thead>
  	<tbody>
  <?php  
