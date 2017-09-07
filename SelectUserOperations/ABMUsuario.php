@@ -46,24 +46,29 @@
 			<div class="clearfix"></div>
         </nav>
 	</div>
+    <div class="tablas">
+		<tr>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">ABM Usuarios</h2></td>
+		</tr>
+    </div>
     <div class="buttons">
-        	<table>
-                <tr>
-                    <td width="45%" align="center">
+    	<table>
+        	<tr>
+            	<td width="45%" align="center">
                     <form id="Crear" action="../mvc/vista/usuario/crearUsuario.php" method="get">
                     	<input  type="hidden" value="<?php 'cargar'?>" />
                         <input id="button" type="button" onClick="document.getElementById('Crear').submit()" value="Crear"/>
                     </form>
-                    </td>
-                    <td width="10%" align="center">
-                    </td>
-                    <td width="45%" align="center">
+                </td>
+                <td width="10%" align="center">
+                </td>
+                <td width="45%" align="center">
 					<form id="Modificar" action="../mvc/vista/usuario/ver_usuario.php" method="post">
                         <input id="button" type="button" onClick="document.getElementById('Modificar').submit()" value="Modificar/Eliminar"/>
                     </form>
-                    </td>
-                </tr>
-        	</table>
+            	</td>
+        	</tr>
+		</table>
     </div>
 </body>
 </html>
