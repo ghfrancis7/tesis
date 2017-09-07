@@ -10,7 +10,7 @@
 	<br><br>
 	<input type="text" placeholder="Descripcion" name="TrataDescripcion">
 	<br><br>
-	<input type="text" placeholder="ClienteEstado" name="ClienteEstado">
+	<input type="text" placeholder="Estado de Tratamiento" name="TrataEstado">
 	<br><br>
 	<input type="submit" name="enviar" value="Crear Tratamiento">
 	<input type="button" value="Atras" onclick="history.back(-1)" />
