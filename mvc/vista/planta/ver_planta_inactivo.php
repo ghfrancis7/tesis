@@ -103,7 +103,7 @@ include_once("../../modelo/Planta.php");
  <?php  
  		foreach($sql as $row){ 
 
- 		if (strcasecmp($row['PlantaEstado'],"Activo") == 0) { ?>
+ 		if (strcasecmp($row['PlantaEstado'],"Inactivo") == 0) { ?>
  				<tr>
 	 			<td><?php echo "{$row['IDPlanta']}"; ?></td>
 	 			<td><?php echo "{$row['PlantaNombre']}"; ?></td>
@@ -129,8 +129,8 @@ include_once("../../modelo/Planta.php");
  <div class="header" style="text-align:center;">
 	<table width="60%" style="margin: 0 auto;"><tbody>
 		<tr><td>
-		<form id="veractivo" action="ver_planta_inactivo.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Plantas Inactivas"/>
+		<form id="veractivo" action="ver_planta.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Plantas Activas"/>
 		</form>
         </td><td>
         <form id="vertodo" action="ver_planta_completo.php" method="post">
