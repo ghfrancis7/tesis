@@ -92,9 +92,6 @@ include_once("../../modelo/Planta.php");
  		<th>Fecha de baja de la Planta</th>
  		<th>Estado de la Planta</th>
 
-
- 		<th><a <form id="bandera" method="post" action="<?php $bandera="true"; ?>"> 
- 		      <input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Ver Inactivos">
  		      </form></a></th>
 
  		
