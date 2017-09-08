@@ -60,7 +60,7 @@
                     <td width="10%" align="center">
                     </td>
                     <td width="45%" align="center">
-					<form id="consulta" action="../mvc/vista/tratamiento/ver_tratamiento.php" method="GET">
+					<form id="consulta" action="../mvc/vista/tratamiento/ver_activo.php" method="GET">
                         <input id="button" type="button" onClick="document.getElementById('consulta').submit()" value="Consulta"/>
                     </form>
                     </td>
