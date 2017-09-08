@@ -3,7 +3,7 @@
 <head>
 	<title>SIS.GES.</title>
 	<meta charset="UTF-8"/>
-	<link rel="stylesheet" href="../CSS/style.css">
+	<link href="../CSS/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -39,14 +39,15 @@
     <div class="wrap">
         <nav>
             <ul class="menu">
-                <li><a href="sesionTecn.php"><span class="iconic home"></span> Home</a></li>
-                <li><a href="../SelectUserOperations/Tecn_Agenda.php"><span class="iconic book"></span> Agenda</a></li>
-                <li><a href="../SelectUserOperations/Tecn_Cliente.php"><span class="iconic new-window"></span> Clientes</a></li>
-                <li><a href="../SelectUserOperations/Tecn_Tratamiento.php"><span class="iconic beaker"></span> Tratamiento</a></li>
-                <li><a href="../SelectUserOperations/Tecn_Producto.php"><span class="iconic cog"></span> Producto</a></li>
+                <li><a href="../Post_Inicio/sesionTecn.php"><span class="iconic home"></span> Home</a></li>
+                <li><a href="Tecn_Agenda.php"><span class="iconic book"></span> Agenda</a></li>
+                <li><a href="Tecn_Cliente.php"><span class="iconic new-window"></span> Clientes</a></li>
+                <li><a href="Tecn_Tratamiento.php"><span class="iconic beaker"></span> Tratamiento</a></li>
+                <li><a href="../mvc/vista/producto/tecn_ver_activo.php"><span class="iconic cog"></span> Producto</a></li>
             </ul>
             <div class="clearfix"></div>
         </nav>
+	</div>
     <div class="buttons">
         	<table>
                 <tr>
