@@ -11,6 +11,7 @@
 			$pdo=new Conexion();
 
 				$TrataNombre= $_POST['TrataNombre'];
+				$IDUsuario=$_POST['IDUsuario'];
 				$TrataFecha= $_POST['TrataFecha'];
 				$TrataNumAnalisis= $_POST['TrataNumAnalisis'];
 				$TrataDescripcion= $_POST['TrataDescripcion'];
