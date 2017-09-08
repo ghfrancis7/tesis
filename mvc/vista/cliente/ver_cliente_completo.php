@@ -97,15 +97,15 @@ include_once("../../modelo/Cliente.php");
 
 <table border="1"> 
  	<thead>
- 		<th>IDCliente</th>
- 		<th>ClienteNombre</th>
- 		<th>ClienteCuit</th>
- 		<th>ClienteDireccion</th>
- 		<th>ClienteTelefono</th>
- 		<th>ClienteCantidadPlantas</th>
- 		<th>ClienteFechaAlta</th>
- 		<th>ClienteFechaBaja</th>
- 		<th>ClienteEstado</th>
+ 		<th>ID</th>
+        <th>Nombre de Cliente</th>
+        <th>Cuit</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Cantidad de Plantas</th>
+        <th>Fecha de Alta</th>
+        <th>Fecha de Baja</th>
+        <th>Estado</th>
 
  	</thead>
  	<tbody>
