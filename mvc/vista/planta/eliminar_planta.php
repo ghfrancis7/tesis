@@ -15,9 +15,9 @@
 		$datosPlanta->execute();
 		$plantita = $datosPlanta->fetch();	
 
-				if ($plantita['PlantaEstado']=="Inactivo") {
+				if ($plantita['PlantaEstado']=="Inactiva") {
 					$PlantaFechaBaja=NULL;
-					$PlantaEstado="Activo";
+					$PlantaEstado="Activa";
 
 					$pst = $pdo->mysql->prepare("INSERT INTO planta (IDCliente,IDUsuario,PlantaNombre, PlantaLocalidad,PlantaDireccion,PlantaTelefono,PlantaMail,PlantaFechaAlta,PlantaEstado) VALUES (:IDCliente,:IDUsuario,:PlantaNombre,:PlantaLocalidad,:PlantaDireccion,:PlantaTelefono,:PlantaMail,:PlantaFechaAlta,:PlantaEstado)");
 
@@ -34,8 +34,8 @@
 		$pst->execute();
 		$pdo->mysql->commit() ;
 
-				}elseif ($plantita['PlantaEstado']=="Activo") {
-						$PlantaEstado="Inactivo";
+				}elseif ($plantita['PlantaEstado']=="Activa") {
+						$PlantaEstado="Inactiva";
 
 						$pst = $pdo->mysql->prepare("UPDATE planta set PlantaEstado =:PlantaEstado , PlantaFechaBaja =:PlantaFechaBaja where IDPlanta = :IDPlanta");
 						$pst->bindParam(":IDPlanta",$IDPlanta,PDO::PARAM_STR);

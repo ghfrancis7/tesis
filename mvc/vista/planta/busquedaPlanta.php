@@ -17,15 +17,13 @@
             $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
             $idUsuario = $_SESSION['id'];
         }
-
-include_once("../../modelo/Planta.php");
-
-	$controlador = new Planta();
-	$IDPlanta= $_GET['buscar'];
-	$sql= $controlador->buscarPlanta($IDPlanta);
-
- ?> 
- <div class="backgroundTable">
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/ 
+		include_once("../../modelo/Planta.php");
+		$controlador = new Planta();
+		$IDPlanta= $_GET['buscar'];
+		$sql= $controlador->buscarPlanta($IDPlanta);
+	?> 
+	<div class="backgroundTable">
     </div>
     <div class="header">
         <header>
@@ -55,54 +53,49 @@ include_once("../../modelo/Planta.php");
 			<div class="clearfix"></div>
         </nav>
 	</div>
-
- <form action="busquedaPlanta.php" method ="get">
-
-		<label>Buscar: <input type="text" name="buscar" ></label>
-			<br>
-		<input type="submit"name="Buscar" values"Buscar">
-
-	</form>
- <div class="tablas" style="text-align:center;">
+	<div class="tablas" style="text-align:center;">
 		<table width="60%" border="1" style="margin: 0 auto;"> 	
- 	<thead>
- 		<th>ID Planta</th>
- 		<th>Nombre de Planta</th>
- 		<th>Localidad de la Panta</th>
- 		<th>Direccion de la Planta</th>
- 		<th>Telefono de la Panta</th>
- 		<th>Email de la Panta</th>
- 		<th>Fecha de baja de la Planta</th>
- 		<th>Estado de la Planta</th>
- 		 </form></a></th>
-
- 	</thead>
- 	<tbody>
- <?php  
+ 			<thead>
+            <th>ID Planta</th>
+            <th>Nombre de Planta</th>
+            <th>Localidad de la Panta</th>
+            <th>Direccion de la Planta</th>
+            <th>Telefono de la Panta</th>
+            <th>Email de la Panta</th>
+            <th>Fecha de baja de la Planta</th>
+            <th>Estado de la Planta</th>
+			</thead>
+ 		<tbody>
+ 		<?php  
  		foreach($sql as $row){  ?>
- 				<tr>
-	 			<td><?php echo "{$row['IDPlanta']}"; ?></td>
-	 			<td><?php echo "{$row['PlantaNombre']}"; ?></td>
-	 			<td><?php echo "{$row['PlantaLocalidad']}"; ?></td>
-	 			<td><?php echo "{$row['PlantaDireccion']}"; ?></td>
-	 			<td><?php echo "{$row['PlantaTelefono']}"; ?></td>
-	 			<td><?php echo "{$row['PlantaMail']}"; ?></td>
-	 			<td><?php echo "{$row['PlantaFechaBaja']}"; ?></td>
-	 			<td><?php echo "{$row['PlantaEstado']}"; ?></td>
-
-	 			<td><a href="editar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Modificar Planta</a></td>
-	 			
-	 			<td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Eliminar Planta</a></td>
-
- 		</tr>
-
- 		<?php
- 			}
- 			 ?>
- 			
- 		<?php
- 			?>
-
-<?php  ?>
-			</tbody>
- </table>
+			<tr>
+ 			<td><?php echo "{$row['IDPlanta']}"; ?></td>
+ 			<td><?php echo "{$row['PlantaNombre']}"; ?></td>
+ 			<td><?php echo "{$row['PlantaLocalidad']}"; ?></td>
+ 			<td><?php echo "{$row['PlantaDireccion']}"; ?></td>
+ 			<td><?php echo "{$row['PlantaTelefono']}"; ?></td>
+ 			<td><?php echo "{$row['PlantaMail']}"; ?></td>
+ 			<td><?php echo "{$row['PlantaFechaBaja']}"; ?></td>
+ 			<td><?php echo "{$row['PlantaEstado']}"; ?></td>
+ 			<td><a href="editar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Modificar Planta</a></td>
+ 			<td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Eliminar Planta</a></td>
+	 		</tr>
+ 		<?php } ?>
+		</tbody>
+	</table>
+    </div>
+	<div class="header" style="text-align:center;">
+	<table width="60%" style="margin: 0 auto;"><tbody>
+		<tr><td>
+		<form id="veractivo" action="ver_planta_inactivo.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Plantas Inactivas"/>
+		</form>
+        </td><td>
+        <form id="vertodo" action="ver_planta.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Plantas Activas"/>
+		</form>
+        </td></tr>
+	</tbody></table>
+    </div>
+</body>
+</html>
