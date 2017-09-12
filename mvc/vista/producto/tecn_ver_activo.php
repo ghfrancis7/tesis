@@ -52,15 +52,13 @@
 			<div class="clearfix"></div>
         </nav>
 	</div>
+	<div class="tablas">
+		<tr>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Productos</h2></td>
+		</tr>
+    </div>
     <div class="tablas">
 	<table width="60%" style="margin: 0 auto;">
-    	<tr><td>
-			<table width="100%" style="margin: 0 auto;"><tbody>
-			<tr><td>
-				<h2><strong>Seccion Productos</strong></h2>
-			</td></tr>
-			</tbody></table>
-		</td></tr>
         <tr><td>
 			<table width="100%" border="1" style="margin: 0 auto;"><tbody>
 			<tr><td width="60%">

@@ -29,7 +29,7 @@
         	<table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Logueado como: <?php echo $usuario?><br>Rol: Administrador</td>
+                    <td width="50%">Logueado como: <?php echo $usuario?><br>Rol:Tecnico</td>
                     <td width="25%">
                     <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -52,15 +52,13 @@
 			<div class="clearfix"></div>
         </nav>
 	</div>
+	<div class="tablas">
+		<tr>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Productos</h2></td>
+		</tr>
+    </div>
     <div class="tablas" style="text-align:center;">
 	<table width="60%" style="margin: 0 auto;">
-    	<tr><td>
-			<table width="100%" style="margin: 0 auto;"><tbody>
-			<tr><td>
-				<h2><strong>Seccion Productos</strong></h2>
-			</td></tr>
-			</tbody></table>
-		</td></tr>
         <tr><td>
 			<table width="100%" border="1" style="margin: 0 auto;"><tbody>
 				<tr><td width="60%">

@@ -53,6 +53,11 @@
 			<div class="clearfix"></div>
         </nav>
 	</div>
+	<div class="tablas">
+		<tr>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Plantas</h2></td>
+		</tr>
+    </div>
 	<div class="tablas" style="text-align:center;">
 		<table width="60%" border="1" style="margin: 0 auto;"> 	
  			<thead>

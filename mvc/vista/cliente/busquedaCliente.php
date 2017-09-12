@@ -54,6 +54,11 @@
         </nav>
 	</div>
 	<div class="tablas">
+		<tr>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Clientes</h2></td>
+		</tr>
+    </div>
+	<div class="tablas">
 	<table width="60%" border="1" style="margin: 0 auto;"> 
 		<thead>
             <th>ID</th>

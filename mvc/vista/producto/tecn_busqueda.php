@@ -18,12 +18,11 @@
             $idUsuario = $_SESSION['id'];
         }
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-include_once("../../modelo/Producto.php");
-
-	$controlador = new Producto();
-	$IDProducto= $_GET['buscar'];
-	$sql= $controlador->buscarProducto($IDProducto);
- ?> 
+		include_once("../../modelo/Producto.php");
+		$controlador = new Producto();
+		$IDProducto= $_GET['buscar'];
+		$sql= $controlador->buscarProducto($IDProducto);
+	?> 
 	<div class="backgroundTable">
     </div>
     <div class="header">
@@ -31,7 +30,7 @@ include_once("../../modelo/Producto.php");
         	<table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Logueado como: <?php echo $usuario?><br>Rol: Administrador</td>
+                    <td width="50%">Logueado como: <?php echo $usuario?><br>Rol: Tecnico</td>
                     <td width="25%">
                     <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -45,13 +44,20 @@ include_once("../../modelo/Producto.php");
 	<div class="wrap">
 		<nav>
 			<ul class="menu">
-				<li><a href="../../../Post_Inicio/sesionAdmin.php"><span class="iconic home"></span> Home</a></li>
-				<li><a href="../../../SelectUserOperations/ABMUsuario.php"><span class="iconic pencil-alt"></span><span class="iconic user"></span> ABM Usuarios</a></li>
-                <li><a href="../../../SelectUserOperations/ABMProducto.php"><span class="iconic pencil-alt"></span><span class="iconic box"></span> ABM Productos</a></li>
+				<li><a href="../../../Post_Inicio/sesionTecn.php"><span class="iconic home"></span> Home</a></li>
+				<li><a href="../../../SelectUserOperations/Tecn_Agenda.php"><span class="iconic book"></span> Agenda</a></li>
+				<li><a href="../../../SelectUserOperations/Tecn_Cliente.php"><span class="iconic new-window"></span> Clientes</a></li>
+				<li><a href="../../../SelectUserOperations/Tecn_Tratamiento.php"><span class="iconic beaker"></span> Tratamiento</a></li>
+				<li><a href="tecn_ver_activo.php"><span class="iconic cog"></span> Producto</a></li>
 			</ul>
 			<div class="clearfix"></div>
         </nav>
 	</div>
+	<div class="tablas">
+		<tr>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Productos</h2></td>
+		</tr>
+    </div>
     <div class="tablas" style="text-align:center;">
 		<table width="60%" border="1" style="margin: 0 auto;"> 
             <thead>
@@ -72,11 +78,7 @@ include_once("../../modelo/Producto.php");
                     <td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
                     <td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
                     <td><?php echo "{$row['ProductoEstado']}"; ?></td>
-                
-                    <td><a href="editar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Modificar Producto</a></td>
-                    <td><a href="eliminar_producto.php?IDProducto=<?php echo $row['IDProducto'] ?>"> Eliminar Producto</a></td>
-                </tr>
-                
+                </tr>                
         <?php } ?>
 		</tbody>
  </table>
@@ -84,15 +86,15 @@ include_once("../../modelo/Producto.php");
 	<div class="tablas" style="text-align:center;">
 	<table width="60%" style="margin: 0 auto;"><tbody>
     <tr><td>
-		<form id="veractivo" action="ver_producto.php" method="post">
+		<form id="veractivo" action="tecn_ver_activo.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Producto Activo"/>
 		</form>
         </td><td>
-        <form id="vertodo" action="ver_producto_completo.php" method="post">
+        <form id="vertodo" action="tecn_ver_completo.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Productos"/>
 		</form>
         </td><td>
-        <form id="verinactivo" action="ver_producto_inactivo.php" method="post">
+        <form id="verinactivo" action="tecn_ver_inactivo.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinactivo').submit()" value="Ver Producto Inactivo"/>
 		</form>
         </td></tr>

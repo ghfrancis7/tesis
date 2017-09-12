@@ -18,9 +18,9 @@
             $idUsuario = $_SESSION['id'];
         }
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/ 
-	include_once("../../modelo/Planta.php");
-	$controlador = new Planta();
-	$sql= $controlador->listarPlanta();
+		include_once("../../modelo/Planta.php");
+		$controlador = new Planta();
+		$sql= $controlador->listarPlanta();
 	?> 
 	<div class="backgroundTable">
     </div>

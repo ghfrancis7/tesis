@@ -18,10 +18,10 @@
             $idUsuario = $_SESSION['id'];
         }
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-	include_once("../../modelo/Tratamiento.php");
-	$controlador = new Tratamiento();
-	$sql= $controlador->listarTratamiento();
- ?> 
+		include_once("../../modelo/Tratamiento.php");
+		$controlador = new Tratamiento();
+		$sql= $controlador->listarTratamiento();
+	?> 
 	<div class="backgroundTable">
     </div>
     <div class="header">
@@ -53,21 +53,19 @@
         </nav>
 	</div>
     <div class="tablas">
+		<tr>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Tratamientos</h2></td>
+		</tr>
+    </div>
+    <div class="tablas">
 	<table width="60%" style="margin: 0 auto;">
-    	<tr><td>
-			<table width="100%" style="margin: 0 auto;"><tbody>
-                <tr><td>
-                    <h2><strong>Seccion Productos</strong></h2>
-                </td></tr>
-			</tbody></table>
-		</td></tr>
         <tr><td>
 			<table width="100%" border="1" style="margin: 0 auto;"><tbody>
                 <tr><td width="60%">
-                    <form action="busquedaTratamiento.php" method ="get">
+                    <form id="find" action="busquedaTratamiento.php" method ="get">
                     <label>Buscar: <input type="text" name="buscar" ></label>
                 </td><td width="40%" valign="middle" class="buttons">
-                    <input type="submit"name="Buscar" values"Buscar">
+                    <input id="button" name="findButton" type="button" onClick="document.getElementById('find').submit()" value="Buscar">
                     </form>
             	</td></tr>
 			</tbody></table>
@@ -104,11 +102,11 @@
 	<table width="60%" style="margin: 0 auto;"><tbody>
 		<tr><td>
 			<form id="veractivo" action="ver_activo.php" method="post">
-				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Productos Activo"/>
+				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Tratamientos Activos"/>
 			</form>
 		</td><td>
 	        <form id="verinact" action="ver_inactivo.php" method="post">
-				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Productos Inactivos"/>
+				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Tratamientos Inactivos"/>
 			</form>
         </td></tr>
 	</tbody></table>
