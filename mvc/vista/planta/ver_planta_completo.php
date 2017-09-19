@@ -77,6 +77,8 @@
         <thead>
             <th>ID</th>
             <th>Nombre de Planta</th>
+            <th>Cliente</th>
+            <th>Tecnico</th>
             <th>Localidad de la Panta</th>
             <th>Direccion de la Planta</th>
             <th>Telefono de la Panta</th>
@@ -91,6 +93,8 @@
             <tr>
             <td><?php echo "{$row['IDPlanta']}"; ?></td>
                 <td><?php echo "{$row['PlantaNombre']}"; ?></td>
+                <td><?php echo "{$row['ClienteNombre']}"; ?></td>
+                <td><?php echo "{$row['UsuNombre']}"; ?></td>
                 <td><?php echo "{$row['PlantaLocalidad']}"; ?></td>
                 <td><?php echo "{$row['PlantaDireccion']}"; ?></td>
                 <td><?php echo "{$row['PlantaTelefono']}"; ?></td>

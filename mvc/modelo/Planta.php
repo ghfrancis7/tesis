@@ -28,7 +28,8 @@ include_once("Conexion.php");
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM planta";
+				 $q="SELECT * FROM planta P INNER JOIN cliente C ON P.IDPlanta = C.IDCliente
+				 	INNER JOIN usuario U ON P.IDPlanta = U.IDUsuario";
 
 					$planta = $pdo->mysql->query($q);
 		

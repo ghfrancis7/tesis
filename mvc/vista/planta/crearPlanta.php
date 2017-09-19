@@ -8,6 +8,14 @@
 
 <body>
 	<?php
+ include_once("../../modelo/Usuario.php");
+  include_once("../../modelo/Cliente.php");
+        $controlador = new Usuario();
+        $sql= $controlador->listarUsuario();
+
+        $control = new Cliente();
+        $sqlp= $control->listarCliente();
+
     $usuario="";
     $idUsuario=1;
         session_start();
@@ -56,6 +64,30 @@
 		<tr>
 			<td width="60%">
 			<form id="frmcreapla" action="guardarPlanta.php" method="post">
+
+    <label>Seleccione el Tecnico</label><br/>
+        <div class="styled-select" style="margin:0 auto;">
+            <select name="IDUsuario">
+                <?php 
+                    foreach($sql as $row){ if (strcasecmp($row['UsuEstado'],"Activo") == 0) {
+                        ?>
+                        <option value= <?php echo "{$row['IDUsuario']}"; ?>><?php echo "{$row['UsuNombre']}"; ?></option>
+                <?php } }
+                    ?>
+            </select>   
+         </div>
+</br>
+    <label>Seleccione el Cliente</label><br/>
+        <div class="styled-select" style="margin:0 auto;">
+            <select name="IDCliente">
+                <?php 
+                    foreach($sqlp as $rowp){ if (strcasecmp($rowp['ClienteEstado'],"Activo") == 0) {
+                        ?>
+                        <option value= <?php echo "{$rowp['IDCliente']}"; ?>><?php echo "{$rowp['ClienteNombre']}"; ?></option>
+                <?php } }
+                    ?>
+            </select>   
+        </div>
             <label>Nombre de la Planta</label><br/>
             <input type="text" name="PlantaNombre">
             <br/>
