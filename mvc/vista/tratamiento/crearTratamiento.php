@@ -67,6 +67,7 @@
 
  <br>
 <form action="guardarTratamiento.php" method="post">
+    <label>Seleccione el Tecnico</label><br/>
 		<div class="styled-select" style="margin:0 auto;">
 			<select name="IDUsuario">
 				<?php 
@@ -75,10 +76,10 @@
 						<option value= <?php echo "{$row['IDUsuario']}"; ?>><?php echo "{$row['UsuNombre']}"; ?></option>
 				<?php } }
 					?>
-
 			</select>	
 		 </div>
-<br></br>
+</br>
+    <label>Seleccione la Planta</label><br/>
 		<div class="styled-select" style="margin:0 auto;">
 			<select name="IDPlanta">
 				<?php 

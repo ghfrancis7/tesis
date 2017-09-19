@@ -77,19 +77,21 @@
  		<th>ID</th>
  		<th>Nombre de Tratamiento</th>
  		<th>Numero de Analisis</th>
- 		<th>Nombre de planta</th>
+ 		<th>Nombre de Tecnico</th>
+ 		<th>Nombre de Planta</th>
  		<th>Fecha de Ingreso</th>
  		<th>Descripcion</th>
- 		<th>Estado</th>
+        <th>Estado Tratamiento</th>
  		</thead>
  		<tbody>
 		<?php
- 		foreach($sql as $row){ 
-			if (strcasecmp($row['TrataEstado'],"Inactivo") == 0) { ?>
+ 		foreach($sql as $row){
+			if (strcasecmp($row['TrataEstado'],"Inactivo") == 0) {?>
 			<tr>
 		 		<td><?php echo "{$row['IDTratamiento']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNumAnalisis']}"; ?></td>
+		 		<td><?php echo "{$row['UsuNombre']}"; ?></td>
 		 		<td><?php echo "{$row['PlantaNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataFecha']}"; ?></td>
 		 		<td><?php echo "{$row['TrataDescripcion']}";?></td>
@@ -108,8 +110,8 @@
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Tratamientos"/>
 			</form>
 		</td><td>
-	        <form id="verinact" action="ver_inactivo.php" method="post">
-				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Tratamientos Inactivos"/>
+	        <form id="verinact" action="ver_activo.php" method="post">
+				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Tratamientos Activos"/>
 			</form>
         </td></tr>
 	</tbody></table>

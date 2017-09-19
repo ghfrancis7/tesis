@@ -26,7 +26,7 @@ include_once("Conexion.php");
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM tratamiento T INNER JOIN planta P ON T.IDTratamiento = P.IDPlanta";
+				 $q="SELECT * FROM tratamiento T INNER JOIN planta P ON T.IDTratamiento = P.IDPlanta INNER JOIN usuario U ON T.IDTratamiento = U.IDUsuario";
 
 					$tratamiento = $pdo->mysql->query($q);
 		

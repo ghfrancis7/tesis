@@ -77,7 +77,8 @@
  		<th>ID</th>
  		<th>Nombre de Tratamiento</th>
  		<th>Numero de Analisis</th>
- 		<th>Nombre de planta</th>
+ 		<th>Nombre de Tecnico</th>
+ 		<th>Nombre de Planta</th>
  		<th>Fecha de Ingreso</th>
  		<th>Descripcion</th>
         <th>Estado Tratamiento</th>
@@ -90,6 +91,7 @@
 		 		<td><?php echo "{$row['IDTratamiento']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNumAnalisis']}"; ?></td>
+		 		<td><?php echo "{$row['UsuNombre']}"; ?></td>
 		 		<td><?php echo "{$row['PlantaNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataFecha']}"; ?></td>
 		 		<td><?php echo "{$row['TrataDescripcion']}";?></td>

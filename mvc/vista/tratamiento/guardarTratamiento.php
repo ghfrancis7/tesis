@@ -21,8 +21,9 @@
 	try {
 
 			$pdo->mysql->beginTransaction();
-			$pst = $pdo->mysql->prepare("INSERT INTO tratamiento (TrataNombre, TrataFecha,TrataNumAnalisis,TrataDescripcion,TrataEstado) VALUES (:TrataNombre,:TrataFecha,:TrataNumAnalisis,:TrataDescripcion,:TrataEstado)");
+			$pst = $pdo->mysql->prepare("INSERT INTO tratamiento (TrataNombre,IDUsuario, TrataFecha,TrataNumAnalisis,TrataDescripcion,TrataEstado) VALUES (:TrataNombre,:IDUsuario,:TrataFecha,:TrataNumAnalisis,:TrataDescripcion,:TrataEstado)");
 			$pst->bindParam(":TrataNombre",$TrataNombre,PDO::PARAM_STR);
+			$pst->bindParam(":IDUsuario",$IDUsuario,PDO::PARAM_STR);
 			$pst->bindParam(":TrataFecha",$TrataFecha,PDO::PARAM_STR);
 			$pst->bindParam(":TrataNumAnalisis",$TrataNumAnalisis,PDO::PARAM_STR);
 			$pst->bindParam(":TrataDescripcion",$TrataDescripcion,PDO::PARAM_STR);
