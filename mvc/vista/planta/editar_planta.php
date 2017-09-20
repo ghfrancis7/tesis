@@ -41,7 +41,7 @@
 </p>
 <p>
 	<label>Email de la Panta</label>
-	<input type="text" name="PlantaEmail" required="true" placeholder="Estado" value="<?php echo $planta['PlantaEmail']; ?>">
+	<input type="text" name="PlantaMail" required="true" placeholder="Estado" value="<?php echo $planta['PlantaMail']; ?>">
 </p>
 
 

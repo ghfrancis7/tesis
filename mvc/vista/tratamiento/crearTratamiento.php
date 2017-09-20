@@ -90,6 +90,19 @@
 					?>
 			</select>	
 		</div>
+
+        </br>
+    <label>Seleccione Producto a Aplicar</label><br/>
+        <div class="styled-select" style="margin:0 auto;">
+            <select name="IDPlanta">
+                <?php 
+                    foreach($sqlp as $rowp){ if (strcasecmp($rowp['PlantaEstado'],"Activo") == 0) {
+                        ?>
+                        <option value= <?php echo "{$rowp['IDPlanta']}"; ?>><?php echo "{$rowp['PlantaNombre']}"; ?></option>
+                <?php } }
+                    ?>
+            </select>   
+        </div>
 	
 	<table width="100%">
 		<tr><td><form id="frmnewtrata" action="guardarTratamiento.php" method="post"></td></tr>
