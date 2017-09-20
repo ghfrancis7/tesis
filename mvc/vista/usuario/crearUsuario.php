@@ -98,7 +98,7 @@
 		</tr><tr>
         <label>Rol de Usuario</label>
             <div class="styled-select" style="margin:0 auto;">
-                <select name="UsuRol">
+                <select name="UsuRol" style="color:#FFF">
 					<option value="admin">Administrador</option>
 					<option value="tecn">Tecnico</option>
                 </select>

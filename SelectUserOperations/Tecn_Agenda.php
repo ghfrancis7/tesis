@@ -17,6 +17,18 @@
             $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
             $idUsuario = $_SESSION['id'];
         }
+		// Establecer el idioma al Español para strftime().
+		setlocale( LC_TIME, 'spanish' );
+
+		// Si no se ha seleccionado mes, ponemos el actual y el año
+		$month = isset( $_GET[ 'month' ] ) ? $_GET[ 'month' ] : date( 'Y-n' );
+		$week = 1;
+		for ( $i=1;$i<=date( 't', strtotime( $month ) );$i++ ) {
+			$day_week = date( 'N', strtotime( $month.'-'.$i )  );			
+			$calendar[ $week ][ $day_week ] = $i;
+			if ( $day_week == 7 )
+				$week++;
+		}
     ?>
 	<div class="backgroundTable">
     </div>
@@ -48,24 +60,53 @@
 			<div class="clearfix"></div>
         </nav>
 	</div>
-    <div class="buttons">
-        	<table>
+    <div class="tablas">
+        	<table width="40%" border="1" style="margin: 0 auto; font-size:14px; font-family: 'Exo', sans-serif;">
+			<thead>
+				<tr>
+					<td colspan="7" style="font-size:20px;"><?php echo strftime( '%B %Y', strtotime( $month ) ); ?></td>
+				</tr>
+				<tr>
+					<td>Lunes</td>
+					<td>Martes</td>			
+					<td>Miercoles</td>			
+					<td>Jueves</td>			
+					<td>Viernes</td>			
+					<td>Sabado</td>			
+					<td>Domingo</td>			
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach ( $calendar as $days ) : ?>
+					<tr>
+						<?php for ( $i=1;$i<=7;$i++ ) : ?>
+							<td>
+								<?php echo isset( $days[ $i ] ) ? $days[ $i ] : ''; ?>
+							</td>
+						<?php endfor; ?>
+					</tr>
+				<?php endforeach; ?>
                 <tr>
-                    <td width="45%" align="center">
-                    <form id="semanal" action="#" method="GET">
-                    	<input  type="hidden" value="<?php ?>" />
-                        <input id="button" type="button" onClick="document.getElementById('semanal').submit()" value="Semanal"/>
-                    </form>
-                    </td>
-                    <td width="10%" align="center">
-                    </td>
-                    <td width="45%" align="center">
-					<form id="mensual" action="#" method="GET">
-                        <input id="button" type="button" onClick="document.getElementById('mensual').submit()" value="Mensual"/>
-                    </form>
-                    </td>
-                </tr>
-        	</table>
+					<td colspan="7">
+						<form id="verMes" method="get">
+							<input name="month" type="month" class="styled-select" style="font-family:  'Exo', sans-serif; color:#000">
+							<input id="button" type="button" onClick="document.getElementById('verMes').submit()" value="Ver Mes"/>
+						</form>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="7">
+                    	<a>Seleccionar Fecha para ver Citas</a><br/>
+						<form id="verfecha" method="post">
+							<input name="date" type="date" class="styled-select" style="font-family:  'Exo', sans-serif; color:#000">
+							<input id="button" type="button" onClick="document.getElementById('verfecha').submit()" value="Ver Citas"/>
+						</form>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
     </div>
 </body>
 </html>

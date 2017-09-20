@@ -66,7 +66,7 @@
 			<form id="frmcreapla" action="guardarPlanta.php" method="post">
 
     <label>Seleccione el Tecnico</label><br/>
-        <div class="styled-select" style="margin:0 auto;">
+        <div class="styled-select" style="margin:0 auto;" style="color:#FFF">
             <select name="IDUsuario">
                 <?php 
                     foreach($sql as $row){ if (strcasecmp($row['UsuEstado'],"Activo") == 0) {
@@ -78,7 +78,7 @@
          </div>
 </br>
     <label>Seleccione el Cliente</label><br/>
-        <div class="styled-select" style="margin:0 auto;">
+        <div class="styled-select" style="margin:0 auto;" style="color:#FFF">
             <select name="IDCliente">
                 <?php 
                     foreach($sqlp as $rowp){ if (strcasecmp($rowp['ClienteEstado'],"Activo") == 0) {
