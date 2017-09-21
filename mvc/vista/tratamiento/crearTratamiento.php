@@ -1,12 +1,15 @@
 <?php 
  include_once("../../modelo/Usuario.php");
  include_once("../../modelo/Planta.php");
+ include_once("../../modelo/Producto.php");
 		$controlador = new Usuario();
 		$sql= $controlador->listarUsuario();
 
-		$control = new Planta();
-		$sqlp= $control->listarPlanta();
+		$controlpl = new Planta();
+		$sqlpl= $controlpl->listarPlanta();
 
+		$controlpr = new Producto();
+		$sqlpr= $controlpr->listarProducto();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -69,11 +72,11 @@
 <form action="guardarTratamiento.php" method="post">
     <label>Seleccione el Tecnico</label><br/>
 		<div class="styled-select" style="margin:0 auto;">
-			<select name="IDUsuario">
+			<select name="IDUsuario" style="color:#FFF">
 				<?php 
 					foreach($sql as $row){ if (strcasecmp($row['UsuEstado'],"Activo") == 0) {
 						?>
-						<option value= <?php echo "{$row['IDUsuario']}"; ?>><?php echo "{$row['UsuNombre']}"; ?></option>
+						<option value= <?php echo "{$row['IDUsuario']}"; ?> style="color:#000"><?php echo "{$row['UsuNombre']}"; ?></option>
 				<?php } }
 					?>
 			</select>	
@@ -81,11 +84,11 @@
 </br>
     <label>Seleccione la Planta</label><br/>
 		<div class="styled-select" style="margin:0 auto;">
-			<select name="IDPlanta">
+			<select name="IDPlanta" style="color:#FFF">
 				<?php 
-					foreach($sqlp as $rowp){ if (strcasecmp($rowp['PlantaEstado'],"Activo") == 0) {
+					foreach($sqlpl as $rowpl){ if (strcasecmp($rowpl['PlantaEstado'],"Activo") == 0) {
 						?>
-						<option value= <?php echo "{$rowp['IDPlanta']}"; ?>><?php echo "{$rowp['PlantaNombre']}"; ?></option>
+						<option value= <?php echo "{$rowpl['IDPlanta']}"; ?> style="color:#000"><?php echo "{$rowpl['PlantaNombre']}"; ?></option>
 				<?php } }
 					?>
 			</select>	
@@ -94,14 +97,24 @@
         </br>
     <label>Seleccione Producto a Aplicar</label><br/>
         <div class="styled-select" style="margin:0 auto;">
-            <select name="IDPlanta">
+            <table name="IDProducto">
                 <?php 
-                    foreach($sqlp as $rowp){ if (strcasecmp($rowp['PlantaEstado'],"Activo") == 0) {
+                    foreach($sqlpr as $rowpr){ if (strcasecmp($rowpr['ProductoEstado'],"Activo") == 0) {
+						/**********************************************************************************************/
+						
+						
+						
+						
                         ?>
-                        <option value= <?php echo "{$rowp['IDPlanta']}"; ?>><?php echo "{$rowp['PlantaNombre']}"; ?></option>
+                        <tr><td width="50%"><input type="checkbox" name= <?php echo "{$rowpr['IDProducto']}"; ?>  value= <?php echo "{$rowpr['IDProducto']}"; ?>><?php echo "{$rowpr['ProductoNombre']}"; ?></td><td width="50%"><input type="text" name=<?php echo "{$rowpr['ProductoCantidad']}"; ?>></td></tr>
                 <?php } }
+
+						/**********************************************************************************************/
+
+
+
                     ?>
-            </select>   
+            </table>   
         </div>
 	
 	<table width="100%">

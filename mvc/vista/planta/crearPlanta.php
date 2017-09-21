@@ -66,24 +66,24 @@
 			<form id="frmcreapla" action="guardarPlanta.php" method="post">
 
     <label>Seleccione el Tecnico</label><br/>
-        <div class="styled-select" style="margin:0 auto;" style="color:#FFF">
-            <select name="IDUsuario">
+        <div class="styled-select" style="margin:0 auto;">
+            <select name="IDUsuario" style="color:#FFF">
                 <?php 
                     foreach($sql as $row){ if (strcasecmp($row['UsuEstado'],"Activo") == 0) {
                         ?>
-                        <option value= <?php echo "{$row['IDUsuario']}"; ?>><?php echo "{$row['UsuNombre']}"; ?></option>
+                        <option value= <?php echo "{$row['IDUsuario']}"; ?> style="color:#000"><?php echo "{$row['UsuNombre']}"; ?></option>
                 <?php } }
                     ?>
             </select>   
          </div>
-</br>
+		</br>
     <label>Seleccione el Cliente</label><br/>
-        <div class="styled-select" style="margin:0 auto;" style="color:#FFF">
-            <select name="IDCliente">
+        <div class="styled-select" style="margin:0 auto;">
+            <select name="IDCliente" style="color:#FFF">
                 <?php 
                     foreach($sqlp as $rowp){ if (strcasecmp($rowp['ClienteEstado'],"Activo") == 0) {
                         ?>
-                        <option value= <?php echo "{$rowp['IDCliente']}"; ?>><?php echo "{$rowp['ClienteNombre']}"; ?></option>
+                        <option value= <?php echo "{$rowp['IDCliente']}"; ?> style="color:#000"><?php echo "{$rowp['ClienteNombre']}"; ?></option>
                 <?php } }
                     ?>
             </select>   

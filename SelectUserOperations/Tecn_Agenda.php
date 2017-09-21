@@ -98,10 +98,21 @@
 			<tfoot>
 				<tr>
 					<td colspan="7">
-                    	<a>Seleccionar Fecha para ver Citas</a><br/>
-						<form id="verfecha" method="post">
+						<form id="verfecha" name="verfecha" action="" method="POST">
 							<input name="date" type="date" class="styled-select" style="font-family:  'Exo', sans-serif; color:#000">
+
 							<input id="button" type="button" onClick="document.getElementById('verfecha').submit()" value="Ver Citas"/>
+							<!-- En el Documento PHP donde se generará la consulta debe convertirse este dato en el dato del tipo aceptado por la tabla con la siguiente instruccion:
+                            $var = $_POST['verfecha'];
+                            $date = str_replace('/', '-', $var);
+                            date('Y-m-d', strtotime($date)); -->
+						</form>
+						<form id="crearCita" name="CrearCita" action="" method="POST">
+							<input id="button" type="button" onClick="document.getElementById('crearCita').submit()" value="Nueva Cita"/>
+							<!-- En el Documento PHP donde se generará la consulta debe convertirse este dato en el dato del tipo aceptado por la tabla con la siguiente instruccion:
+                            $var = $_POST['verfecha'];
+                            $date = str_replace('/', '-', $var);
+                            date('Y-m-d', strtotime($date)); -->
 						</form>
 					</td>
 				</tr>

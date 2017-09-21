@@ -99,8 +99,8 @@
         <label>Rol de Usuario</label>
             <div class="styled-select" style="margin:0 auto;">
                 <select name="UsuRol" style="color:#FFF">
-					<option value="admin">Administrador</option>
-					<option value="tecn">Tecnico</option>
+					<option value="admin" style="color:#000">Administrador</option>
+					<option value="tecn" style="color:#000">Tecnico</option>
                 </select>
             </div>
         </tr><tr>
