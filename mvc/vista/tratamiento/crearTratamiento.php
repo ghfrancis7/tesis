@@ -1,16 +1,3 @@
-<?php 
- include_once("../../modelo/Usuario.php");
- include_once("../../modelo/Planta.php");
- include_once("../../modelo/Producto.php");
-		$controlador = new Usuario();
-		$sql= $controlador->listarUsuario();
-
-		$controlpl = new Planta();
-		$sqlpl= $controlpl->listarPlanta();
-
-		$controlpr = new Producto();
-		$sqlpr= $controlpr->listarProducto();
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,6 +17,18 @@
             $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
             $idUsuario = $_SESSION['id'];
         }
+/***************************************************************/
+		include_once("../../modelo/Usuario.php");
+		include_once("../../modelo/Planta.php");
+		include_once("../../modelo/Producto.php");
+		$controlador = new Usuario();
+		$sql= $controlador->listarUsuario();
+
+		$controlpl = new Planta();
+		$sqlpl= $controlpl->listarPlanta();
+
+		$controlpr = new Producto();
+		$sqlpr= $controlpr->listarProducto();
     ?>
 	<div class="backgroundTable">
     </div>
