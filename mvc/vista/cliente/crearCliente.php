@@ -8,6 +8,9 @@
 
 <body>
 	<?php
+
+include_once("validarcuil.php");
+
     $usuario="";
     $idUsuario=1;
         session_start();
@@ -60,7 +63,10 @@
             <input type="text" name="ClienteNombre">
 			<br/>
             <label>C. U. I. T.</label><br/>
-			<input type="text" name="ClienteCUIT">
+                 
+            
+			<input type="text" name="ClienteCUIT" id="cuit">
+             <input type="button" value="Enviar" onclick="ValidarCuit()" />
             <br/>
             <label>Direccion</label><br/>
             <input type="text" name="ClienteDireccion">
@@ -77,6 +83,10 @@
             <br/>
             </td>
 		</tr>
+                <form name="form">
+                        <input type="text" name="cuit" id="cuit"/>
+                        <input type="button" value="Enviar" onclick="ValidarCuit()" />
+                </form>
         <tr>
         	<td width="100%">
             	 <table width="100%" style="margin: 0 auto;">

@@ -96,6 +96,7 @@
 		 		<td><?php echo "{$row['TrataFecha']}"; ?></td>
 		 		<td><?php echo "{$row['TrataDescripcion']}";?></td>
                 <td><?php echo "{$row['TrataEstado']}";?></td>
+                <td><a href="agregarproductos.php"><span ></span> Agregar Productos</a></td>
  			</tr>
  		<?php
 			}

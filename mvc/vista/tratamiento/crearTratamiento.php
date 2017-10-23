@@ -10,7 +10,19 @@
 
 		$controlpr = new Producto();
 		$sqlpr= $controlpr->listarProducto();
+
 ?>
+          
+<script>
+
+            function popup(url)
+            {
+                 window.open(url,"Productos","width=700,height=300,top=200,left=200")
+                
+            }
+
+?></script>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -92,28 +104,8 @@
 				<?php } }
 					?>
 			</select>	
-		</div>
-
         </br>
-    <label>Seleccione Producto a Aplicar</label><br/>
-        <div class="styled-select" style="margin:0 auto;">
-            <table name="IDProducto">
-                <?php 
-                    foreach($sqlpr as $rowpr){ if (strcasecmp($rowpr['ProductoEstado'],"Activo") == 0) {
-						/**********************************************************************************************/
-						
-						
-						
-						
-                        ?>
-                        <tr><td width="50%"><input type="checkbox" name= <?php echo "{$rowpr['IDProducto']}"; ?>  value= <?php echo "{$rowpr['IDProducto']}"; ?>><?php echo "{$rowpr['ProductoNombre']}"; ?></td><td width="50%"><input type="text" name=<?php echo "{$rowpr['ProductoCantidad']}"; ?>></td></tr>
-                <?php } }
 
-						/**********************************************************************************************/
-
-
-
-                    ?>
             </table>   
         </div>
 	
