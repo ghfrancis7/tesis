@@ -20,7 +20,7 @@
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 	include_once("../../modelo/Tratamiento.php");
 	$controlador = new Tratamiento();
-	$sql= $controlador->listarTratamiento();
+	$sql= $controlador->listarTratamiento($idUsuario);
  ?> 
 	<div class="backgroundTable">
     </div>
@@ -96,7 +96,7 @@
 		 		<td><?php echo "{$row['TrataFecha']}"; ?></td>
 		 		<td><?php echo "{$row['TrataDescripcion']}";?></td>
                 <td><?php echo "{$row['TrataEstado']}";?></td>
-                <td><a href="agregarproductos.php"><span ></span> Agregar Productos</a></td>
+                <td><a href="agregarproductos.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Agregar Productos </a></td>
  			</tr>
  		<?php
 			}

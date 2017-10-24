@@ -24,12 +24,12 @@ include_once("Conexion.php");
 
 		}
 
-		public function listarPlanta(){
+		public function listarPlanta($idusuario){
 
 				 $pdo = new Conexion();
 
 				 $q="SELECT * FROM planta P INNER JOIN cliente C ON P.IDPlanta = C.IDCliente
-				 	INNER JOIN usuario U ON P.IDPlanta = U.IDUsuario";
+				 	INNER JOIN usuario U ON U.IDUsuario = P.IDUsuario WHERE P.IDUsuario = $idusuario";
 
 					$planta = $pdo->mysql->query($q);
 		

@@ -20,7 +20,7 @@
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 		include_once("../../modelo/Tratamiento.php");
 		$controlador = new Tratamiento();
-		$sql= $controlador->listarTratamiento();
+		$sql= $controlador->listarTratamiento($idUsuario);
 	?> 
 	<div class="backgroundTable">
     </div>

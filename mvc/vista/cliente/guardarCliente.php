@@ -2,9 +2,11 @@
 
 		require_once("../../modelo/Conexion.php");
 		include_once("../../modelo/Cliente.php");
+		include_once("validarcuit.php");
 
 		$controlador = new Cliente();
 		$sql= $controlador->listarCliente();
+		$controladorcuit = new cuit();
 
 			$cuitused="false";
 			$ccused="false";
@@ -18,6 +20,8 @@
 				$ClienteCantidadPlantas= $_POST['ClienteCantidadPlantas'];
 				$ClienteFechaAlta= $_POST['ClienteFechaAlta'];
 				$ClienteEstado= $_POST['ClienteEstado'];
+
+					$sqlc= $controladorcuit->validarCuit($ClienteCUIT);
 
 		foreach($sql as $row){
  			if ($ClienteNombre==$row['ClienteNombre']) {
@@ -38,9 +42,8 @@
 				echo"<script type=\"text/javascript\">alert('Este cliente ya existe'); window.location='crearCliente.php';</script>"; 
 			}elseif ($cuitused=="true") {
 				echo"<script type=\"text/javascript\">alert('CUIT ya utilizado'); window.location='crearCliente.php';</script>"; 
-			}else {
-
-		try {
+			}elseif($sqlc==$ClienteCUIT) {
+				try {
 
 			$pdo->mysql->beginTransaction();
 			$pst = $pdo->mysql->prepare("INSERT INTO cliente (ClienteNombre, ClienteCUIT,ClienteDireccion,ClienteTelefono,ClienteCantidadPlantas,ClienteFechaAlta,ClienteEstado) VALUES (:ClienteNombre,:ClienteCUIT,:ClienteDireccion,:ClienteTelefono,:ClienteCantidadPlantas,:ClienteFechaAlta,:ClienteEstado)");
@@ -60,7 +63,11 @@
 				$pdo->mysql->rollback();
 				echo "No se pudo agregar el cliente";
 				
+			} 
+
+		
+		}else {
+				echo"<script type=\"text/javascript\">alert('Cuit incorrecto'); window.location='../planta/crearCliente.php';</script>";
 			}
-		}
 		
 		?>

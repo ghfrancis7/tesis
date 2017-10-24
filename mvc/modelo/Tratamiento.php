@@ -22,11 +22,11 @@ include_once("Conexion.php");
 
 		}
 
-		public function listarTratamiento(){
+		public function listarTratamiento($idusuario){
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM tratamiento T INNER JOIN planta P ON T.IDTratamiento = P.IDPlanta INNER JOIN usuario U ON T.IDTratamiento = U.IDUsuario";
+				 $q="SELECT * FROM tratamiento T INNER JOIN planta P ON T.IDPlanta = P.IDPlanta INNER JOIN usuario U ON T.IDUsuario = U.IDUsuario WHERE T.IDUsuario=$idusuario";
 
 					$tratamiento = $pdo->mysql->query($q);
 		

@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-<?php 
- include_once("../../modelo/Usuario.php");
- include_once("../../modelo/Planta.php");
- include_once("../../modelo/Producto.php");
-		$controlador = new Usuario();
-		$sql= $controlador->listarUsuario();
-
-		$controlpl = new Planta();
-		$sqlpl= $controlpl->listarPlanta();
-
-		$controlpr = new Producto();
-		$sqlpr= $controlpr->listarProducto();
-
-?>
-          
-<script>
-
-            function popup(url)
-            {
-                 window.open(url,"Productos","width=700,height=300,top=200,left=200")
-                
-            }
-
-?></script>
-
-=======
->>>>>>> 5a70f8fddd6b2cb671c3a5970d847cfbbcb709bb
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -45,7 +17,7 @@
             $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
             $idUsuario = $_SESSION['id'];
         }
-/***************************************************************/
+
 		include_once("../../modelo/Usuario.php");
 		include_once("../../modelo/Planta.php");
 		include_once("../../modelo/Producto.php");
@@ -53,7 +25,7 @@
 		$sql= $controlador->listarUsuario();
 
 		$controlpl = new Planta();
-		$sqlpl= $controlpl->listarPlanta();
+		$sqlpl= $controlpl->listarPlanta($idUsuario);
 
 		$controlpr = new Producto();
 		$sqlpr= $controlpr->listarProducto();
@@ -97,17 +69,6 @@
 
  <br>
 <form action="guardarTratamiento.php" method="post">
-    <label>Seleccione el Tecnico</label><br/>
-		<div class="styled-select" style="margin:0 auto;">
-			<select name="IDUsuario" style="color:#FFF">
-				<?php 
-					foreach($sql as $row){ if (strcasecmp($row['UsuEstado'],"Activo") == 0) {
-						?>
-						<option value= <?php echo "{$row['IDUsuario']}"; ?> style="color:#000"><?php echo "{$row['UsuNombre']}"; ?></option>
-				<?php } }
-					?>
-			</select>	
-		 </div>
 </br>
     <label>Seleccione la Planta</label><br/>
 		<div class="styled-select" style="margin:0 auto;">
@@ -131,7 +92,7 @@
         <input type="text" name="TrataNombre">
 		<br/>
         <label>Fecha de Inicio del Tratamiento</label><br/>
-		<input type="text" name="TrataFecha">
+		<input type="date" name="TrataFecha">
 		<br/>
         <label>Numero de Analisis</label><br/>
 		<input type="text" name="TrataNumAnalisis">

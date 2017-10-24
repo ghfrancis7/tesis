@@ -66,8 +66,8 @@ include_once("validarcuil.php");
                  
             
 			<input type="text" name="ClienteCUIT" id="cuit">
-             <input type="button" value="Enviar" onclick="ValidarCuit()" />
-            <br/>
+            <br>
+
             <label>Direccion</label><br/>
             <input type="text" name="ClienteDireccion">
             <br/>
@@ -83,10 +83,7 @@ include_once("validarcuil.php");
             <br/>
             </td>
 		</tr>
-                <form name="form">
-                        <input type="text" name="cuit" id="cuit"/>
-                        <input type="button" value="Enviar" onclick="ValidarCuit()" />
-                </form>
+                
         <tr>
         	<td width="100%">
             	 <table width="100%" style="margin: 0 auto;">

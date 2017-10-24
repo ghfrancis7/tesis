@@ -65,18 +65,10 @@
 			<td width="60%">
 			<form id="frmcreapla" action="guardarPlanta.php" method="post">
 
-    <label>Seleccione el Tecnico</label><br/>
-        <div class="styled-select" style="margin:0 auto;">
-            <select name="IDUsuario" style="color:#FFF">
-                <?php 
-                    foreach($sql as $row){ if (strcasecmp($row['UsuEstado'],"Activo") == 0) {
-                        ?>
-                        <option value= <?php echo "{$row['IDUsuario']}"; ?> style="color:#000"><?php echo "{$row['UsuNombre']}"; ?></option>
-                <?php } }
-                    ?>
-            </select>   
-         </div>
-		</br>
+    <label>Tecnico</label><br/>
+    <input type="text" name="a" value="<?php echo "$usuario"; ?>"readonly=true > <br>
+
+    
     <label>Seleccione el Cliente</label><br/>
         <div class="styled-select" style="margin:0 auto;">
             <select name="IDCliente" style="color:#FFF">

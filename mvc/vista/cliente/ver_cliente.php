@@ -20,7 +20,7 @@
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 		include_once("../../modelo/Cliente.php");
         $controlador = new Cliente();
-        $sql= $controlador->listarCliente();
+        $sql= $controlador->listarCliente($idUsuario);
     ?>
 	<div class="backgroundTable">
     </div>

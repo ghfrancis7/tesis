@@ -113,6 +113,11 @@
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Productos Inactivos"/>
 			</form>
         </td></tr>
+        <tr><td>
+	        <form id="generarpdf.php" action="generarpdf.php" method="post">
+				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('generarpdf.php').submit()" value="Generar PDF"/>
+			</form>
+		</td><td>
 	</tbody></table>
     </div>
 </body>

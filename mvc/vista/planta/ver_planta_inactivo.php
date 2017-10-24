@@ -20,7 +20,7 @@
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/ 
 		include_once("../../modelo/Planta.php");
 		$controlador = new Planta();
-		$sql= $controlador->listarPlanta();
+		$sql= $controlador->listarPlanta($idUsuario);
 	?> 
 	<div class="backgroundTable">
     </div>
