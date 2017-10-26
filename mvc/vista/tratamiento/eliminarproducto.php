@@ -3,6 +3,7 @@
 	require ("../../modelo/Conexion.php");
 	$pdo = new Conexion();
 	$IDLote = $_GET['IDLote'];
+	$IDTratamiento= $_GET['IDTratamiento'];
 
 			$pdo->mysql->beginTransaction();
 
@@ -10,5 +11,14 @@
 
 				$pst->execute();
 		$pdo->mysql->commit() ;
+		
+		?>
 
-	?>
+<script>
+window.history.back();
+
+</script>
+		
+
+
+	

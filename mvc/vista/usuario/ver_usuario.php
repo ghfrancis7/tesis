@@ -62,7 +62,6 @@
 			<th>Fecha Nac.</th>
 			<th>Zona Laboral</th>
 			<th>Cuenta</th>
-			<th>Password</th>
 			<th>Fecha Ingreso</th>
 			<th>Fecha Egreso</th>
 			<th>Estado</th>
@@ -81,7 +80,6 @@
  				<td><?php echo "{$row['UsuFechaNacimiento']}"; ?></td>
  				<td><?php echo "{$row['UsuLocalidadOpera']}"; ?></td>
  				<td><?php echo "{$row['UsuCuenta']}"; ?></td>
- 				<td><?php echo "{$row['UsuPassword']}"; ?></td>
  				<td><?php echo "{$row['UsuFechaIngreso']}"; ?></td>
  				<td><?php echo "{$row['UsuFechaEgreso']}"; ?></td>
  				<td><?php echo "{$row['UsuEstado']}"; ?></td>

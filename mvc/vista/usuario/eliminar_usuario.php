@@ -52,13 +52,11 @@
 
 				$pdo->mysql->commit();
 				}
-
-				
 				
 					header("Location:ver_usuario.php");
 				
 		} catch (Exception $e) {
 			$pdo->mysql->rollback();
-					echo "No se pudo modificar";	
+					echo "No se pudo modificar el estado";	
 		}
  ?>
