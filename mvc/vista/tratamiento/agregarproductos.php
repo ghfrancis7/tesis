@@ -1,8 +1,24 @@
-
 <?php 
+    $usuario="";
+    $idUsuario=1;
+        session_start();
+        if (!isset($_SESSION['id'])){
+            header ("Location:../../../index.html");
+        } else {
+            $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
+            $idUsuario = $_SESSION['id'];
+        }
+
+if($_SESSION["recargarDeIndex"] != 1){
+  echo '<meta http-equiv="refresh" content="1">';
+  $_SESSION["recargarDeIndex"] = 1;
+}
 	include_once("../../modelo/Producto.php");
 	include_once("../../modelo/Conexion.php");
 	include_once("../../modelo/Lote.php");
+
+	
+
 		$controlador = new Producto();
 		$controladorlote = new Lote();
 		$sql= $controlador->listarProducto();
@@ -44,17 +60,12 @@
  						<td><?php echo "{$rowl['IDLote']}"; ?></td>
  						<td><?php echo "{$rowl['ProductoNombre']}"; ?></td>
 		 				<td><?php echo "{$rowl['LoteCantidad']}"; ?></td>
-						<td><a href="eliminarproducto.php?IDLote=<?php echo $rowl['IDLote'] ?>" onclick="return confirm('Estas seguro de eliminar este producto?');">Eliminar Producto</a></td>
+						<td><a href="eliminarproducto.php?IDLote=<?php echo $rowl['IDLote'] ?>&IDTratamiento=<?php echo $IDTratamiento ?>" onclick="return confirm('Estas seguro de eliminar este producto?');">Eliminar Producto</a></td>
 
  					</tr>
- 				
  		<?php
-	
 		}	
 		?>
-
-			
-
 		</tbody>
 	</table>
 
@@ -82,8 +93,6 @@
 
 		 <input type="text" name="LoteCantidad" placeholder="Cantidad"> KG 
 
-	 				
-				
 				<input type="hidden" name="IDTratamiento" value= <?php echo $IDTratamiento ?> />
 
 				<input id="button" type="button" onClick="document.getElementById('frmagregaproductos').submit()" value="Agregar">
