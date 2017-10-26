@@ -76,7 +76,6 @@
  		<thead>
  			<th>ID</th>
  			<th>Nombre</th>
- 			<th>Precio</th>
  			<th>Fecha de Alta en DB</th>
  			<th>Fecha de Baja en DB</th>
  			<th>Activo/Inactivo</th>
@@ -90,7 +89,6 @@
  				<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoPrecio']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
@@ -114,8 +112,8 @@
 			</form>
         </td></tr>
         <tr><td>
-	        <form id="generarpdf.php" action="generarpdf.php" method="post">
-				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('generarpdf.php').submit()" value="Generar PDF"/>
+	        <form id="pdfproductosactivos.php" action="pdfproductosactivos.php" method="post">
+				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfproductosactivos.php').submit()" value="Generar PDF"/>
 			</form>
 		</td><td>
 	</tbody></table>

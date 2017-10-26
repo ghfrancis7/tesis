@@ -68,7 +68,7 @@
 	    <div class="formularios">
 
  <br>
-<form action="guardarTratamiento.php" method="post">
+<form id="frmnewtrata" action="guardarTratamiento.php" method="post">
 </br>
     <label>Seleccione la Planta</label><br/>
 		<div class="styled-select" style="margin:0 auto;">
@@ -99,7 +99,7 @@
 		<br/>
         <label>Descripcion</label><br/>
         <input type="text" name="TrataDescripcion">
-		<input type="hidden" value="Activo" name="ClienteEstado">
+		<input type="hidden" value="<?php echo 'Activo';?>" name="TrataEstado">
 		<br/>
         </td></tr>
 		<tr><td>

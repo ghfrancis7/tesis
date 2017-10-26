@@ -12,16 +12,16 @@
 	try {
 
 	$pdo->mysql->beginTransaction();
-		$pst = $pdo->mysql->prepare("INSERT INTO lote (IDTratamiento,IDProducto,LoteCantidad) VALUES (:IDTratamiento,:IDProducto,:LoteCantidad)");
-		$pst->bindParam(":IDTratamiento",$IDTratamiento,PDO::PARAM_STR);
+		$pst = $pdo->mysql->prepare("INSERT INTO lote (IDProducto,IDTratamiento,LoteCantidad) VALUES (:IDProducto,:IDTratamiento,:LoteCantidad)");
 		$pst->bindParam(":IDProducto",$IDProducto,PDO::PARAM_STR);
+		$pst->bindParam(":IDTratamiento",$IDTratamiento,PDO::PARAM_STR);
 		$pst->bindParam(":LoteCantidad",$LoteCantidad,PDO::PARAM_STR);
 
 
 		$pst->execute();
 		$pdo->mysql->commit();
 
-		echo"<script type=\"text/javascript\">alert('Se agrego el producto correctamente'); window.location='agregarproductos?IDTratamiento=$IDTratamiento.php';</script>";
+		echo"<script type=\"text/javascript\">alert('Se agrego el producto correctamente'); window.location='agregarproductos?IDTratamiento=$IDTratamiento';</script>";
 			
 
 			} catch (Exception $e) {
