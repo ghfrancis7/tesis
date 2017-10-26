@@ -22,12 +22,12 @@
 
 			}
 
-		public function listarCliente(){
+		public function listarCliente($idusuario){
 
 				 $pdo = new Conexion();
 
 
-				 $q="SELECT * FROM cliente ";
+				 $q="SELECT * FROM cliente WHERE IDUsuario='$idusuario'";
 
 					$cliente = $pdo->mysql->query($q);
 		

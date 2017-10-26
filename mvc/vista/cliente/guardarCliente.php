@@ -1,11 +1,20 @@
-<?php 
+<?php
+    $usuario="";
+    $idUsuario=1;
+        session_start();
+        if (!isset($_SESSION['id'])){
+            header ("Location:../../../index.html");
+        } else {
+            $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
+            $idUsuario = $_SESSION['id'];
+        } 
 
 		require_once("../../modelo/Conexion.php");
 		include_once("../../modelo/Cliente.php");
 		include_once("validarcuit.php");
 
 		$controlador = new Cliente();
-		$sql= $controlador->listarCliente();
+		$sql= $controlador->listarCliente($idUsuario);
 		$controladorcuit = new cuit();
 
 			$cuitused="false";
@@ -46,7 +55,8 @@
 				try {
 
 			$pdo->mysql->beginTransaction();
-			$pst = $pdo->mysql->prepare("INSERT INTO cliente (ClienteNombre, ClienteCUIT,ClienteDireccion,ClienteTelefono,ClienteCantidadPlantas,ClienteFechaAlta,ClienteEstado) VALUES (:ClienteNombre,:ClienteCUIT,:ClienteDireccion,:ClienteTelefono,:ClienteCantidadPlantas,:ClienteFechaAlta,:ClienteEstado)");
+			$pst = $pdo->mysql->prepare("INSERT INTO cliente (IDUsuario,ClienteNombre, ClienteCUIT,ClienteDireccion,ClienteTelefono,ClienteCantidadPlantas,ClienteFechaAlta,ClienteEstado) VALUES (:IDUsuario,:ClienteNombre,:ClienteCUIT,:ClienteDireccion,:ClienteTelefono,:ClienteCantidadPlantas,:ClienteFechaAlta,:ClienteEstado)");
+			$pst->bindParam(":IDUsuario",$idUsuario,PDO::PARAM_STR);
 			$pst->bindParam(":ClienteNombre",$ClienteNombre,PDO::PARAM_STR);
 			$pst->bindParam(":ClienteCUIT",$ClienteCUIT,PDO::PARAM_STR);
 			$pst->bindParam(":ClienteDireccion",$ClienteDireccion,PDO::PARAM_STR);
