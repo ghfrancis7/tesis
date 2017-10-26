@@ -21,7 +21,7 @@
 		include_once("../../modelo/Planta.php");
 		$controlador = new Planta();
 		$IDPlanta= $_GET['buscar'];
-		$sql= $controlador->buscarPlanta($IDPlanta);
+		$sql= $controlador->buscarPlanta($IDPlanta,$idUsuario);
 	?> 
 	<div class="backgroundTable">
     </div>
@@ -61,29 +61,35 @@
 	<div class="tablas" style="text-align:center;">
 		<table width="60%" border="1" style="margin: 0 auto;"> 	
  			<thead>
-            <th>ID Planta</th>
-            <th>Nombre de Planta</th>
-            <th>Localidad de la Panta</th>
-            <th>Direccion de la Planta</th>
-            <th>Telefono de la Panta</th>
-            <th>Email de la Panta</th>
-            <th>Fecha de baja de la Planta</th>
-            <th>Estado de la Planta</th>
+                <th>ID</th>
+                <th>Nombre de Planta</th>
+                <th>Cliente</th>
+                <th>Tecnico</th>
+                <th>Localidad de la Panta</th>
+                <th>Direccion de la Planta</th>
+                <th>Telefono de la Panta</th>
+                <th>Email de la Panta</th>
+                <th>Fecha de alta de la Planta</th>
+                <th>Fecha de baja de la Planta</th>
+                <th>Estado de la Planta</th>
 			</thead>
  		<tbody>
  		<?php  
  		foreach($sql as $row){  ?>
 			<tr>
- 			<td><?php echo "{$row['IDPlanta']}"; ?></td>
- 			<td><?php echo "{$row['PlantaNombre']}"; ?></td>
- 			<td><?php echo "{$row['PlantaLocalidad']}"; ?></td>
- 			<td><?php echo "{$row['PlantaDireccion']}"; ?></td>
- 			<td><?php echo "{$row['PlantaTelefono']}"; ?></td>
- 			<td><?php echo "{$row['PlantaMail']}"; ?></td>
- 			<td><?php echo "{$row['PlantaFechaBaja']}"; ?></td>
- 			<td><?php echo "{$row['PlantaEstado']}"; ?></td>
+ 			    <td><?php echo "{$row['IDPlanta']}"; ?></td>
+                <td><?php echo "{$row['PlantaNombre']}"; ?></td>
+                <td><?php echo "{$row['ClienteNombre']}"; ?></td>
+                <td><?php echo "{$row['UsuNombre']}"; ?></td>
+                <td><?php echo "{$row['PlantaLocalidad']}"; ?></td>
+                <td><?php echo "{$row['PlantaDireccion']}"; ?></td>
+                <td><?php echo "{$row['PlantaTelefono']}"; ?></td>
+                <td><?php echo "{$row['PlantaMail']}"; ?></td>
+                <td><?php echo "{$row['PlantaFechaAlta']}"; ?></td>
+                <td><?php echo "{$row['PlantaFechaBaja']}"; ?></td>
+                <td><?php echo "{$row['PlantaEstado']}"; ?></td>
  			<td><a href="editar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Modificar Planta</a></td>
- 			<td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Eliminar Planta</a></td>
+ 			<td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>" onclick="return confirm('Estas seguro de cambiar el estado de la planta?');"> Eliminar Planta</a></td>
 	 		</tr>
  		<?php } ?>
 		</tbody>

@@ -28,19 +28,32 @@ include_once("Conexion.php");
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM planta P INNER JOIN cliente C ON P.IDPlanta = C.IDCliente
-				 	INNER JOIN usuario U ON U.IDUsuario = P.IDUsuario WHERE P.IDUsuario = $idusuario";
+				 $q="SELECT * FROM planta P INNER JOIN cliente C ON P.IDCliente = C.IDCliente
+				 	INNER JOIN usuario U ON U.IDUsuario = P.IDUsuario WHERE P.IDUsuario = $idusuario AND P.IDCliente=C.IDCliente";
 
 					$planta = $pdo->mysql->query($q);
 		
 				return $planta;
 			
 		}
-		public function buscarPlanta($buscar){
+		public function listarPlantaActivo($idusuario){
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM planta WHERE IDPlanta LIKE '%$buscar%' OR PlantaNombre LIKE '%$buscar%' OR PlantaLocalidad LIKE '%$buscar%'";
+				 $q="SELECT * FROM planta P INNER JOIN cliente C ON P.IDCliente = C.IDCliente
+				 	INNER JOIN usuario U ON U.IDUsuario = P.IDUsuario WHERE P.IDUsuario = $idusuario AND P.IDCliente=C.IDCliente AND PlantaEstado='Activo'";
+
+					$planta = $pdo->mysql->query($q);
+		
+				return $planta;
+			
+		}
+		public function buscarPlanta($buscar,$idusuario){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM planta P INNER JOIN cliente C ON P.IDCliente = C.IDCliente
+				 	INNER JOIN usuario U ON U.IDUsuario = P.IDUsuario WHERE P.IDUsuario = $idusuario AND IDPlanta LIKE '%$buscar%' OR PlantaNombre LIKE '%$buscar%' OR PlantaLocalidad LIKE '%$buscar%'OR ClienteNombre LIKE '%$buscar%'OR PlantaTelefono LIKE '%$buscar%'";
 
 					$planta = $pdo->mysql->query($q);
 		

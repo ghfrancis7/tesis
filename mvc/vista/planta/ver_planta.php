@@ -119,6 +119,10 @@
         <form id="vertodo" action="ver_planta_completo.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todas las Plantas"/>
 		</form>
+        </td><td>
+        <form id="pdfplantaactiva" action="pdfplantaactiva.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfplantaactiva').submit()" value="Generar PDF"/>
+		</form>
         </td></tr>
 	</tbody></table>
 	</div>

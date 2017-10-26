@@ -8,14 +8,6 @@
 
 <body>
 	<?php
- include_once("../../modelo/Usuario.php");
-  include_once("../../modelo/Cliente.php");
-        $controlador = new Usuario();
-        $sql= $controlador->listarUsuario();
-
-        $control = new Cliente();
-        $sqlp= $control->listarCliente();
-
     $usuario="";
     $idUsuario=1;
         session_start();
@@ -28,6 +20,14 @@
 		//Determina dia actual
 		date_default_timezone_set ("America/Argentina/Buenos_Aires");
 		$today = date( "Y/m/d");
+
+    include_once("../../modelo/Usuario.php");
+    include_once("../../modelo/Cliente.php");
+            $controlador = new Usuario();
+            $sql= $controlador->listarUsuario();
+
+            $control = new Cliente();
+            $sqlp= $control->listarCliente($idUsuario);
     ?>
 	<div class="backgroundTable">
     </div>
@@ -93,10 +93,9 @@
             <input type="text" name="PlantaTelefono">
             <br/>
             <label>Email de la Panta</label><br/>
-            <input type="text" name="PlantaEmail">
-            <input type="hidden" value="<?php echo $today;?>" name="PlantaFechaAlta">
-            <input type="hidden" value="<?php echo NULL;?>" name="PlantaFechaBaja">
-            <input type="hidden" value="<?php echo "Activa";?>" name="PlantaEstado">
+            <input type="text" name="PlantaMail">
+            <input type="hidden" value="<?php echo $today;?>" name="PlantaFechaAlta">         
+            <input type="hidden" value="<?php echo 'Activo';?>" name="PlantaEstado">
             <br/></td>
 		</tr>
         <tr>
