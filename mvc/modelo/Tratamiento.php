@@ -44,6 +44,17 @@ include_once("Conexion.php");
 				return $tratamiento;
 			
 		}
+		public function listarTratamientoActivoPlanta($idusuario,$idtratamiento){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM tratamiento T INNER JOIN planta P ON T.IDPlanta = P.IDPlanta INNER JOIN usuario U ON T.IDUsuario = U.IDUsuario WHERE T.IDUsuario=$idusuario AND TrataEstado='Activo' AND T.IDTratamiento=$idtratamiento" ;
+
+					$tratamiento = $pdo->mysql->query($q);
+		
+				return $tratamiento;
+			
+		}
 		public function listarTratamientoInactivo($idusuario){
 
 				 $pdo = new Conexion();

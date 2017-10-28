@@ -99,6 +99,8 @@
                 
                 <td><a href="agregarproductos.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Agregar Productos </a></td>
                 <td><a href="eliminar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del tratamiento?');">Cambiar Estado</a></td>
+                <td><a href="pdftratamientosporplanta.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?> & PlantaNombre=<?php echo $row['PlantaNombre'] ?>"> Generar PDF </a></td>
+			</td>
  			</tr>
  		<?php
 			}
