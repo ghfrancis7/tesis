@@ -59,16 +59,16 @@ include_once("validarcuil.php");
 		<tr>
 			<td width="60%">
 			<form id="frmcreacli" action="guardarCliente.php" method="post">
-			<label>Nombre</label><br/>
+			<label>* Nombre</label><br/>
             <input type="text" name="ClienteNombre">
 			<br/>
-            <label>C. U. I. T.</label><br/>
+            <label>* C. U. I. T.</label><br/>
                  
             
 			<input type="text" name="ClienteCUIT" id="cuit">
             <br>
 
-            <label>Direccion</label><br/>
+            <label>* Direccion</label><br/>
             <input type="text" name="ClienteDireccion">
             <br/>
             <label>Telefono</label><br/>
