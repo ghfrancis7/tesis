@@ -22,9 +22,8 @@
 			$ProductoEstado="Activo";
 			$ProductoFechaBajaDB = NULL;
 
-				$pst = $pdo->mysql->prepare("INSERT INTO producto (ProductoNombre, ProductoPrecio,ProductoNumeroSerie,ProductoFechaAltaDB,ProductoDescripcion,ProductoEstado) VALUES (:ProductoNombre,:ProductoPrecio,:ProductoNumeroSerie,:ProductoFechaAltaDB,:ProductoDescripcion,:ProductoEstado)");
+				$pst = $pdo->mysql->prepare("INSERT INTO producto (ProductoNombre,ProductoNumeroSerie,ProductoFechaAltaDB,ProductoDescripcion,ProductoEstado) VALUES (:ProductoNombre,:ProductoNumeroSerie,:ProductoFechaAltaDB,:ProductoDescripcion,:ProductoEstado)");
 				$pst->bindParam(":ProductoNombre",$producto['ProductoNombre'],PDO::PARAM_STR);
-				$pst->bindParam(":ProductoPrecio",$producto['ProductoPrecio'],PDO::PARAM_STR);
 				$pst->bindParam(":ProductoNumeroSerie",$producto['ProductoNumeroSerie'],PDO::PARAM_STR);
 				$pst->bindParam(":ProductoFechaAltaDB",$ProductoFechaAltaDB,PDO::PARAM_STR);
 				$pst->bindParam(":ProductoDescripcion",$producto['ProductoDescripcion'],PDO::PARAM_STR);

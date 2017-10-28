@@ -62,9 +62,6 @@
 			<label>Nombre del Producto</label><br/>
 			<input type="text" name="ProductoNombre">
             <br/>
-        	<label>Precio del Producto</label><br/>
-            <input type="text" name="ProductoPrecio">
-            <br/>
             <label>Descripcion de Producto</label><br/>
             <input type="text" name="ProductoDescripcion">
             <input type="hidden" value="<?php echo $today; ?>" name="ProductoFechaAltaDB">

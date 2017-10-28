@@ -72,9 +72,6 @@
                 <br/>
 				<input type="text" name="ProductoNombre" required value="<?php echo $producto['ProductoNombre']; ?>">
 				<br/>
-				<label>ProductoPrecio</label>
-                <br/>
-				<input type="text" name="ProductoPrecio" required value="<?php echo $producto['ProductoPrecio']; ?>">
 			</td>
 		</tr>
         <tr>

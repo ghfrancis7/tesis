@@ -110,12 +110,11 @@
 	        <form id="verinact" action="tecn_ver_inactivo.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Productos Inactivos"/>
 			</form>
-        </td></tr>
-        <tr><td>
+       </td><td>
 	        <form id="pdfproductosactivos.php" action="pdfproductosactivos.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfproductosactivos.php').submit()" value="Generar PDF"/>
 			</form>
-		</td><td>
+		</td></tr>
 	</tbody></table>
     </div>
 </body>

@@ -8,7 +8,6 @@ include_once("Conexion.php");
 		private $IDLote;
 		private $IDProductoTratamiento;
 		private $ProductoNombre;
-		private $ProductoPrecio;
 		private $ProductoFechaAltaDB;
 		private $ProductoFechaBajaDB;
 		private $ProductoEstado;
@@ -38,6 +37,17 @@ include_once("Conexion.php");
 				 $pdo = new Conexion();
 
 				 $q="SELECT * FROM producto WHERE ProductoEstado='Activo'";
+
+					$producto = $pdo->mysql->query($q);
+		
+				return $producto;
+			
+		}
+		public function listarProductoInactivo(){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM producto WHERE ProductoEstado='Inactivo'";
 
 					$producto = $pdo->mysql->query($q);
 		

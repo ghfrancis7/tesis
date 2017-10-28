@@ -17,7 +17,6 @@
             $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
             $idUsuario = $_SESSION['id'];
         }
-/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 		include_once("../../modelo/Cliente.php");
         $controlador = new Cliente();
         $sql= $controlador->listarCliente($idUsuario);
@@ -111,6 +110,10 @@
         <form id="vertodo" action="ver_cliente_completo.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Clientes"/>
 		</form>
+        </td><td>
+        <form id="pdfclienteactivo" action="pdfclienteactivo.php" method="post">
+            <input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfclienteactivo').submit()" value="Generar PDF"/>
+        </form>
         </td></tr>
 	</tbody></table>
     </div>

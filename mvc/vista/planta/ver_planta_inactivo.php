@@ -54,7 +54,7 @@
 	</div>
     <div class="tablas">
 		<tr>
-        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Plantas</h2></td>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Plantas Inactivas</h2></td>
 		</tr>
     </div>
     <div class="tablas">
@@ -119,6 +119,10 @@
         <form id="vertodo" action="ver_planta_completo.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todas las Plantas"/>
 		</form>
+    </td><td>
+        <form id="pdfplantainactivo" action="pdfplantainactivo.php" method="post">
+            <input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfplantainactivo').submit()" value="Generar PDF"/>
+        </form>
         </td></tr>
 	</tbody></table>
     </div>

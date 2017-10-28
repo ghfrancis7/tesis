@@ -5,7 +5,6 @@
 	<meta charset="UTF-8"/>
 	<link href="../../../CSS/style.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
 	<?php
     $usuario="";
@@ -17,10 +16,9 @@
             $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
             $idUsuario = $_SESSION['id'];
         }
-/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 		include_once("../../modelo/Cliente.php");
 		$controlador = new Cliente();
-		$sql= $controlador->listarCliente();
+		$sql= $controlador->listarCliente($idUsuario);
     ?>
 	<div class="backgroundTable">
     </div>
@@ -111,6 +109,10 @@
         <form id="veractivo" action="ver_cliente.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Clientes Activos"/>
 		</form>
+        </td><td>
+        <form id="pdfclientetodos" action="pdfclientetodos.php" method="post">
+            <input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfclientetodos').submit()" value="Generar PDF"/>
+        </form>
         </td></tr>
 	</tbody></table>
     </div>

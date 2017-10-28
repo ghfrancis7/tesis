@@ -49,6 +49,17 @@ include_once("Conexion.php");
 				return $usuario;
 			
 		}
+		public function listarUsuariolog($idusuario){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM usuario WHERE IDUsuario=$idusuario";
+
+					$usuario = $pdo->mysql->query($q);
+		
+				return $usuario;
+			
+		}
 		public function buscarUsuario($buscar){
 
 				 $pdo = new Conexion();

@@ -24,7 +24,7 @@ class conexion{
 		$this->usr = $user;
 		$this->pwd = $pass;
 		
-		$query = "SELECT IDUsuario, UsuNombre, UsuApellido, UsuCuenta, UsuPassword, UsuRol, UsuEstado FROM usuario WHERE UsuCuenta LIKE '".$this->usr."' AND UsuPassword LIKE '".$this->pwd."' AND UsuEstado LIKE 'Activo'";
+		$query = "SELECT IDUsuario, UsuNombre, UsuApellido, UsuMail, UsuCuenta, UsuPassword, UsuRol, UsuEstado FROM usuario WHERE UsuCuenta LIKE '".$this->usr."' AND UsuPassword LIKE '".$this->pwd."' AND UsuEstado LIKE 'Activo'";
 		
 		$consulta = $this->conexion->query($query);
 		
@@ -33,6 +33,7 @@ class conexion{
 			$_SESSION['id'] = $row['IDUsuario'];
 			$_SESSION['nom'] = $row['UsuNombre'];
 			$_SESSION['ape'] = $row['UsuApellido'];
+			$_SESSION['mail'] = $row['UsuMail'];
 			
 			if (strnatcasecmp($row['UsuEstado'],"activo") == 0) {
 				if (strnatcasecmp($row['UsuRol'],"admin") == 0){

@@ -20,7 +20,7 @@
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 		include_once("../../modelo/Cliente.php");
 		$controlador = new Cliente();
-		$sql= $controlador->listarCliente();
+		$sql= $controlador->listarCliente($idUsuario);
     ?>
 	<div class="backgroundTable">
     </div>
@@ -111,6 +111,10 @@
         <form id="vertodo" action="ver_cliente_completo.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Clientes"/>
 		</form>
+        </td><td>
+        <form id="pdfclienteinactivo" action="pdfclienteinactivo.php" method="post">
+            <input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfclienteinactivo').submit()" value="Generar PDF"/>
+        </form>
         </td></tr>
 	</tbody></table>
     </div>

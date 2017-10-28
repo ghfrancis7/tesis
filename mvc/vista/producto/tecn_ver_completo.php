@@ -76,7 +76,6 @@
  		<thead>
  			<th>ID</th>
  			<th>Nombre</th>
- 			<th>Precio</th>
  			<th>Fecha de Alta en DB</th>
  			<th>Fecha de Baja en DB</th>
  			<th>Activo/Inactivo</th>
@@ -87,7 +86,6 @@
  				<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
-	 			<td><?php echo "{$row['ProductoPrecio']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
@@ -106,6 +104,10 @@
 		</td><td>
 			<form id="verinact" action="tecn_ver_activo.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Productos Inactivo"/>
+			</form>
+		</td><td>
+			<form id="pdfproductostodos" action="pdfproductostodos.php" method="post">
+				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfproductostodos').submit()" value="Generar PDF"/>
 			</form>
 		</td></tr>
 	</tbody></table>

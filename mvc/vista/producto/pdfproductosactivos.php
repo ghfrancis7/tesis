@@ -1,7 +1,17 @@
 <?php 
-include_once("../../modelo/Conexion.php");
-include_once("../../modelo/pdf/fpdf.php");
-include_once("../../modelo/Producto.php");
+	 $usuario="";
+	    $idUsuario=1;
+	        session_start();
+	        if (!isset($_SESSION['id'])){
+	            header ("Location:../../../index.html");
+	        } else {
+	            $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
+	            $idUsuario = $_SESSION['id'];
+	        }
+
+	include_once("../../modelo/Conexion.php");
+	include_once("../../modelo/pdf/fpdf.php");
+	include_once("../../modelo/Producto.php");
 
 	$pdf=new FPDF();
 	$pdf->AddPage();
@@ -23,14 +33,13 @@ include_once("../../modelo/Producto.php");
 	$pdf->SetFont('Arial','B',8);
 	$pdf->Cell(10,8,"ID",0);
 	$pdf->Cell(30,8,"Nombre",0);
-	$pdf->Cell(50,8,"Fecha de Alta en DB",0);
+	$pdf->Cell(40,8,"Fecha de Alta",0);
 	$pdf->Cell(30,8,"Activo/Inactivo",0);
 	$pdf->Ln(8);
 	$pdf->SetFont("Arial",'',8);
 
 	$controlador = new Producto();
 		$sql= $controlador->listarProductoActivo();
-		$sql->fetch(PDO::FETCH_ASSOC);
 
 	foreach($sql as $row){ 
 
@@ -40,14 +49,7 @@ include_once("../../modelo/Producto.php");
 		$pdf->Cell(50,8,$row['ProductoFechaAltaDB'],0);
 		$pdf->Cell(30,8,$row['ProductoEstado'],0);
 		
-	$pdf->Ln(8);
-
+		$pdf->Ln(8);
  				}
-		$pdf->Output();
-		?>
-
-
-
-
-
-
+	$pdf->Output();
+	?>

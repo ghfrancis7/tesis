@@ -48,6 +48,19 @@ include_once("Conexion.php");
 				return $planta;
 			
 		}
+		public function listarPlantaInactivo($idusuario){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM planta P INNER JOIN cliente C ON P.IDCliente = C.IDCliente
+				 	INNER JOIN usuario U ON U.IDUsuario = P.IDUsuario WHERE P.IDUsuario = $idusuario AND P.IDCliente=C.IDCliente AND PlantaEstado='Inactivo'";
+
+					$planta = $pdo->mysql->query($q);
+		
+				return $planta;
+			
+		}
+		
 		public function buscarPlanta($buscar,$idusuario){
 
 				 $pdo = new Conexion();

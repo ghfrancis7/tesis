@@ -10,12 +10,14 @@
 	<?php
     $usuario="";
     $idUsuario=1;
+
         session_start();
         if (!isset($_SESSION['id'])){
             header ("Location:../index.html");
         } else {
             $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
             $idUsuario = $_SESSION['id'];
+            
         }
     ?>
 	<div class="background">

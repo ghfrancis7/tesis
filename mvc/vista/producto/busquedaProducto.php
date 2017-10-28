@@ -57,7 +57,6 @@ include_once("../../modelo/Producto.php");
             <thead>
                 <th>ProductoID</th>
                 <th>ProductoNombre</th>
-                <th>ProductoPrecio</th>
                 <th>ProductoFechaAltaDB</th>
                 <th>ProductoFechaBajaDB</th>
                 <th>ProductoEstado</th>
@@ -68,7 +67,6 @@ include_once("../../modelo/Producto.php");
                 <tr>
                     <td><?php echo "{$row['IDProducto']}"; ?></td>
                     <td><?php echo "{$row['ProductoNombre']}"; ?></td>
-                    <td><?php echo "{$row['ProductoPrecio']}"; ?></td>
                     <td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
                     <td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
                     <td><?php echo "{$row['ProductoEstado']}"; ?></td>

@@ -54,7 +54,7 @@
 	</div>
     <div class="tablas">
 		<tr>
-        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Plantas</h2></td>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Plantas Activas</h2></td>
 		</tr>
     </div>
     <div class="tablas">
@@ -83,7 +83,6 @@
  		<th>Telefono de la Panta</th>
  		<th>Email de la Panta</th>
  		<th>Fecha de alta de la Planta</th>
- 		<th>Fecha de baja de la Planta</th>
  		<th>Estado de la Planta</th>
  	</thead>
  	<tbody>
@@ -100,7 +99,6 @@
 	 			<td><?php echo "{$row['PlantaTelefono']}"; ?></td>
 	 			<td><?php echo "{$row['PlantaMail']}"; ?></td>
 	 			<td><?php echo "{$row['PlantaFechaAlta']}"; ?></td>
-	 			<td><?php echo "{$row['PlantaFechaBaja']}"; ?></td>
 	 			<td><?php echo "{$row['PlantaEstado']}"; ?></td>
 	 			<td><a href="editar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Modificar Planta</a></td>
 	 			<td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>" onclick="return confirm('Estas seguro de cambiar el estado de la planta?');"> Eliminar Planta</a></td>
