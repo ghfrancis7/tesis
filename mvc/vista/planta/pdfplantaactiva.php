@@ -38,7 +38,7 @@
 			$pdf->Cell(20,8,"Telefono",0);
 			$pdf->Cell(35,8,"Email",0);
 			$pdf->Cell(20,8,"Fecha de Alta",0);
-			$pdf->Cell(15,8,"Estado",0);
+			$pdf->Cell(3,8,"A/I",0);
 			$pdf->Ln(8);
 			$pdf->SetFont("Arial",'',8);
 
@@ -55,7 +55,7 @@
 				$pdf->Cell(20,8,$row['PlantaTelefono'],0); 
 				$pdf->Cell(35,8,$row['PlantaMail'],0); 
 				$pdf->Cell(20,8,$row['PlantaFechaAlta'],0); 
-				$pdf->Cell(15,8,$row['PlantaEstado'],0); 
+				$pdf->Cell(3,8,$row['PlantaEstado'],0); 
 				$pdf->Ln(8);
 	 				}
 			$pdf->Output();

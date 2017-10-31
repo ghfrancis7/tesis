@@ -54,7 +54,7 @@
 	</div>
     <div class="tablas">
 		<tr>
-        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Tratamientos</h2></td>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Tratamientos Inactivos</h2></td>
 		</tr>
     </div>
     <div class="tablas">
@@ -77,9 +77,9 @@
  		<th>ID</th>
  		<th>Nombre de Tratamiento</th>
  		<th>Numero de Analisis</th>
- 		<th>Nombre de Tecnico</th>
  		<th>Nombre de Planta</th>
  		<th>Fecha de Ingreso</th>
+ 		<th>Fecha de Baja</th>
  		<th>Descripcion</th>
         <th>Estado Tratamiento</th>
  		</thead>
@@ -91,11 +91,12 @@
 		 		<td><?php echo "{$row['IDTratamiento']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNumAnalisis']}"; ?></td>
-		 		<td><?php echo "{$row['UsuNombre']}"; ?></td>
 		 		<td><?php echo "{$row['PlantaNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataFecha']}"; ?></td>
+		 		<td><?php echo "{$row['TrataFechaBaja']}"; ?></td>
 		 		<td><?php echo "{$row['TrataDescripcion']}";?></td>
                 <td><?php echo "{$row['TrataEstado']}";?></td>
+                <td><a href="ver_tratamientoinactivo.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Ver Tratamiento </a></td>
  			</tr>
  		<?php 
 			}
@@ -114,7 +115,7 @@
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Tratamientos Activos"/>
 			</form>
 			</td><td>
-	        <form id="pdftratamientosinactivos" action="pdftratamientosinactivos.php" method="post">
+	        <form id="pdftratamientosinactivos"  target="_blank" action="pdftratamientosinactivos.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdftratamientosinactivos').submit()" value="Generar PDF"/>
 			</form>
         </td></tr>

@@ -19,7 +19,7 @@
         }
 		include_once("../../modelo/Usuario.php");
 		$controlador = new Usuario();
-		$sql= $controlador->listarUsuario();
+		$sql= $controlador->listarUsuarioTecnico();
     ?>
 	<div class="backgroundTable">
     </div>
@@ -93,8 +93,8 @@
 	<div class="header" style="text-align:center;">
 	<table width="60%" style="margin: 0 auto;"><tbody>
 		<tr><td>
-		<form id="vertecnico" action="ver_tecnico.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertecnico').submit()" value="Ver Usuarios Tecnicos"/>
+		<form id="verusuario" action="ver_usuario.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verusuario').submit()" value="Ver Todos los Usuario"/>
 		</form>
         </td><td>
         <form id="veradmin" action="ver_admin.php" method="post">

@@ -26,7 +26,6 @@
 				$ClienteCUIT= $_POST['ClienteCUIT'];
 				$ClienteDireccion= $_POST['ClienteDireccion'];
 				$ClienteTelefono= $_POST['ClienteTelefono'];
-				$ClienteCantidadPlantas= $_POST['ClienteCantidadPlantas'];
 				$ClienteFechaAlta= $_POST['ClienteFechaAlta'];
 				$ClienteEstado= $_POST['ClienteEstado'];
 
@@ -55,13 +54,12 @@
 				try {
 
 			$pdo->mysql->beginTransaction();
-			$pst = $pdo->mysql->prepare("INSERT INTO cliente (IDUsuario,ClienteNombre, ClienteCUIT,ClienteDireccion,ClienteTelefono,ClienteCantidadPlantas,ClienteFechaAlta,ClienteEstado) VALUES (:IDUsuario,:ClienteNombre,:ClienteCUIT,:ClienteDireccion,:ClienteTelefono,:ClienteCantidadPlantas,:ClienteFechaAlta,:ClienteEstado)");
+			$pst = $pdo->mysql->prepare("INSERT INTO cliente (IDUsuario,ClienteNombre, ClienteCUIT,ClienteDireccion,ClienteTelefono,ClienteFechaAlta,ClienteEstado) VALUES (:IDUsuario,:ClienteNombre,:ClienteCUIT,:ClienteDireccion,:ClienteTelefono,:ClienteFechaAlta,:ClienteEstado)");
 			$pst->bindParam(":IDUsuario",$idUsuario,PDO::PARAM_STR);
 			$pst->bindParam(":ClienteNombre",$ClienteNombre,PDO::PARAM_STR);
 			$pst->bindParam(":ClienteCUIT",$ClienteCUIT,PDO::PARAM_STR);
 			$pst->bindParam(":ClienteDireccion",$ClienteDireccion,PDO::PARAM_STR);
 			$pst->bindParam(":ClienteTelefono",$ClienteTelefono,PDO::PARAM_STR);
-			$pst->bindParam(":ClienteCantidadPlantas",$ClienteCantidadPlantas,PDO::PARAM_STR);
 			$pst->bindParam(":ClienteFechaAlta",$ClienteFechaAlta,PDO::PARAM_STR);
 			$pst->bindParam(":ClienteEstado",$ClienteEstado,PDO::PARAM_STR);	
 			$pst->execute();

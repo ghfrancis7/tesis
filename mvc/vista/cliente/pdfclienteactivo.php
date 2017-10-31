@@ -35,7 +35,6 @@
 			$pdf->Cell(25,8,"Cuit",0);
 			$pdf->Cell(30,8,"Direccion",0);
 			$pdf->Cell(20,8,"Telefono",0);
-			$pdf->Cell(30,8,"Cantidad de Plantas",0);
 			$pdf->Cell(25,8,"Fecha de Alta",0);
 			$pdf->Cell(15,8,"Estado",0);
 			$pdf->Ln(8);
@@ -50,7 +49,6 @@
 				$pdf->Cell(25,8,$row['ClienteCUIT'],0);
 				$pdf->Cell(30,8,$row['ClienteDireccion'],0);
 				$pdf->Cell(20,8,$row['ClienteTelefono'],0); 
-				$pdf->Cell(30,8,$row['ClienteCantidadPlantas'],0); 
 				$pdf->Cell(25,8,$row['ClienteFechaAlta'],0); 
 				$pdf->Cell(15,8,$row['ClienteEstado'],0); 
 				$pdf->Ln(8);

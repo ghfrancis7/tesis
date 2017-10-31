@@ -20,9 +20,8 @@
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 		include_once("../../modelo/Tratamiento.php");
 		$controlador = new Tratamiento();
-		$IDTratamiento= $_GET['buscar'];
         $IDPlanta = $_GET['IDPlanta'];
-		$sql= $controlador->buscarTratamiento($IDTratamiento,$idUsuario,$IDPlanta);
+		$sql= $controlador->buscarTratamientoporplanta($idUsuario,$IDPlanta);
 	?> 
  
 	<div class="backgroundTable">
@@ -68,7 +67,6 @@
                 <th>Numero de Analisis</th>
                 <th>Fecha de Ingreso</th>
                 <th>Descripcion</th>
-                <th>Estado</th>
         	</thead>
 		<tbody>
 			<?php
@@ -79,7 +77,6 @@
                         <td><?php echo "{$row['TrataNumAnalisis']}"; ?></td>
                         <td><?php echo "{$row['TrataFecha']}"; ?></td>
                         <td><?php echo "{$row['TrataDescripcion']}"; ?></td>
-                        <td><?php echo "{$row['TrataEstado']}"; ?></td>
                         <td><a href="agregarproductos.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Agregar Productos </a></td>
                 <td><a href="eliminar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del tratamiento?');">Cambiar Estado</a></td>
                 

@@ -54,7 +54,7 @@
 	</div>
     <div class="tablas">
 		<tr>
-        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Tratamientos</h2></td>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Tratamientos Activos</h2></td>
 		</tr>
     </div>
     <div class="tablas">
@@ -77,7 +77,6 @@
  		<th>ID</th>
  		<th>Nombre de Tratamiento</th>
  		<th>Numero de Analisis</th>
- 		<th>Nombre de Tecnico</th>
  		<th>Nombre de Planta</th>
  		<th>Fecha de Ingreso</th>
  		<th>Descripcion</th>
@@ -91,15 +90,19 @@
 		 		<td><?php echo "{$row['IDTratamiento']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNumAnalisis']}"; ?></td>
-		 		<td><?php echo "{$row['UsuNombre']}"; ?></td>
 		 		<td><?php echo "{$row['PlantaNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataFecha']}"; ?></td>
 		 		<td><?php echo "{$row['TrataDescripcion']}";?></td>
                 <td><?php echo "{$row['TrataEstado']}";?></td>
-                
+                <td><a href="editar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Modificar Tratamiento</a></td>
                 <td><a href="agregarproductos.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Agregar Productos </a></td>
-                <td><a href="eliminar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del tratamiento?');">Cambiar Estado</a></td>
-                <td><a href="pdftratamientosporplanta.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?> & PlantaNombre=<?php echo $row['PlantaNombre'] ?>"> Generar PDF </a></td>
+               <?php if ($row['TrataEstado']=="Activo"){ ?>
+                	<td><a href="eliminar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del tratamiento?');">Cambiar Estado</a></td>
+                
+            <?php }else{?>
+					<td></td>
+            <?php }?>
+                <td><a href="ver_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Ver Tratamiento </a></td>
 			</td>
  			</tr>
  		<?php
@@ -119,7 +122,7 @@
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Tratamientos Inactivos"/>
 			</form>
         </td><td>
-	        <form id="pdftratamientosactivos" action="pdftratamientosactivos.php" method="post">
+	        <form id="pdftratamientosactivos"  target="_blank" action="pdftratamientosactivos.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdftratamientosactivos').submit()" value="Generar PDF"/>
 			</form>
         </td></tr>

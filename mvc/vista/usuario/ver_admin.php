@@ -19,7 +19,7 @@
         }
 		include_once("../../modelo/Usuario.php");
 		$controlador = new Usuario();
-		$sql= $controlador->listarUsuario();
+		$sql= $controlador->listarUsuarioAdmin();
     ?>
 	<div class="backgroundTable">
     </div>
@@ -97,8 +97,8 @@
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertecnico').submit()" value="Ver Usuarios Tecnicos"/>
 		</form>
         </td><td>
-        <form id="veradmin" action="ver_admin.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veradmin').submit()" value="Ver Usuarios Administradores"/>
+       <form id="verusuario" action="ver_usuario.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verusuario').submit()" value="Ver Todos los Usuario"/>
 		</form>
         </td></tr>
 	</tbody></table>

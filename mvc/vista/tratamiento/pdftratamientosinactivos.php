@@ -32,11 +32,11 @@
 			$pdf->Ln(23);
 			$pdf->SetFont('Arial','B',8);
 			$pdf->Cell(5,8,"ID",0);
-			$pdf->Cell(60,8,"Nombre de Tratamiento",0);
+			$pdf->Cell(50,8,"Nombre de Tratamiento",0);
 			$pdf->Cell(20,8,"Analisis",0);
-			$pdf->Cell(25,8,"Tecnico",0);
 			$pdf->Cell(40,8,"Nombre de Planta",0);
 			$pdf->Cell(30,8,"Fecha de Inicio",0);
+			$pdf->Cell(30,8,"Fecha de Baja",0);
 			$pdf->Cell(20,8,"Estado",0);
 			$pdf->Ln(8);
 			$pdf->SetFont("Arial",'',8);
@@ -47,11 +47,11 @@
 		foreach($sql as $row){ 
 
 				$pdf->Cell(5,8,$row['IDTratamiento'],0);
-				$pdf->Cell(60,8,$row['TrataNombre'],0);
+				$pdf->Cell(50,8,$row['TrataNombre'],0);
 				$pdf->Cell(20,8,$row['TrataNumAnalisis'],0);
-				$pdf->Cell(25,8,$row['UsuNombre'],0);
 				$pdf->Cell(40,8,$row['PlantaNombre'],0);
 				$pdf->Cell(30,8,$row['TrataFecha'],0);
+				$pdf->Cell(30,8,$row['TrataFechaBaja'],0);
 				$pdf->Cell(20,8,$row['TrataEstado'],0); 
 				$pdf->Ln(8);
 	 				}

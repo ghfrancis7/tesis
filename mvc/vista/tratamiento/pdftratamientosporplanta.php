@@ -80,7 +80,7 @@
 					$pdf->Cell(30,8,$row['LoteCantidad'],0);
 					$pdf->Ln(8);
 	 				}
-	 				$pdf->Cell(30,12,"Seguir el contacto con ventas, informandoles el numero de ID del tratamiento.",0);
+	 				$pdf->Cell(30,12,"",0);
 
 
 			$pdf->Output();

@@ -6,7 +6,7 @@
 		$PlantaFechaBaja= date('Y/m/d');
 		$PlantaFechaAlta= date('Y/m/d');
 
-	//try {
+	try {
 
 		$pdo->mysql->beginTransaction();
 
@@ -15,9 +15,9 @@
 		$datosPlanta->execute();
 		$plantita = $datosPlanta->fetch();	
 
-				if ($plantita['PlantaEstado']=="Inactiva") {
+				if ($plantita['PlantaEstado']=="Inactivo") {
 					$PlantaFechaBaja=NULL;
-					$PlantaEstado="Activa";
+					$PlantaEstado="Activo";
 
 					$pst = $pdo->mysql->prepare("INSERT INTO planta (IDCliente,IDUsuario,PlantaNombre, PlantaLocalidad,PlantaDireccion,PlantaTelefono,PlantaMail,PlantaFechaAlta,PlantaEstado) VALUES (:IDCliente,:IDUsuario,:PlantaNombre,:PlantaLocalidad,:PlantaDireccion,:PlantaTelefono,:PlantaMail,:PlantaFechaAlta,:PlantaEstado)");
 
@@ -34,8 +34,8 @@
 		$pst->execute();
 		$pdo->mysql->commit() ;
 
-				}elseif ($plantita['PlantaEstado']=="Activa") {
-						$PlantaEstado="Inactiva";
+				}elseif ($plantita['PlantaEstado']=="Activo") {
+						$PlantaEstado="Inactivo";
 
 						$pst = $pdo->mysql->prepare("UPDATE planta set PlantaEstado =:PlantaEstado , PlantaFechaBaja =:PlantaFechaBaja where IDPlanta = :IDPlanta");
 						$pst->bindParam(":IDPlanta",$IDPlanta,PDO::PARAM_STR);
@@ -49,11 +49,11 @@
 						}
 		header("Location:ver_planta.php");
 		
-	//} catch (Exception $e) {
-	//	$pdo->mysql->rollback();
-		//		echo "No se pudo modificar";
+	} catch (Exception $e) {
+		$pdo->mysql->rollback();
+				echo "No se pudo modificar";
 		
-	//}
+	}
 
 		
 

@@ -73,7 +73,6 @@
             <th>Cuit</th>
             <th>Direccion</th>
             <th>Telefono</th>
-            <th>Cantidad de Plantas</th>
             <th>Fecha de Alta</th>
             <th>Fecha de Baja</th>
             <th>Estado</th>
@@ -87,7 +86,6 @@
                 <td><?php echo "{$row['ClienteCUIT']}"; ?></td>
                 <td><?php echo "{$row['ClienteDireccion']}"; ?></td>
                 <td><?php echo "{$row['ClienteTelefono']}"; ?></td>
-                <td><?php echo "{$row['ClienteCantidadPlantas']}"; ?></td>
                 <td><?php echo "{$row['ClienteFechaAlta']}"; ?></td>
                 <td><?php echo "{$row['ClienteFechaBaja']}"; ?></td>
                 <td><?php echo "{$row['ClienteEstado']}"; ?></td>
@@ -110,7 +108,7 @@
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Clientes Activos"/>
 		</form>
         </td><td>
-        <form id="pdfclientetodos" action="pdfclientetodos.php" method="post">
+        <form id="pdfclientetodos"  target="_blank" action="pdfclientetodos.php" method="post">
             <input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfclientetodos').submit()" value="Generar PDF"/>
         </form>
         </td></tr>

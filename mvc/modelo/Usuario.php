@@ -60,6 +60,28 @@ include_once("Conexion.php");
 				return $usuario;
 			
 		}
+		public function listarUsuarioTecnico(){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM usuario WHERE UsuRol='tecn'";
+
+					$usuario = $pdo->mysql->query($q);
+		
+				return $usuario;
+			
+		}
+		public function listarUsuarioAdmin(){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM usuario WHERE UsuRol='admin'";
+
+					$usuario = $pdo->mysql->query($q);
+		
+				return $usuario;
+			
+		}
 		public function buscarUsuario($buscar){
 
 				 $pdo = new Conexion();

@@ -36,10 +36,10 @@
 			$pdf->Cell(20,8,"Localidad",0);
 			$pdf->Cell(30,8,"Direccion",0);
 			$pdf->Cell(20,8,"Telefono",0);
-			$pdf->Cell(25,8,"Email",0);
-			$pdf->Cell(20,8,"Fecha de Alta",0);
-			$pdf->Cell(20,8,"Fecha de Baja",0);
-			$pdf->Cell(15,8,"Estado",0);
+			$pdf->Cell(30,8,"Email",0);
+			$pdf->Cell(18,8,"Fecha Alta",0);
+			$pdf->Cell(18,8,"Fecha Baja",0);
+			$pdf->Cell(3,8,"Estado",0);
 			$pdf->Ln(8);
 			$pdf->SetFont("Arial",'',8);
 
@@ -53,10 +53,10 @@
 				$pdf->Cell(20,8,$row['PlantaLocalidad'],0);
 				$pdf->Cell(30,8,$row['PlantaDireccion'],0);
 				$pdf->Cell(20,8,$row['PlantaTelefono'],0); 
-				$pdf->Cell(25,8,$row['PlantaMail'],0); 
-				$pdf->Cell(20,8,$row['PlantaFechaAlta'],0);
-				$pdf->Cell(20,8,$row['PlantaFechaBaja'],0); 
-				$pdf->Cell(15,8,$row['PlantaEstado'],0); 
+				$pdf->Cell(30,8,$row['PlantaMail'],0); 
+				$pdf->Cell(18,8,$row['PlantaFechaAlta'],0);
+				$pdf->Cell(18,8,$row['PlantaFechaBaja'],0); 
+				$pdf->Cell(3,8,$row['PlantaEstado'],0); 
 				$pdf->Ln(8);
 	 				}
 			$pdf->Output();
