@@ -80,6 +80,7 @@
  		<th>Nombre de Tecnico</th>
  		<th>Nombre de Planta</th>
  		<th>Fecha de Ingreso</th>
+ 		<th>Fecha de Baja</th>
  		<th>Descripcion</th>
         <th>Estado Tratamiento</th>
  		</thead>
@@ -94,6 +95,7 @@
 		 		<td><?php echo "{$row['UsuNombre']}"; ?></td>
 		 		<td><?php echo "{$row['PlantaNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataFecha']}"; ?></td>
+		 		<td><?php echo "{$row['TrataFechaBaja']}"; ?></td>
 		 		<td><?php echo "{$row['TrataDescripcion']}";?></td>
                 <td><?php echo "{$row['TrataEstado']}";?></td>
  			</tr>

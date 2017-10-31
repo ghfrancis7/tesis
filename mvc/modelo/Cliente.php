@@ -9,7 +9,6 @@
 			public $ClienteCuit;
 			public $ClienteDireccion;
 			public $ClienteTelefono;
-			public $ClienteCantidadPlantas;
 			public $ClienteFechaAlta;
 			public $ClienteFechaBaja;
 			public $ClienteEstado;

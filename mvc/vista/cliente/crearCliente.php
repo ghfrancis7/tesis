@@ -73,10 +73,6 @@ include_once("validarcuil.php");
             <br/>
             <label>Telefono</label><br/>
             <input type="text" name="ClienteTelefono">
-            <br/>
-            <label>Cantidad de Plantas</label><br/>
-            <input type="text" name="ClienteCantidadPlantas">
-            <br/>
             <input type="hidden" value="<?php echo $today;?>" name="ClienteFechaAlta" requrired>
             <input type="hidden" value="<?php echo NULL;?>" name="ClienteFechaBaja"requrired>
 			<input type="hidden" value="<?php echo "Activo";?>" name="ClienteEstado">
