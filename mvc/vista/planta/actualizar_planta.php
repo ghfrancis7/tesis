@@ -7,18 +7,18 @@
 			$PlantaLocalidad = $_POST['PlantaLocalidad'];
 			$PlantaDireccion = $_POST['PlantaDireccion'];
 			$PlantaTelefono = $_POST['PlantaTelefono'];
-			$PlantaEmail = $_POST['PlantaEmail'];
+			$PlantaMail = $_POST['PlantaMail'];
 
 		try {
 
 			$pdo->mysql->beginTransaction();
-			$pst = $pdo->mysql->prepare("UPDATE planta set PlantaNombre = :PlantaNombre, PlantaLocalidad = :PlantaLocalidad, PlantaDireccion =:PlantaDireccion, PlantaTelefono =:PlantaTelefono, PlantaEmail =:PlantaEmail where IDPlanta = :IDPlanta");
+			$pst = $pdo->mysql->prepare("UPDATE planta set PlantaNombre = :PlantaNombre, PlantaLocalidad = :PlantaLocalidad, PlantaDireccion =:PlantaDireccion, PlantaTelefono =:PlantaTelefono, PlantaMail =:PlantaMail where IDPlanta = :IDPlanta");
 			$pst->bindParam(":IDPlanta",$IDPlanta,PDO::PARAM_STR);
 			$pst->bindParam(":PlantaNombre",$PlantaNombre,PDO::PARAM_STR);
 			$pst->bindParam(":PlantaLocalidad",$PlantaLocalidad,PDO::PARAM_STR);
 			$pst->bindParam(":PlantaDireccion",$PlantaDireccion,PDO::PARAM_STR);
 			$pst->bindParam(":PlantaTelefono",$PlantaTelefono,PDO::PARAM_STR);
-			$pst->bindParam(":PlantaEmail",$PlantaEmail,PDO::PARAM_STR);
+			$pst->bindParam(":PlantaMail",$PlantaMail,PDO::PARAM_STR);
 			
 			$pst->execute();
 

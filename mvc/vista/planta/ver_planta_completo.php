@@ -78,7 +78,6 @@
             <th>ID</th>
             <th>Nombre de Planta</th>
             <th>Cliente</th>
-            <th>Tecnico</th>
             <th>Localidad de la Panta</th>
             <th>Direccion de la Planta</th>
             <th>Telefono de la Panta</th>
@@ -94,7 +93,6 @@
             <td><?php echo "{$row['IDPlanta']}"; ?></td>
                 <td><?php echo "{$row['PlantaNombre']}"; ?></td>
                 <td><?php echo "{$row['ClienteNombre']}"; ?></td>
-                <td><?php echo "{$row['UsuNombre']}"; ?></td>
                 <td><?php echo "{$row['PlantaLocalidad']}"; ?></td>
                 <td><?php echo "{$row['PlantaDireccion']}"; ?></td>
                 <td><?php echo "{$row['PlantaTelefono']}"; ?></td>
@@ -103,7 +101,12 @@
                 <td><?php echo "{$row['PlantaFechaBaja']}"; ?></td>
                 <td><?php echo "{$row['PlantaEstado']}"; ?></td>
                 <td><a href="editar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Modificar Planta</a></td>
-                <td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>" onclick="return confirm('Estas seguro de cambiar el estado de la planta?');"> Eliminar Planta</a></td>
+                <?php if ($row['PlantaEstado']=="Activo"){ ?>
+                    <td><a href="editar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>" onclick="return confirm('Estas seguro de cambiar el estado de la Planta?');">Cambiar Estado</a></td>
+                
+            <?php }else{?>
+                    <td></td>
+            <?php }?>
             </tr>
         <?php } ?>
         </tbody>
