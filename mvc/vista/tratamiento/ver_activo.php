@@ -54,7 +54,7 @@
 	</div>
     <div class="tablas">
 		<tr>
-        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Tratamientos</h2></td>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Tratamientos Activos</h2></td>
 		</tr>
     </div>
     <div class="tablas">
