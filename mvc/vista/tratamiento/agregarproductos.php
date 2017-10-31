@@ -98,6 +98,6 @@ if($_SESSION["recargarDeIndex"] != 1){
 				<input id="button" type="button" onClick="document.getElementById('frmagregaproductos').submit()" value="Agregar">
 	 				<br>			
 </form>
-<form id="veractivo" action="ver_activo.php" method="post">
+			<form id="veractivo" action="ver_activo.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Aceptar"/>
 			</form>

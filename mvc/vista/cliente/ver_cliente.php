@@ -109,7 +109,7 @@
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Clientes"/>
 		</form>
         </td><td>
-        <form id="pdfclienteactivo" action="pdfclienteactivo.php" method="post">
+        <form id="pdfclienteactivo"  target="_blank" action="pdfclienteactivo.php" method="post">
             <input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfclienteactivo').submit()" value="Generar PDF"/>
         </form>
         </td></tr>

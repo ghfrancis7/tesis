@@ -123,7 +123,7 @@
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Plantas Activas"/>
 		</form>
          </td><td>
-        <form id="pdfplantatodas" action="pdfplantatodas.php" method="post">
+        <form id="pdfplantatodas"  target="_blank" action="pdfplantatodas.php" method="post">
             <input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfplantatodas').submit()" value="Generar PDF"/>
         </form>
         </td></tr>

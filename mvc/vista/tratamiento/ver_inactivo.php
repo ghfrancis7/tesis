@@ -115,7 +115,7 @@
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Tratamientos Activos"/>
 			</form>
 			</td><td>
-	        <form id="pdftratamientosinactivos" action="pdftratamientosinactivos.php" method="post">
+	        <form id="pdftratamientosinactivos"  target="_blank" action="pdftratamientosinactivos.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdftratamientosinactivos').submit()" value="Generar PDF"/>
 			</form>
         </td></tr>

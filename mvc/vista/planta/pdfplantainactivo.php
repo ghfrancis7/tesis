@@ -27,12 +27,13 @@
 			$pdf->Ln(30);
 			$pdf->SetFont('Arial','B',11);
 			$pdf->Cell(70,8,"",11);
-			$pdf->Cell(100,8,"Lista de Plantas",0);
+			$pdf->Cell(100,8,"Lista de Plantas Inactivas",0);
 			$pdf->Ln(15);
 			$pdf->Cell(25,8,"Cliente: ",0);
 			$pdf->Ln(10);
 			$pdf->SetFont('Arial','B',8);
 			$pdf->Cell(5,8,"ID",0);
+			$pdf->Cell(25,8,"Nombre Cliente",0);
 			$pdf->Cell(20,8,"Nombre",0);
 			$pdf->Cell(20,8,"Localidad",0);
 			$pdf->Cell(30,8,"Direccion",0);
@@ -40,7 +41,6 @@
 			$pdf->Cell(35,8,"Email",0);
 			$pdf->Cell(20,8,"Fecha de Alta",0);
 			$pdf->Cell(20,8,"Fecha de Baja",0);
-			$pdf->Cell(15,8,"Estado",0);
 			$pdf->Ln(8);
 			$pdf->SetFont("Arial",'',8);
 
@@ -48,8 +48,8 @@
 					$sql= $controlador->listarPlantaInactivo($idUsuario);
 
 		foreach($sql as $row){ 
-				$pdf->Cell(25,8,$row['ClienteNombre'],0);
 				$pdf->Cell(5,8,$row['IDPlanta'],0);
+				$pdf->Cell(25,8,$row['ClienteNombre'],0);
 				$pdf->Cell(20,8,$row['PlantaNombre'],0);
 				$pdf->Cell(20,8,$row['PlantaLocalidad'],0);
 				$pdf->Cell(30,8,$row['PlantaDireccion'],0);
@@ -57,7 +57,6 @@
 				$pdf->Cell(35,8,$row['PlantaMail'],0); 
 				$pdf->Cell(20,8,$row['PlantaFechaAlta'],0);
 				$pdf->Cell(20,8,$row['PlantaFechaBaja'],0); 
-				$pdf->Cell(15,8,$row['PlantaEstado'],0); 
 				$pdf->Ln(8);
 	 				}
 			$pdf->Output();

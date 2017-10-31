@@ -117,7 +117,7 @@
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todas las Plantas"/>
 		</form>
     </td><td>
-        <form id="pdfplantainactivo" action="pdfplantainactivo.php" method="post">
+        <form id="pdfplantainactivo"  target="_blank" action="pdfplantainactivo.php" method="post">
             <input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfplantainactivo').submit()" value="Generar PDF"/>
         </form>
         </td></tr>

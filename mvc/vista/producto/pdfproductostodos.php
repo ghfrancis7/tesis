@@ -57,23 +57,23 @@
  				}
  	$pdf->Output('I');
 
-	$doc=$pdf->Output('S');
-
 	require("../../modelo/phpmailer/class.phpmailer.php");
 
 	$mail=new PHPMailer();
 	$mail->IsSMTP();
-	$mail->Host = "smtp.gmail.com";
+	$mail->Host ="smtp.gmail.com";
 	$mail->Port=465;
 	$mail->SMTPAuth = true;
 	$mail->SMTPSecure='ssl';
 	$mail->Username=$email;
 	$mail->Password='intel8600';
-	$mail->SetFrom($email);
+	$mail->SetFrom=($email);
 	$mail->AddAddress('ghfrancis7@gmail.com');
 	$mail->Subject='Productos Grupo AGUAS';
-	$body='mira wachin automatico jeje';
+	$body='Mensaje de Prueba';
 	$mail->MsgHTML($body);
+
+	$doc=$pdf->Output('S');
 
 	$mail->AddStringAttachment($doc,'doc.pdf','base64','application/pdf');
 	$mail->Send();

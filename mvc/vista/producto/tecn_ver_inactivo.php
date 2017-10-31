@@ -109,7 +109,7 @@
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Productos"/>
 		</form>
         </td><td>
-			<form id="pdfproductosinactivos" action="pdfproductosinactivos.php" method="post">
+			<form id="pdfproductosinactivos"  target="_blank" action="pdfproductosinactivos.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfproductosinactivos').submit()" value="Generar PDF"/>
 			</form>
 		</td></tr>

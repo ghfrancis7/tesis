@@ -109,7 +109,7 @@
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Productos Inactivos"/>
 			</form>
        </td><td>
-	        <form id="pdfproductosactivos.php" action="pdfproductosactivos.php" method="post">
+	        <form id="pdfproductosactivos.php"  target="_blank" action="pdfproductosactivos.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfproductosactivos.php').submit()" value="Generar PDF"/>
 			</form>
 		</td></tr>
