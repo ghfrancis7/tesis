@@ -21,7 +21,7 @@
 		include_once("../../modelo/Cliente.php");
 		$controlador = new Cliente();
 		$IDCliente= $_GET['buscar'];
-		$sql= $controlador->buscarCliente($IDCliente);
+		$sql= $controlador->buscarCliente($IDCliente,$idUsuario);
 	?>
 	<div class="backgroundTable">
     </div>

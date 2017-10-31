@@ -33,11 +33,35 @@
 				return $cliente;
 			
 		}
-		public function buscarCliente($buscar){
+		public function listarClienteActivo($idusuario){
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM cliente WHERE IDCliente LIKE '%$buscar%' OR ClienteNombre LIKE '%$buscar%' OR ClienteCUIT LIKE '%$buscar%'";
+
+				 $q="SELECT * FROM cliente WHERE IDUsuario='$idusuario' AND ClienteEstado='Activo'";
+
+					$cliente = $pdo->mysql->query($q);
+		
+				return $cliente;
+			
+		}
+		public function listarClienteInactivo($idusuario){
+
+				 $pdo = new Conexion();
+
+
+				 $q="SELECT * FROM cliente WHERE IDUsuario='$idusuario' AND ClienteEstado='Inactivo'";
+
+					$cliente = $pdo->mysql->query($q);
+		
+				return $cliente;
+			
+		}
+		public function buscarCliente($buscar,$idusuario){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM cliente WHERE IDUsuario=$idusuario AND IDCliente LIKE '%$buscar%' OR IDUsuario=$idusuario AND ClienteNombre LIKE '%$buscar%' OR IDUsuario=$idusuario AND ClienteCUIT LIKE '%$buscar%'";
 
 					$producto = $pdo->mysql->query($q);
 		
