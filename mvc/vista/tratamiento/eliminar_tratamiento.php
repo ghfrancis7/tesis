@@ -26,21 +26,13 @@
 				$trata = $datosTratamiento->fetch();	
 				
 				if ($trata['TrataEstado']=="Inactivo") {
-					$TrataEstado="Activo";
-					$TrataFechaBaja=NULL;
+				 ?>
+<script>
+    window.history.back();
+</script>
 
-							$pst = $pdo->mysql->prepare("INSERT INTO tratamiento (IDUsuario,IDPlanta,TrataNombre,TrataFecha,TrataFechaBaja,TrataNumAnalisis,TrataDescripcion,TrataEstado) VALUES (:IDUsuario,:IDPlanta,:TrataNombre,:TrataFecha,:TrataFechaBaja,:TrataNumAnalisis,:TrataDescripcion,:TrataEstado)");
-			$pst->bindParam(":IDUsuario",$idUsuario,PDO::PARAM_STR);
-			$pst->bindParam(":IDPlanta",$IDPlanta,PDO::PARAM_STR);
-			$pst->bindParam(":TrataNombre",$TrataNombre,PDO::PARAM_STR);
-			$pst->bindParam(":TrataFecha",$TrataFecha,PDO::PARAM_STR);
-			$pst->bindParam(":TrataFechaBaja",$TrataFechaBaja,PDO::PARAM_STR);
-			$pst->bindParam(":TrataNumAnalisis",$TrataNumAnalisis,PDO::PARAM_STR);
-			$pst->bindParam(":TrataDescripcion",$TrataDescripcion,PDO::PARAM_STR);
-			$pst->bindParam(":TrataEstado",$TrataEstado,PDO::PARAM_STR);
+<?php 
 
-		$pst->execute();
-		$pdo->mysql->commit() ;
 
 
 

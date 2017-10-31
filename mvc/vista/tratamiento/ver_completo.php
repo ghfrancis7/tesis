@@ -77,7 +77,6 @@
  		<th>ID</th>
  		<th>Nombre de Tratamiento</th>
  		<th>Numero de Analisis</th>
- 		<th>Nombre de Tecnico</th>
  		<th>Nombre de Planta</th>
  		<th>Fecha de Ingreso</th>
  		<th>Descripcion</th>
@@ -90,11 +89,19 @@
 		 		<td><?php echo "{$row['IDTratamiento']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNumAnalisis']}"; ?></td>
-		 		<td><?php echo "{$row['UsuNombre']}"; ?></td>
 		 		<td><?php echo "{$row['PlantaNombre']}"; ?></td>
 		 		<td><?php echo "{$row['TrataFecha']}"; ?></td>
 		 		<td><?php echo "{$row['TrataDescripcion']}";?></td>
                 <td><?php echo "{$row['TrataEstado']}";?></td>
+                <td><a href="editar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Modificar Tratamiento</a></td>
+                <td><a href="agregarproductos.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Agregar Productos </a></td>
+            <?php if ($row['TrataEstado']=="Activo"){ ?>
+                	<td><a href="eliminar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del tratamiento?');">Cambiar Estado</a></td>
+                
+            <?php }else{?>
+					<td></td>
+            <?php }?>
+                <td><a href="ver_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Ver Tratamiento </a></td>
  			</tr>
  		<?php }?>
 		</tbody>

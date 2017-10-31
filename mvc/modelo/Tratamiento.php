@@ -66,11 +66,22 @@ include_once("Conexion.php");
 				return $tratamiento;
 			
 		}
-		public function buscarTratamiento($buscar){
+		public function buscarTratamiento($buscar,$idusuario){
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM tratamiento WHERE IDTratamiento LIKE '%$buscar%' OR TrataNombre LIKE '%$buscar%' OR TrataNumAnalisis LIKE '%$buscar%'";
+				 $q="SELECT * FROM tratamiento WHERE IDUsuario=$idusuario AND IDTratamiento LIKE '%$buscar%' OR IDUsuario=$idusuario AND TrataNombre LIKE '%$buscar%' OR IDUsuario=$idusuario AND TrataNumAnalisis LIKE '%$buscar%'";
+
+					$tratamiento = $pdo->mysql->query($q);
+		
+				return $tratamiento;
+			
+		}
+		public function buscarTratamientoporplanta($idusuario,$idplanta){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM tratamiento WHERE IDUsuario=$idusuario AND IDPlanta=$idplanta";
 
 					$tratamiento = $pdo->mysql->query($q);
 		
