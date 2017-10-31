@@ -23,12 +23,15 @@
 		// Si no se ha seleccionado mes, ponemos el actual y el año
 		$month = isset( $_GET[ 'month' ] ) ? $_GET[ 'month' ] : date( 'Y-n' );
 		$week = 1;
+		
 		for ( $i=1;$i<=date( 't', strtotime( $month ) );$i++ ) {
 			$day_week = date( 'N', strtotime( $month.'-'.$i )  );			
 			$calendar[ $week ][ $day_week ] = $i;
 			if ( $day_week == 7 )
 				$week++;
 		}
+		//incluye agenda.php
+		include_once ("../mvc/modelo/Agenda.php");
     ?>
 	<div class="backgroundTable">
     </div>
@@ -79,9 +82,17 @@
 			<tbody>
 				<?php foreach ( $calendar as $days ) : ?>
 					<tr>
-						<?php for ( $i=1;$i<=7;$i++ ) : ?>
-							<td>
-								<?php echo isset( $days[ $i ] ) ? $days[ $i ] : ''; ?>
+						<?php for ( $i=1;$i<=7;$i++ ) : 
+							$dia = isset( $days[ $i ] ) ? $days[ $i ] : '';
+							$controlador = new Agenda();
+							$sql= $controlador->CuentaCita($month,$dia,$idUsuario);
+							foreach($sql as $row){?>
+							
+                            <td>
+								<?php echo isset( $days[ $i ] ) ? $days[ $i ] : '';
+									echo isset( $days[$i] )?$days[$i]:''; 
+									if ($row['COUNT(*)'] >= 1){ echo "\nTiene Cita"; }
+									}?>
 							</td>
 						<?php endfor; ?>
 					</tr>
@@ -100,7 +111,6 @@
 					<td colspan="7">
 						<form id="verfecha" name="verfecha" action="" method="POST">
 							<input name="date" type="date" class="styled-select" style="font-family:  'Exo', sans-serif; color:#000">
-
 							<input id="button" type="button" onClick="document.getElementById('verfecha').submit()" value="Ver Citas"/>
 							<!-- En el Documento PHP donde se generará la consulta debe convertirse este dato en el dato del tipo aceptado por la tabla con la siguiente instruccion:
                             $var = $_POST['verfecha'];
