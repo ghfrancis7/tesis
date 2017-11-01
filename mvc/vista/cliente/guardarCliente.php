@@ -51,7 +51,8 @@
 			}elseif ($cuitused=="true") {
 				echo"<script type=\"text/javascript\">alert('CUIT ya utilizado'); window.location='crearCliente.php';</script>"; 
 			}elseif($sqlc==$ClienteCUIT) {
-				try {
+
+				//try {
 
 			$pdo->mysql->beginTransaction();
 			$pst = $pdo->mysql->prepare("INSERT INTO cliente (IDUsuario,ClienteNombre, ClienteCUIT,ClienteDireccion,ClienteTelefono,ClienteFechaAlta,ClienteEstado) VALUES (:IDUsuario,:ClienteNombre,:ClienteCUIT,:ClienteDireccion,:ClienteTelefono,:ClienteFechaAlta,:ClienteEstado)");
@@ -67,11 +68,11 @@
 			
 			echo"<script type=\"text/javascript\">alert('Se registro correctamente'); window.location='../planta/crearPlanta.php';</script>";
 				
-			} catch (Exception $e) {
-				$pdo->mysql->rollback();
-				echo "No se pudo agregar el cliente";
+			//} catch (Exception $e) {
+			//	$pdo->mysql->rollback();
+			//	echo "No se pudo agregar el cliente";
 				
-			} 
+			//} 
 
 		
 		}else {

@@ -75,7 +75,6 @@
             <th>Direccion</th>
             <th>Telefono</th>
             <th>Fecha de Alta</th>
-            <th>Fecha de Baja</th>
             <th>Estado</th>
 		</thead>
  		<tbody>
@@ -89,7 +88,6 @@
  			<td><?php echo "{$row['ClienteDireccion']}"; ?></td>
  			<td><?php echo "{$row['ClienteTelefono']}"; ?></td>
  			<td><?php echo "{$row['ClienteFechaAlta']}"; ?></td>
- 			<td><?php echo "{$row['ClienteFechaBaja']}"; ?></td>
  			<td><?php echo "{$row['ClienteEstado']}"; ?></td>
  			<td><a href="editar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Modificar Cliente</a></td>
  			<td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del cliente?');"> Cambiar Estado</a></td>
