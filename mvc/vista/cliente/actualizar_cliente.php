@@ -13,7 +13,7 @@
 	$ClienteEstado = $_POST['ClienteEstado'];
 
 
-	try { 
+	//try { 
 
 			$pdo->mysql->beginTransaction();
 			$pst = $pdo->mysql->prepare("UPDATE cliente set ClienteNombre = :ClienteNombre, ClienteCUIT = :ClienteCUIT, ClienteDireccion =:ClienteDireccion, ClienteTelefono =:ClienteTelefono, ClienteFechaAlta=:ClienteFechaAlta , ClienteFechaBaja=:ClienteFechaBaja , ClienteEstado=:ClienteEstado where IDCliente = :IDCliente");
@@ -32,9 +32,9 @@
 			$pdo->mysql->commit();
 				header("Location:ver_cliente.php");
 			
-		} catch (Exception $e) {
-				$pdo->mysql->rollback();
-					echo "No se pudo modificar";
+		//} catch (Exception $e) {
+		//		$pdo->mysql->rollback();
+		//			echo "No se pudo modificar";
 			
-	}
+	//}
 	 ?>
