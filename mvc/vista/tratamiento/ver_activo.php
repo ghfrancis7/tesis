@@ -53,11 +53,12 @@
         </nav>
 	</div>
     <div class="tablas">
+    <table width="60%" style="margin: 0 auto;">
 		<tr>
         	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Tratamientos Activos</h2></td>
 		</tr>
-    </div>
-    <div class="tablas">
+    </table>
+    
 	<table width="60%" style="margin: 0 auto;">
         <tr><td>
 			<table width="100%" border="1" style="margin: 0 auto;"><tbody>
