@@ -17,21 +17,6 @@
             $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
             $idUsuario = $_SESSION['id'];
         }
-		// Establecer el idioma al Español para strftime().
-		setlocale( LC_TIME, 'spanish' );
-
-		// Si no se ha seleccionado mes, ponemos el actual y el año
-		$month = isset( $_GET[ 'month' ] ) ? $_GET[ 'month' ] : date( 'Y-n' );
-		$week = 1;
-		
-		for ( $i=1;$i<=date( 't', strtotime( $month ) );$i++ ) {
-			$day_week = date( 'N', strtotime( $month.'-'.$i )  );			
-			$calendar[ $week ][ $day_week ] = $i;
-			if ( $day_week == 7 )
-				$week++;
-		}
-		//incluye agenda.php
-		include_once ("../mvc/modelo/Agenda.php");
     ?>
 	<div class="backgroundTable">
     </div>
@@ -63,71 +48,24 @@
 			<div class="clearfix"></div>
         </nav>
 	</div>
-    <div class="tablas">
-        	<table width="40%" border="1" style="margin: 0 auto; font-size:14px; font-family: 'Exo', sans-serif;">
-			<thead>
-				<tr>
-					<td colspan="7" style="font-size:20px;"><?php echo strftime( '%B %Y', strtotime( $month ) ); ?></td>
-				</tr>
-				<tr>
-					<td>Lunes</td>
-					<td>Martes</td>			
-					<td>Miercoles</td>			
-					<td>Jueves</td>			
-					<td>Viernes</td>			
-					<td>Sabado</td>			
-					<td>Domingo</td>			
-				</tr>
-			</thead>
-			<tbody>
-				<?php foreach ( $calendar as $days ) : ?>
-					<tr>
-						<?php for ( $i=1;$i<=7;$i++ ) : 
-							$dia = isset( $days[ $i ] ) ? $days[ $i ] : '';
-							$controlador = new Agenda();
-							$sql= $controlador->CuentaCita($month,$dia,$idUsuario);
-							foreach($sql as $row){?>
-							
-                            <td>
-								<?php echo isset( $days[ $i ] ) ? $days[ $i ] : '';
-									echo isset( $days[$i] )?$days[$i]:''; 
-									if ($row['COUNT(*)'] >= 1){ echo "\nTiene Cita"; }
-									}?>
-							</td>
-						<?php endfor; ?>
-					</tr>
-				<?php endforeach; ?>
+    <div class="buttons">
+        	<table>
                 <tr>
-					<td colspan="7">
-						<form id="verMes" method="get">
-							<input name="month" type="month" class="styled-select" style="font-family:  'Exo', sans-serif; color:#000">
-							<input id="button" type="button" onClick="document.getElementById('verMes').submit()" value="Ver Mes"/>
-						</form>
-					</td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="7">
-						<form id="verfecha" name="verfecha" action="" method="POST">
-							<input name="date" type="date" class="styled-select" style="font-family:  'Exo', sans-serif; color:#000">
-							<input id="button" type="button" onClick="document.getElementById('verfecha').submit()" value="Ver Citas"/>
-							<!-- En el Documento PHP donde se generará la consulta debe convertirse este dato en el dato del tipo aceptado por la tabla con la siguiente instruccion:
-                            $var = $_POST['verfecha'];
-                            $date = str_replace('/', '-', $var);
-                            date('Y-m-d', strtotime($date)); -->
-						</form>
-						<form id="crearCita" name="CrearCita" action="" method="POST">
-							<input id="button" type="button" onClick="document.getElementById('crearCita').submit()" value="Nueva Cita"/>
-							<!-- En el Documento PHP donde se generará la consulta debe convertirse este dato en el dato del tipo aceptado por la tabla con la siguiente instruccion:
-                            $var = $_POST['verfecha'];
-                            $date = str_replace('/', '-', $var);
-                            date('Y-m-d', strtotime($date)); -->
-						</form>
-					</td>
-				</tr>
-			</tfoot>
-		</table>
+                    <td width="45%" align="center">
+                    <form id="semanal" action="#" method="GET">
+                    	<input  type="hidden" value="<?php ?>" />
+                        <input id="button" type="button" onClick="document.getElementById('semanal').submit()" value="Semanal"/>
+                    </form>
+                    </td>
+                    <td width="10%" align="center">
+                    </td>
+                    <td width="45%" align="center">
+					<form id="mensual" action="#" method="GET">
+                        <input id="button" type="button" onClick="document.getElementById('mensual').submit()" value="Mensual"/>
+                    </form>
+                    </td>
+                </tr>
+        	</table>
     </div>
 </body>
 </html>
