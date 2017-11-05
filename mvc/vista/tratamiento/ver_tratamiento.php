@@ -84,7 +84,8 @@
         <table width="60%" border="1" style="margin: 0 auto;"> 
 		<thead>
 			<th>Producto</th>
-			<th>Cantidad</th>
+			<th>Dosificacion Semanal</th>
+			<th>Dosificacion Anual aprox.</th>
 		</thead>
 		<tbody>
 			<?php 
@@ -92,6 +93,7 @@
  				<tr>
  					<td><?php echo "{$rowl['ProductoNombre']}"; ?></td>
 		 			<td><?php echo "{$rowl['LoteCantidad']}"; ?></td>
+		 			<td><?php echo ("{$rowl['LoteCantidad']}")*52; ?></td>
  				</tr>
  			<?php } ?>
 		</tbody>
