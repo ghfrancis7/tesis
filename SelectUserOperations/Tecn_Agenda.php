@@ -52,16 +52,16 @@
         	<table>
                 <tr>
                     <td width="45%" align="center">
-                    <form id="semanal" action="#" method="GET">
+                    <form id="semanal" action="../mvc/vista/agenda/crearAgenda.php" method="GET">
                     	<input  type="hidden" value="<?php ?>" />
-                        <input id="button" type="button" onClick="document.getElementById('semanal').submit()" value="Semanal"/>
+                        <input id="button" type="button" onClick="document.getElementById('semanal').submit()" value="Nueva Cita"/>
                     </form>
                     </td>
                     <td width="10%" align="center">
                     </td>
                     <td width="45%" align="center">
-					<form id="mensual" action="#" method="GET">
-                        <input id="button" type="button" onClick="document.getElementById('mensual').submit()" value="Mensual"/>
+					<form id="mensual" action="../mvc/vista/agenda/ver_agenda.php" method="GET">
+                        <input id="button" type="button" onClick="document.getElementById('mensual').submit()" value="Ver Citas"/>
                     </form>
                     </td>
                 </tr>

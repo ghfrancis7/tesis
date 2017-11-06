@@ -1,52 +1,46 @@
 <?php 
 
-include_once("Conexion.php");
+	include_once("Conexion.php");
+		class Agenda{
 
-	class Agenda{
-		
-		private $IDPlanta;
-		private $IDUsuario;
-		private $Titulo;
-		private $Descripcion;
-		private $Inicio;
-		private $Fin;
-		private $start;
+			public $IDAgenda;
+			public $IDUsuario;
+			public $IDTratamiento;
+			public $AgendaNombre;
+			public $AgendaFecha;
+			public $AgendaDescripcion;
+			public $AgendaEstado;
 
-		private $pdo;
 
-		public function __construct(){
-		
- 			$pdo = new Conexion();
+			private $pdo;
 
-		}
+			public function __construct(){
+			
+	 			$pdo = new Conexion();
 
-		public function VerTodasCita($start, $iduser){
+			}
+
+		public function listarAgenda($idusuario){
 
 				 $pdo = new Conexion();
-				 $start1 = $start.' + 3 day';
-				 
-				 $q="SELECT * FROM cita WHERE (InicioCita BETWEEN $start AND $start1) AND IDUsuario LIKE $iduser";
 
-					$cita = $pdo->mysql->query($q);
+
+				 $q="SELECT * FROM agenda A INNER JOIN Tratamiento T ON A.IDTratamiento=T.IDTratamiento INNER JOIN Planta P ON P.IDPlanta= T.IDPlanta WHERE A.IDUsuario = $idusuario";
+
+					$agenda = $pdo->mysql->query($q);
 		
-				//return $cita;
-				return $cita;
+				return $agenda;
 			
 		}
+		public function buscarAgenda($buscar,$idusuario){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM agenda A INNER JOIN Tratamiento T ON A.IDTratamiento=T.IDTratamiento INNER JOIN Planta P ON P.IDPlanta= T.IDPlanta WHERE A.IDUsuario = $idusuario AND IDAgenda LIKE '%$buscar%' OR AgendaNombre LIKE '%$buscar%' OR AgendaFecha LIKE '%$buscar%'";
+
+					$agenda = $pdo->mysql->query($q);
 		
-		public function CuentaCita($month, $dia, $iduser){
-
-				$pdo = new Conexion();
-				
-				$start="'".$month."-".$dia."'";
-				$end = "'".$month."-".($dia+1)."'";	 
-				
-				$q="SELECT COUNT(*) FROM cita WHERE (InicioCita BETWEEN $start AND $end) AND IDUsuario LIKE $iduser";
-
-				$cuentaCitas = $pdo->mysql->query($q);
-				$cuentaCitas=$cuentaCitas." ".$end;
-				
-				return $cuentaCitas;
+				return $agenda;
+			
 		}
 	}
- ?>

@@ -54,8 +54,4 @@
 				echo "No se pudo modificar";
 		
 	}
-
-		
-
-
 	 ?>
