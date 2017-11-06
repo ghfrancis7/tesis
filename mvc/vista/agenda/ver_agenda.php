@@ -65,7 +65,7 @@
         <tr><td>
 			<table width="100%" border="1" style="margin: 0 auto;"><tbody>
 			<tr><td width="60%">
-				<form id="find" action="busquedaPlanta.php" method ="get">
+				<form id="find" action="busquedaAgenda.php" method ="get">
 				<label>Buscar: <input type="text" name="buscar" ></label>
             </td><td width="40%" valign="middle" class="buttons">
 				<input id="button" name="findButton" type="button" onClick="document.getElementById('find').submit()" value="Buscar">
@@ -80,6 +80,7 @@
  		<th>Nombre de Cita</th>
  		<th>Tratamiento</th>
  		<th>Direccion de Planta</th>
+ 		<th>Telefono de Planta</th>
  		<th>Fecha</th>
  		<th>Descripcion</th>
  	</thead>
@@ -92,6 +93,7 @@
 	 			<td><?php echo "{$row['AgendaNombre']}"; ?></td>
 	 			<td><?php echo "{$row['TrataNombre']}"; ?></td>
 	 			<td><?php echo "{$row['PlantaDireccion']}"; ?></td>
+	 			<td><?php echo "{$row['PlantaTelefono']}"; ?></td>
 	 			<td><?php echo "{$row['AgendaFecha']}"; ?></td>
 	 			<td><?php echo "{$row['AgendaDescripcion']}"; ?></td>
 	 			<td><a href="eliminar_agenda.php?IDAgenda=<?php echo $row['IDAgenda'] ?>" onclick="return confirm('Estas seguro de dar de baja esta cita?');"> Eliminar Cita</a></td>
@@ -107,8 +109,8 @@
 		<form id="verinactivo" action="ver_agenda_todas.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinactivo').submit()" value="Ver Todas"/>
 		</form>
-        <form id="pdfplantaactiva"  target="_blank" action="pdfplantaactiva.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfplantaactiva').submit()" value="Generar PDF"/>
+        <form id="pdfagendas"  target="_blank" action="pdfagenda.php" method="post">
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfagendas').submit()" value="Generar PDF"/>
 		</form>
         </td></tr>
 	</tbody></table>
