@@ -17,12 +17,7 @@
             $usuario = $_SESSION['nom']." ".$_SESSION['ape'];
             $idUsuario = $_SESSION['id'];
         }
-
-	//if($_SESSION["recargarDeIndex"] != 1){
-	//	echo '<meta http-equiv="refresh" content="1">';
-	//	$_SESSION["recargarDeIndex"] = 1;
-	//}
-
+/*-------------------------------------------------------------*/
 	include_once("../../modelo/Tratamiento.php");
 	include_once("../../modelo/Conexion.php");
 	include_once("../../modelo/Lote.php");
@@ -73,54 +68,62 @@
         </nav>
 	</div>
 
-    <div class="tablas">
-		<label>Crear una Cita:</label>
-		<b style="font-size:18px"><u><?php echo $tratamiento['TrataNombre']; ?></u></b><br/><br/>
-        <table width="60%" style="margin: 0 auto;">
-       
-		<tbody>
-            <td width="30%">
-                <form id="frmagregaragenda" action="guardarAgenda.php" method="post">
-            </td>
-            <label>Seleccione el Tratamiento</label><br/>
+    <div class="formularios">
+    <table width="60%" style="margin: 0 auto;">
+    <form id="frmagregaragenda" action="guardarAgenda.php" method="post">
+    <thead>
+		<label style="font-size:36px">Crear una Cita:</label>
+	</thead>
+	<tbody>
+    	<tr><td>
+		<br/>
+        <label>Seleccione el Tratamiento</label><br/>
         <div class="styled-select" style="margin:0 auto;">
            <select name="IDTratamiento" style="color:#FFF">
-                        <?php 
-                        foreach($sql as $row){ 
-                            if (strcasecmp($row['TrataEstado'],"Activo") == 0) { ?>
-                                <option value= <?php echo "{$row['IDTratamiento']}"; ?> style="color:#000"><?php echo "{$row['TrataNombre']}"; ?></option>
-                        <?php } } ?>
-                    </select>
-        </div>
-            <label>*Nombre de la Cita</label><br/>
+				<?php 
+                foreach($sql as $row){ 
+                    if (strcasecmp($row['TrataEstado'],"Activo") == 0) { ?>
+                        <option value= <?php echo "{$row['IDTratamiento']}"; ?> style="color:#000"><?php echo "{$row['TrataNombre']}"; ?></option>
+                <?php } } ?>
+			</select>
+        	</div>
+            </td></tr>
+            <tr><td>
+            <br/>
+            <label>Nombre de la Cita</label><br/>
             <input type="text" name="AgendaNombre">
             <br/>
-            <label>*Fecha</label><br/>
+            </td></tr>
+            <tr><td>
+            <br/>
+            <label>Fecha</label><br/>
             <input type="date" name="AgendaFecha">
             <br/>
+            </td></tr>
+            <tr><td>
             <br/>
             <label>Hora</label><br/>
             <input type="time" name="AgendaHora">
             <br/>
+            </td></tr>
+            <tr><td>
+            <br/>
             <label>Descripcion</label><br/>
-            <input type="text" name="AgendaDescripcion">
-            <br/>       
+            <textarea name="AgendaDescripcion" style="height:150px"></textarea>
+            <br/></td></tr>
             <input type="hidden" value="<?php echo 'Activo';?>" name="AgendaEstado">
             <input type="hidden" value="<?php echo $idUsuario;?>" name="IDUsuario">
-            <br/>
-        </td>
-        </tr>
-        <tr>
+            <tr>
             <td width="100%">
                  <table width="100%" style="margin: 0 auto;">
                     <tr>
                         <td width="50%">
-                        <input id="button" type="button" onClick="document.getElementById('frmagregaragenda').submit()" value="Acept">
+                        <input id="button" type="button" onClick="document.getElementById('frmagregaragenda').submit()" value="Aceptar">
                         </form>
                         </td>
                         <td width="50%">
                         <form id="frmcancel" method="post" action="../../../Post_Inicio/sesionTecn.php">
-                        <input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Cancel">
+                        <input id="button" type="button" onClick="document.getElementById('frmcancel').submit()" value="Cancelar">
                         </form>
                         </td>
                     </tr>
