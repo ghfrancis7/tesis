@@ -7,6 +7,7 @@
 		$sql= $controlador->listarProducto();
 
 			$nombreused="false";
+			$numserieused="false";
 
 			$pdo=new Conexion();
 
@@ -20,12 +21,18 @@
 		foreach($sql as $row){
  			if ($ProductoNombre==$row['ProductoNombre']) {
  				$nombreused='true';
+ 			}elseif{$ProductoNumeroSerie==$row['ProductoNumeroSerie']){
+				$numserieused='true';
  			}
 }
 		if ($nombreused=="true") {
 			echo"<script type=\"text/javascript\">alert('Ya hay otro producto con este nombre'); window.location='crearProducto.php';</script>"; 
 		}elseif ($ProductoNombre==""){
 			echo"<script type=\"text/javascript\">alert('No ingreso el nombre del producto'); window.location='crearProducto.php';</script>"; 
+		}elseif ($ProductoNumeroSerie==""){
+			echo"<script type=\"text/javascript\">alert('No ingreso el numero de serie del producto'); window.location='crearProducto.php';</script>"; 
+		}elseif ($numserieused=="true"){
+			echo"<script type=\"text/javascript\">alert('Este Numero de serie pertenece a otro Producto'); window.location='crearProducto.php';</script>"; 
 		}else {
 
 	//try {

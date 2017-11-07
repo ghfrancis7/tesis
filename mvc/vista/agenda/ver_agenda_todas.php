@@ -81,19 +81,20 @@
  		<th>Tratamiento</th>
  		<th>Direccion de Planta</th>
  		<th>Fecha</th>
+ 		<th>Hora</th>
  		<th>Fecha de Baja</th>
  		<th>Descripcion</th>
  	</thead>
  	<tbody>
  	<?php  
  		foreach($sql as $row){ 
- 			echo $today;
 			if ($row['AgendaEstado']=="Inactivo") { ?>
  				<tr>
 	 			<td><?php echo "{$row['AgendaNombre']}"; ?></td>
 	 			<td><?php echo "{$row['TrataNombre']}"; ?></td>
 	 			<td><?php echo "{$row['PlantaDireccion']}"; ?></td>
 	 			<td><?php echo "{$row['AgendaFecha']}"; ?></td>
+	 			<td><?php echo "{$row['AgendaHora']}"; ?></td>
 	 			<td><?php echo "{$row['AgendaFechaBaja']}"; ?></td>
 	 			<td><?php echo "{$row['AgendaDescripcion']}"; ?></td>
 	 			<td><a target="_blank" href="../tratamiento/ver_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Ver Tratamiento </a></td>

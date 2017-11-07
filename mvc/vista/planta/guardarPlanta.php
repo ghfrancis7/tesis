@@ -40,6 +40,8 @@
 			echo"<script type=\"text/javascript\">alert('Ya hay otra planta con este nombre'); window.location='crearPlanta.php';</script>"; 
 		}elseif ($PlantaNombre==""){
 			echo"<script type=\"text/javascript\">alert('No ingreso el nombre de la planta'); window.location='crearPlanta.php';</script>"; 
+		}elseif ($PlantaDireccion==""){
+			echo"<script type=\"text/javascript\">alert('No ingreso la direccion de la planta'); window.location='crearPlanta.php';</script>"; 
 		}else {
 
 	//try {

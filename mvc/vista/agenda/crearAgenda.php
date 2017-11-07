@@ -18,10 +18,10 @@
             $idUsuario = $_SESSION['id'];
         }
 
-	if($_SESSION["recargarDeIndex"] != 1){
-		echo '<meta http-equiv="refresh" content="1">';
-		$_SESSION["recargarDeIndex"] = 1;
-	}
+	//if($_SESSION["recargarDeIndex"] != 1){
+	//	echo '<meta http-equiv="refresh" content="1">';
+	//	$_SESSION["recargarDeIndex"] = 1;
+	//}
 
 	include_once("../../modelo/Tratamiento.php");
 	include_once("../../modelo/Conexion.php");
@@ -80,7 +80,7 @@
        
 		<tbody>
             <td width="30%">
-                <form id="frmagregaragenda" action="agregarAgenda.php" method="post">
+                <form id="frmagregaragenda" action="guardarAgenda.php" method="post">
             </td>
             <label>Seleccione el Tratamiento</label><br/>
         <div class="styled-select" style="margin:0 auto;">
@@ -92,10 +92,10 @@
                         <?php } } ?>
                     </select>
         </div>
-            <label>Nombre de la Cita</label><br/>
+            <label>*Nombre de la Cita</label><br/>
             <input type="text" name="AgendaNombre">
             <br/>
-            <label>Fecha</label><br/>
+            <label>*Fecha</label><br/>
             <input type="date" name="AgendaFecha">
             <br/>
             <br/>
@@ -106,6 +106,7 @@
             <input type="text" name="AgendaDescripcion">
             <br/>       
             <input type="hidden" value="<?php echo 'Activo';?>" name="AgendaEstado">
+            <input type="hidden" value="<?php echo $idUsuario;?>" name="IDUsuario">
             <br/>
         </td>
         </tr>
@@ -114,7 +115,7 @@
                  <table width="100%" style="margin: 0 auto;">
                     <tr>
                         <td width="50%">
-                        <input id="button" type="button" onClick="document.getElementById('frmcreapla').submit()" value="Acept">
+                        <input id="button" type="button" onClick="document.getElementById('frmagregaragenda').submit()" value="Acept">
                         </form>
                         </td>
                         <td width="50%">

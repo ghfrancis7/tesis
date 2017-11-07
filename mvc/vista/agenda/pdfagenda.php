@@ -35,6 +35,7 @@
 			$pdf->Cell(30,8,"Direccion de Planta",0);
 			$pdf->Cell(28,8,"Telefono de Planta",0);
 			$pdf->Cell(30,8,"Fecha",0);
+			$pdf->Cell(15,8,"Hora",0);
 			$pdf->Cell(20,8,"Descripcion",0);
 			$pdf->Ln(8);
 			$pdf->SetFont("Arial",'',8);
@@ -49,6 +50,7 @@
 				$pdf->Cell(30,8,$row['PlantaDireccion'],0);
 				$pdf->Cell(28,8,$row['PlantaTelefono'],0);
 				$pdf->Cell(30,8,$row['AgendaFecha'],0);
+				$pdf->Cell(15,8,$row['AgendaHora'],0);
 				$pdf->Cell(20,8,$row['AgendaDescripcion'],0); 
 				$pdf->Ln(8);
 	 				}

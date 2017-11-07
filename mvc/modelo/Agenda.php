@@ -8,6 +8,7 @@
 			public $IDTratamiento;
 			public $AgendaNombre;
 			public $AgendaFecha;
+			public $AgendaHora;
 			public $AgendaDescripcion;
 			public $AgendaEstado;
 

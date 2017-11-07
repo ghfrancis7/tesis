@@ -80,13 +80,13 @@
                     ?>
             </select>   
         </div>
-            <label>Nombre de la Planta</label><br/>
+            <label>*Nombre de la Planta</label><br/>
             <input type="text" name="PlantaNombre">
             <br/>
             <label>Localidad de la Panta</label><br/>
             <input type="text" name="PlantaLocalidad">
             <br/>
-            <label>Direccion de la Planta</label><br/>
+            <label>*Direccion de la Planta</label><br/>
             <input type="text" name="PlantaDireccion">
             <br/>
             <label>Telefono de la Panta</label><br/>

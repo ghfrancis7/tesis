@@ -56,10 +56,10 @@
 	<table width="100%">
 		<tr><td><form id="frmnewprod" action="guardarProducto.php" method="post"></td></tr>
         <tr><td>
-        	<label>Numero de Serie</label><br/>
+        	<label>*Numero de Serie</label><br/>
             <input type="text" name="ProductoNumeroSerie">
 			<br/>
-			<label>Nombre del Producto</label><br/>
+			<label>*Nombre del Producto</label><br/>
 			<input type="text" name="ProductoNombre">
             <br/>
             <label>Descripcion de Producto</label><br/>

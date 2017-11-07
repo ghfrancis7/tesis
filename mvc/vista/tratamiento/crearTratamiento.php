@@ -88,13 +88,13 @@
 	<table width="100%">
 		<tr><td><form id="frmnewtrata" action="guardarTratamiento.php" method="post"></td></tr>
 		<tr><td>
-		<label>Nombre de Tratamiento</label><br/>
+		<label>*Nombre de Tratamiento</label><br/>
         <input type="text" name="TrataNombre">
 		<br/>
         <label>Fecha de Inicio del Tratamiento</label><br/>
 		<input type="date" name="TrataFecha">
 		<br/>
-        <label>Numero de Analisis</label><br/>
+        <label>*Numero de Analisis</label><br/>
 		<input type="text" name="TrataNumAnalisis">
 		<br/>
         <label>Descripcion</label><br/>

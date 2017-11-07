@@ -65,6 +65,7 @@
                 <th>Tratamiento</th>
                 <th>Direccion de Planta</th>
                 <th>Fecha</th>
+                <th>Hora</th>
                 <th>Descripcion</th>
 			</thead>
  		<tbody>
@@ -75,6 +76,7 @@
                 <td><?php echo "{$row['TrataNombre']}"; ?></td>
                 <td><?php echo "{$row['PlantaDireccion']}"; ?></td>
                 <td><?php echo "{$row['AgendaFecha']}"; ?></td>
+                <td><?php echo "{$row['AgendaHora']}"; ?></td>
                 <td><?php echo "{$row['AgendaDescripcion']}"; ?></td>
                 <?php if ($row['AgendaEstado']=="Activo"){ ?>
                     <td><a href="eliminar_agenda.php?IDAgenda=<?php echo $row['IDAgenda'] ?>" onclick="return confirm('Estas seguro de dar de baja esta cita?');"> Eliminar Cita</a></td>
