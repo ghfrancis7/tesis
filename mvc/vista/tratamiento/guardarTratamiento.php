@@ -27,9 +27,9 @@
 				$TrataEstado= $_POST['TrataEstado'];
 
 				if ($TrataNombre==""){
-			echo"<script type=\"text/javascript\">alert('No ingreso el nombre del tratamiento'); window.location='crearPlanta.php';</script>"; 
+			echo"<script type=\"text/javascript\">alert('No ingreso el nombre del tratamiento'); window.location='crearTratamiento.php';</script>"; 
 		}elseif ($TrataNumAnalisis==""){
-			echo"<script type=\"text/javascript\">alert('No ingreso el numero de analisis del tratamiento'); window.location='crearPlanta.php';</script>"; 
+			echo"<script type=\"text/javascript\">alert('No ingreso el numero de analisis del tratamiento'); window.location='crearTratamiento.php';</script>"; 
 		}else {
 
 

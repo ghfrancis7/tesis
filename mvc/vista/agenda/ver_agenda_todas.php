@@ -57,7 +57,7 @@
 	</div>
     <div class="tablas">
 		<tr>
-        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Agenda</h2></td>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Toda la Agenda</h2></td>
 		</tr>
     </div>
     <div class="tablas">
@@ -84,6 +84,7 @@
  		<th>Hora</th>
  		<th>Fecha de Baja</th>
  		<th>Descripcion</th>
+ 		<th>Estado</th>
  	</thead>
  	<tbody>
  	<?php  
@@ -97,6 +98,7 @@
 	 			<td><?php echo "{$row['AgendaHora']}"; ?></td>
 	 			<td><?php echo "{$row['AgendaFechaBaja']}"; ?></td>
 	 			<td><?php echo "{$row['AgendaDescripcion']}"; ?></td>
+	 			<td><?php echo "{$row['AgendaEstado']}"; ?></td>
 	 			<td><a target="_blank" href="../tratamiento/ver_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Ver Tratamiento </a></td>
 		 		</tr>
  	<?php } } ?>

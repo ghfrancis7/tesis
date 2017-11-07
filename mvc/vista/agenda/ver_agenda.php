@@ -88,7 +88,6 @@
  	</thead>
  	<tbody>
  	<?php  
- 	echo $today;
  		foreach($sql as $row){ 
 			if ($row['AgendaEstado']=="Activo") { ?>
  				<tr>
