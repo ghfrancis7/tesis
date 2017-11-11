@@ -13,6 +13,7 @@
 
 				$ProductoNombre= $_POST['ProductoNombre'];
 				$ProductoNumeroSerie= $_POST['ProductoNumeroSerie'];
+				$ProductoPrecio= $_POST['ProductoPrecio'];
 				$ProductoFechaAltaDB= $_POST['ProductoFechaAltaDB'];
 				$ProductoDescripcion= $_POST['ProductoDescripcion'];
 				$ProductoEstado= $_POST['ProductoEstado'];
@@ -21,7 +22,7 @@
 		foreach($sql as $row){
  			if ($ProductoNombre==$row['ProductoNombre']) {
  				$nombreused='true';
- 			}elseif{$ProductoNumeroSerie==$row['ProductoNumeroSerie']){
+ 			}elseif($ProductoNumeroSerie==$row['ProductoNumeroSerie']){
 				$numserieused='true';
  			}
 }
@@ -38,9 +39,10 @@
 	//try {
 
 			$pdo->mysql->beginTransaction();
-			$pst = $pdo->mysql->prepare("INSERT INTO producto (ProductoNombre,ProductoNumeroSerie,ProductoFechaAltaDB,ProductoDescripcion,ProductoEstado) VALUES (:ProductoNombre,:ProductoPrecio,:ProductoNumeroSerie,:ProductoFechaAltaDB,:ProductoDescripcion,:ProductoEstado)");
+			$pst = $pdo->mysql->prepare("INSERT INTO producto (ProductoNombre,ProductoNumeroSerie,ProductoPrecio,ProductoFechaAltaDB,ProductoDescripcion,ProductoEstado) VALUES (:ProductoNombre,:ProductoNumeroSerie,:ProductoPrecio,:ProductoFechaAltaDB,:ProductoDescripcion,:ProductoEstado)");
 			$pst->bindParam(":ProductoNombre",$ProductoNombre,PDO::PARAM_STR);
 			$pst->bindParam(":ProductoNumeroSerie",$ProductoNumeroSerie,PDO::PARAM_STR);
+			$pst->bindParam(":ProductoPrecio",$ProductoPrecio,PDO::PARAM_STR);
 			$pst->bindParam(":ProductoFechaAltaDB",$ProductoFechaAltaDB,PDO::PARAM_STR);
 			$pst->bindParam(":ProductoDescripcion",$ProductoDescripcion,PDO::PARAM_STR);
 			$pst->bindParam(":ProductoEstado",$ProductoEstado,PDO::PARAM_STR);
@@ -51,10 +53,11 @@
 
 		header("Location:crearProducto.php");
 		
-	//} catch (Exception $e) {
-	//	$pdo->mysql->rollback();
-	//		echo "No se pudo agregar el cliente";
+	} catch (Exception $e) {
+		$pdo->mysql->rollback();
+			echo "No se pudo agregar el producto";
+			header("Location:crearProducto.php");
 		
-	//}
+	}
 	}
 		?>

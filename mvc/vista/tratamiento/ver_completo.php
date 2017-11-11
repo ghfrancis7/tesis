@@ -120,6 +120,10 @@
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Tratamientos Inactivos"/>
 			</form>
 			</td><td>
+				<form id="verpendientes" action="ver_tratamientopendiente.php" method="post">
+				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verpendientes').submit()" value="Ver Tratamientos Pendientes"/>
+				</form>
+        </td><td>
 	        <form id="pdftratamientostodos"  target="_blank" action="pdftratamientostodos.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdftratamientostodos').submit()" value="Generar PDF"/>
 			</form>

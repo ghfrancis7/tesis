@@ -55,7 +55,7 @@
     <div class="tablas">
     <table width="60%" style="margin: 0 auto;">
 		<tr>
-        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Tratamientos Activos</h2></td>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Tratamientos Pendientes</h2></td>
 		</tr>
     </table>
     
@@ -86,7 +86,7 @@
  		<tbody>
 		<?php
  		foreach($sql as $row){
-			if (strcasecmp($row['TrataEstado'],"Activo") == 0) {?>
+			if (strcasecmp($row['TrataEstado'],"Pendiente") == 0) {?>
 			<tr>
 		 		<td><?php echo "{$row['IDTratamiento']}"; ?></td>
 		 		<td><?php echo "{$row['TrataNombre']}"; ?></td>
@@ -97,12 +97,7 @@
                 <td><?php echo "{$row['TrataEstado']}";?></td>
                 <td><a href="editar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Modificar Tratamiento</a></td>
                 <td><a href="agregarproductos.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Agregar Productos </a></td>
-               <?php if ($row['TrataEstado']=="Activo"){ ?>
                 	<td><a href="eliminar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del tratamiento?');">Cambiar Estado</a></td>
-                
-            <?php }else{?>
-					<td></td>
-            <?php }?>
                 <td><a href="ver_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Ver Tratamiento </a></td>
 			</td>
  			</tr>
@@ -119,16 +114,16 @@
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('vertodo').submit()" value="Ver Todos los Tratamientos"/>
 			</form>
 		</td><td>
+			<form id="veractivo" action="ver_activo.php" method="post">
+				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('veractivo').submit()" value="Ver Tratamientos Activos"/>
+			</form>
+		</td><td>
 	        <form id="verinact" action="ver_inactivo.php" method="post">
 				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinact').submit()" value="Ver Tratamientos Inactivos"/>
 			</form>
         </td><td>
-        	<form id="verpendientes" action="ver_tratamientopendiente.php" method="post">
-				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verpendientes').submit()" value="Ver Tratamientos Pendientes"/>
-			</form>
-        </td><td>
-	        <form id="pdftratamientosactivos"  target="_blank" action="pdftratamientosactivos.php" method="post">
-				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdftratamientosactivos').submit()" value="Generar PDF"/>
+	        <form id="pdftratamientospendientes"  target="_blank" action="pdftratamientospendiente.php" method="post">
+				<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdftratamientospendientes').submit()" value="Generar PDF"/>
 			</form>
         </td></tr>
 	</tbody></table>

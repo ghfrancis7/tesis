@@ -86,14 +86,19 @@
 			<th>Producto</th>
 			<th>Dosificacion Semanal</th>
 			<th>Dosificacion Anual aprox.</th>
+			<th>Precio</th>
+			<th>Precio Anual aprox.</th>
 		</thead>
 		<tbody>
 			<?php 
  			foreach($sqlt as $rowl){ ?>
  				<tr>
  					<td><?php echo "{$rowl['ProductoNombre']}"; ?></td>
-		 			<td><?php echo "{$rowl['LoteCantidad']}"; ?></td>
-		 			<td><?php echo ("{$rowl['LoteCantidad']}")*52; ?></td>
+		 			<td><?php echo "{$rowl['LoteCantidad']}"; ?> KG</td>
+		 			<td><?php echo ("{$rowl['LoteCantidad']}")*52; ?> KG</td>
+		 			<td>$<?php echo ("{$rowl['LoteCantidad']}")*("{$rowl['ProductoPrecio']}"); ?></td>
+		 			<td>$<?php echo (("{$rowl['LoteCantidad']}")*52)*("{$rowl['ProductoPrecio']}"); ?></td>
+
  				</tr>
  			<?php } ?>
 		</tbody>

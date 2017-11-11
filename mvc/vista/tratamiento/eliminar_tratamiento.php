@@ -25,12 +25,20 @@
 				$datosTratamiento->execute();
 				$trata = $datosTratamiento->fetch();	
 				
-				if ($trata['TrataEstado']=="Inactivo") {
+				if ($trata['TrataEstado']=="Pendiente") {
 				 ?>
-<script>
-    window.history.back();
-</script>
+					<?php $TrataEstado="Activo";
 
+					$pst = $pdo->mysql->prepare("UPDATE tratamiento set TrataEstado =:TrataEstado , TrataFechaBaja =:TrataFechaBaja where IDTratamiento = :IDTratamiento");
+				$pst->bindParam(":IDTratamiento",$IDTratamiento,PDO::PARAM_STR);
+				$pst->bindParam(":TrataEstado",$TrataEstado,PDO::PARAM_STR);
+				$pst->bindParam(":TrataFechaBaja",$TrataFechaBaja,PDO::PARAM_STR);
+
+				
+				$pst->execute();
+
+				$pdo->mysql->commit();
+				?>
 <?php 
 
 

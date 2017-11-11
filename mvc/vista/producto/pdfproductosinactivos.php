@@ -33,6 +33,7 @@
 	$pdf->SetFont('Arial','B',8);
 	$pdf->Cell(10,8,"ID",0);
 	$pdf->Cell(30,8,"Nombre",0);
+	$pdf->Cell(30,8,"Precio",0);
 	$pdf->Cell(40,8,"Fecha de Alta",0);
 	$pdf->Cell(30,8,"Activo/Inactivo",0);
 	$pdf->Ln(8);
@@ -46,6 +47,7 @@
 
 		$pdf->Cell(10,8,$row['IDProducto'],0); 
 		$pdf->Cell(30,8,$row['ProductoNombre'],0);
+		$pdf->Cell(30,8,$row['ProductoPrecio'],0);
 		$pdf->Cell(50,8,$row['ProductoFechaAltaDB'],0);
 		$pdf->Cell(30,8,$row['ProductoEstado'],0);
 		

@@ -66,6 +66,17 @@ include_once("Conexion.php");
 				return $tratamiento;
 			
 		}
+		public function listarTratamientoPendiente($idusuario){
+
+				 $pdo = new Conexion();
+
+				 $q="SELECT * FROM tratamiento T INNER JOIN planta P ON T.IDPlanta = P.IDPlanta INNER JOIN usuario U ON T.IDUsuario = U.IDUsuario WHERE T.IDUsuario=$idusuario AND TrataEstado='Pendiente'" ;
+
+					$tratamiento = $pdo->mysql->query($q);
+		
+				return $tratamiento;
+			
+		}
 		public function buscarTratamiento($buscar,$idusuario){
 
 				 $pdo = new Conexion();

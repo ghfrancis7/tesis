@@ -69,23 +69,39 @@
 				$pdf->Cell(110,12,"Productos requeridos",0);
 				$pdf->SetFont("Arial",'B',8);
 				$pdf->Ln(23);
-				$pdf->Cell(60,12,"Nombre del Producto",0);
+				$pdf->Cell(50,12,"Nombre del Producto",0);
 				$pdf->Cell(40,12,"Dosificacion Semanal",0);
 				$pdf->Cell(40,12,"Dosificacion Anual aprox.",0);
+				$pdf->Cell(40,12,"Precio Semanal",0);
+				$pdf->Cell(40,12,"Precio Anual aprox.",0);
 				$pdf->Ln(15);
 				$pdf->SetFont("Arial",'',10);
 
+				$total=0;
+				$totalanual=0;
+
 				foreach($sqll as $row){ 
 
-					$pdf->Cell(60,8,$row['ProductoNombre'],0);
+					$pdf->Cell(50,8,$row['ProductoNombre'],0);
 					$pdf->Cell(40,8,$row['LoteCantidad'],0);
 					$pdf->Cell(40,8,$row['LoteCantidad']*52,0);
+					$pdf->Cell(40,8,'$'.$row['LoteCantidad']*$row['ProductoPrecio'],0);
+					$pdf->Cell(40,8,'$'.($row['LoteCantidad']*52)*$row['ProductoPrecio'],0);
+					
+					$total+=$row['LoteCantidad']*$row['ProductoPrecio'];
+					$totalanual+=($row['LoteCantidad']*52)*$row['ProductoPrecio'];
 					$pdf->Ln(8);
 	 				}
+	 				$pdf->Ln(8);
+	 				$pdf->Cell(30,8,"Total Mensual",0);
+	 				$pdf->Cell(30,8,'$'.$total,0);
+	 				$pdf->Cell(30,8,"Total Anual",0);
+	 				$pdf->Cell(30,8,'$'.$totalanual,0);
 	 				$pdf->Cell(30,12,"",0);
 	 				$pdf->Ln(100);
 
-	 				$pdf->Cell(30,12,"Documento Interno de la Empresa",0);
+
+	 				
 
 
 			$pdf->Output();
