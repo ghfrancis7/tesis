@@ -64,14 +64,18 @@
                 <br/>
 				<input type="text" name="IDProducto" value="<?php echo $IDProducto ?>" readonly=true >
 				<br/>
-				<label>Producto Numero Serie</label>
+				<label>Numero Serie</label>
                 <br/>
 				<input type="text" name="ProductoNumeroSerie" required placeholder="Numero Serie Producto" value="<?php echo $producto['ProductoNumeroSerie']; ?>">
 				<br/>
-				<label>ProductoNombre</label>
+				<label>Nombre</label>
                 <br/>
 				<input type="text" name="ProductoNombre" required value="<?php echo $producto['ProductoNombre']; ?>">
 				<br/>
+                <label>Precio</label>
+                <br/>
+                <input type="text" name="ProductoPrecio" required value="<?php echo $producto['ProductoPrecio']; ?>">
+                <br/>
 			</td>
 		</tr>
         <tr>

@@ -76,7 +76,8 @@
  		<thead>
  			<th>ID</th>
  			<th>Nombre</th>
- 			<th>Fecha de Alta en DB</th>
+ 			<th>Precio</th>
+ 			<th>Fecha de Alta</th>
  			<th>Activo/Inactivo</th>
  			
 		</thead>
@@ -88,6 +89,7 @@
  				<tr>
 	 			<td><?php echo "{$row['IDProducto']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoNombre']}"; ?></td>
+	 			<td><?php echo "{$row['ProductoPrecio']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
 	 			<td><?php echo "{$row['ProductoEstado']}"; ?></td>
  				</tr>

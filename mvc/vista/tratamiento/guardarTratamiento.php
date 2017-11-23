@@ -55,5 +55,5 @@
 			echo "No se pudo agregar la planta";
 		
 	}
-	
+	}
 		?>

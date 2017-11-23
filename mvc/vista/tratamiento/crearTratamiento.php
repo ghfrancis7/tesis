@@ -99,7 +99,7 @@
 		<br/>
         <label>Descripcion</label><br/>
         <input type="text" name="TrataDescripcion">
-		<input type="hidden" value="<?php echo 'Activo';?>" name="TrataEstado">
+		<input type="hidden" value="<?php echo 'Pendiente';?>" name="TrataEstado">
 		<br/>
         </td></tr>
 		<tr><td>

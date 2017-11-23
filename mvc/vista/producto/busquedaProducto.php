@@ -55,11 +55,12 @@ include_once("../../modelo/Producto.php");
     <div class="tablas" style="text-align:center;">
 		<table width="60%" border="1" style="margin: 0 auto;"> 
             <thead>
-                <th>ProductoID</th>
-                <th>ProductoNombre</th>
-                <th>ProductoFechaAltaDB</th>
-                <th>ProductoFechaBajaDB</th>
-                <th>ProductoEstado</th>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Fecha Alta</th>
+                <th>Fecha Baja</th>
+                <th>Estado</th>
             </thead>
             <tbody>
 			<?php  
@@ -67,6 +68,7 @@ include_once("../../modelo/Producto.php");
                 <tr>
                     <td><?php echo "{$row['IDProducto']}"; ?></td>
                     <td><?php echo "{$row['ProductoNombre']}"; ?></td>
+                    <td><?php echo "{$row['ProductoPrecio']}"; ?></td>
                     <td><?php echo "{$row['ProductoFechaAltaDB']}"; ?></td>
                     <td><?php echo "{$row['ProductoFechaBajaDB']}"; ?></td>
                     <td><?php echo "{$row['ProductoEstado']}"; ?></td>
