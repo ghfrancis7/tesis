@@ -47,7 +47,7 @@
 				<li><a href="../../../SelectUserOperations/Tecn_Agenda.php"><span class="iconic book"></span> Agenda</a></li>
 				<li><a href="../../../SelectUserOperations/Tecn_Cliente.php"><span class="iconic new-window"></span> Clientes</a></li>
 				<li><a href="../../../SelectUserOperations/Tecn_Tratamiento.php"><span class="iconic beaker"></span> Tratamiento</a></li>
-				<li><a href="tecn_ver_activo.php"><span class="iconic cog"></span> Producto</a></li>
+				<li><a href="../producto/tecn_ver_activo.php"><span class="iconic cog"></span> Producto</a></li>
 			</ul>
 			<div class="clearfix"></div>
         </nav>
