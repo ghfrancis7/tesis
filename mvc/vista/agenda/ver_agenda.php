@@ -77,7 +77,7 @@
     <br/>
 	<table width="60%" border="1" style="margin: 0 auto;"> 
  	<thead>
- 		<th>Cita HOY</th>
+ 		<th>Alerta</th>
  		<th>Nombre de Cita</th>
  		<th>Tratamiento</th>
  		<th>Direccion de Planta</th>
@@ -93,10 +93,15 @@
  				<tr>
  					<?php if ($row['AgendaFecha']==$today){?>
 							<td><img src="../../../Images/advertencia.png" width="50" height="50" style="width:30px;height:30px;"></td>
- 					<?php }else{ ?>
- 						<td></td>
- 					<?php } ?>
- 					
+ 					<?php }elseif($row['AgendaFecha']<$today){ ?>
+ 						<td><img src="../../../Images/warning.jpg" width="50" height="50" style="width:30px;height:30px;"></td>
+ 					<?php }else { ?>
+ 					<td></td>
+ 				
+ 					<?php 
+
+ 					} ?>
+
 	 			<td><?php echo "{$row['AgendaNombre']}"; ?></td>
 	 			<td><?php echo "{$row['TrataNombre']}"; ?></td>
 	 			<td><?php echo "{$row['PlantaDireccion']}"; ?></td>
@@ -104,10 +109,12 @@
 	 			<td><?php echo "{$row['AgendaFecha']}"; ?></td>
 	 			<td><?php echo "{$row['AgendaHora']}"; ?></td>
 	 			<td><?php echo "{$row['AgendaDescripcion']}"; ?></td>
+	 			
 	 			<td><a href="eliminar_agenda.php?IDAgenda=<?php echo $row['IDAgenda'] ?>" onclick="return confirm('Estas seguro de dar de baja esta cita?');"> Eliminar Cita</a></td>
 	 			<td><a target="_blank" href="../tratamiento/ver_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Ver Tratamiento </a></td>
 		 		</tr>
  	<?php } } ?>
+ 	
 		</tbody>
 	</table>
     </div>
