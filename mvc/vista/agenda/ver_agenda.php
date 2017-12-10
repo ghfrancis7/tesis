@@ -122,7 +122,7 @@
 	<table width="60%" style="margin: 0 auto;"><tbody>
 		<tr><td>
 		<form id="verinactivo" action="ver_agenda_todas.php" method="post">
-			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinactivo').submit()" value="Ver Todas"/>
+			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinactivo').submit()" value="Ver Inactivas"/>
 		</form>
         <form id="pdfagendas"  target="_blank" action="pdfagenda.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdfagendas').submit()" value="Generar PDF"/>
