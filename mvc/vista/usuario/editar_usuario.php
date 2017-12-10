@@ -95,7 +95,7 @@
                 <input type="text" name="UsuCuenta" value="<?php echo $usuario['UsuCuenta']; ?>">
 				<br/>
                 <label>Password</label>
-                <input type="text" name="UsuPassword" value="<?php echo $usuario['UsuPassword']; ?>">
+                <input type="password" name="UsuPassword" value="<?php echo $usuario['UsuPassword']; ?>">
 				<br/><br/><br/><br/><br/><label></label>
 			</td>
 		</tr>
