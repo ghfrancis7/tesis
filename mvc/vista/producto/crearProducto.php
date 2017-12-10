@@ -63,10 +63,10 @@
 			<input type="text" name="ProductoNombre">
             <br/>
             <label>Precio del Producto</label><br/>
-            <input type="text" name="ProductoPrecio">
+            <input type="text" name="ProductoPrecio" onkeypress="return valida(event)">
             <br/>
             <label>Descripcion de Producto</label><br/>
-            <input type="text" name="ProductoDescripcion">
+            <textarea name="ProductoDescripcion" style="height:150px"></textarea>
             <input type="hidden" value="<?php echo $today; ?>" name="ProductoFechaAltaDB">
             <input type="hidden" value="<?php echo NULL; ?>" name="ProductoFechaBajaDB" requrired>
             <input type="hidden" value="Activo" name="ProductoEstado">
@@ -87,4 +87,19 @@
     </table>
     </div>
 </body>
+<script>
+	function valida(e){
+		tecla = (document.all) ? e.keyCode : e.which;
+	
+		//Tecla de retroceso para borrar, siempre la permite
+		if (tecla==8){
+			return true;
+		}
+			
+		// Patron de entrada, en este caso solo acepta numeros
+		patron =/[0-9]/;
+		tecla_final = String.fromCharCode(tecla);
+		return patron.test(tecla_final);
+	}
+</script>
 </html>

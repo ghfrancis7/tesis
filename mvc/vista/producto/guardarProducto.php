@@ -36,7 +36,7 @@
 			echo"<script type=\"text/javascript\">alert('Este Numero de serie pertenece a otro Producto'); window.location='crearProducto.php';</script>"; 
 		}else {
 
-	//try {
+	try {
 
 			$pdo->mysql->beginTransaction();
 			$pst = $pdo->mysql->prepare("INSERT INTO producto (ProductoNombre,ProductoNumeroSerie,ProductoPrecio,ProductoFechaAltaDB,ProductoDescripcion,ProductoEstado) VALUES (:ProductoNombre,:ProductoNumeroSerie,:ProductoPrecio,:ProductoFechaAltaDB,:ProductoDescripcion,:ProductoEstado)");

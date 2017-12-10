@@ -94,7 +94,7 @@
  					<?php if ($row['AgendaFecha']==$today){?>
 							<td><img src="../../../Images/advertencia.png" width="50" height="50" style="width:30px;height:30px;"></td>
  					<?php }elseif($row['AgendaFecha']<$today){ ?>
- 						<td><img src="../../../Images/warning.jpg" width="50" height="50" style="width:30px;height:30px;"></td>
+ 						<td><img src="../../../Images/warning.png" width="50" height="50" style="width:30px;height:30px;"></td>
  					<?php }else { ?>
  					<td></td>
  				

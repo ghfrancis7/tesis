@@ -63,11 +63,8 @@ include_once("validarcuil.php");
             <input type="text" name="ClienteNombre">
 			<br/>
             <label>* C. U. I. T.</label><br/>
-                 
-            
 			<input type="text" name="ClienteCUIT" id="cuit">
             <br>
-
             <label>* Direccion</label><br/>
             <input type="text" name="ClienteDireccion">
             <br/>

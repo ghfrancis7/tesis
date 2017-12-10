@@ -74,7 +74,7 @@
 				<br/>
                 <label>Precio</label>
                 <br/>
-                <input type="text" name="ProductoPrecio" required value="<?php echo $producto['ProductoPrecio']; ?>">
+                <input type="text" name="ProductoPrecio" onkeypress="return valida(event)" required value="<?php echo $producto['ProductoPrecio']; ?>">
                 <br/>
 			</td>
 		</tr>
@@ -98,4 +98,19 @@
     </table>
     </div>
 </body>
+<script>
+	function valida(e){
+		tecla = (document.all) ? e.keyCode : e.which;
+	
+		//Tecla de retroceso para borrar, siempre la permite
+		if (tecla==8){
+			return true;
+		}
+			
+		// Patron de entrada, en este caso solo acepta numeros
+		patron =/[0-9]/;
+		tecla_final = String.fromCharCode(tecla);
+		return patron.test(tecla_final);
+	}
+</script>
 </html>
