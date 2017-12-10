@@ -64,13 +64,13 @@
                 <input type="text" name="UsuApellido" requrired>
                 <br />
                 <label>DNI</label>
-                <input type="text" name="UsuDNI" requrired>
+                <input type="text" name="UsuDNI" onkeypress="return valida(event)" requrired>
                 <br />
                 <label>Direccion</label>
                 <input type="text" name="UsuDireccion" requrired>
                 <br />
                 <label>Telefono</label>
-                <input type="text" name="UsuTelefono" requrired>
+                <input type="text" name="UsuTelefono" onkeypress="return valida(event)" requrired>
                 <br />
             </td>
             <td width="20%">
@@ -119,4 +119,19 @@
     </table>
     </div>
 </body>
+<script>
+	function valida(e){
+		tecla = (document.all) ? e.keyCode : e.which;
+	
+		//Tecla de retroceso para borrar, siempre la permite
+		if (tecla==8){
+			return true;
+		}
+			
+		// Patron de entrada, en este caso solo acepta numeros
+		patron =/[0-9]/;
+		tecla_final = String.fromCharCode(tecla);
+		return patron.test(tecla_final);
+	}
+</script>
 </html>

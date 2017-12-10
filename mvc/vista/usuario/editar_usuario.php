@@ -71,13 +71,13 @@
                 <input type="text" name="UsuApellido" required value="<?php echo $usuario['UsuApellido']; ?>">
 				<br/>
                 <label>Documento</label>
-                <input type="text" name="UsuDNI" required value="<?php echo $usuario['UsuDNI']; ?>">
+                <input type="text" name="UsuDNI" onkeypress="return valida(event)" required value="<?php echo $usuario['UsuDNI']; ?>">
 				<br/>
                 <label>Direccion</label>
                 <input type="text" name="UsuDireccion" value="<?php echo $usuario['UsuDireccion']; ?>">
 				<br/>
                 <label>Telefono</label>
-                <input type="text" name="UsuTelefono" required value="<?php echo $usuario['UsuTelefono']; ?>">
+                <input type="text" name="UsuTelefono" onkeypress="return valida(event)" required value="<?php echo $usuario['UsuTelefono']; ?>">
 			</td>
             <td width="20%">
             </td>
@@ -117,4 +117,19 @@
     </table>
     </div>
 </body>
+<script>
+	function valida(e){
+		tecla = (document.all) ? e.keyCode : e.which;
+	
+		//Tecla de retroceso para borrar, siempre la permite
+		if (tecla==8){
+			return true;
+		}
+			
+		// Patron de entrada, en este caso solo acepta numeros
+		patron =/[0-9]/;
+		tecla_final = String.fromCharCode(tecla);
+		return patron.test(tecla_final);
+	}
+</script>
 </html>
