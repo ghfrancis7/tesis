@@ -89,7 +89,7 @@
                 <input type="text" name="UsuCuenta" requrired>
                 <br />
                 <label>Password</label>
-                <input type="Password" name="UsuPassword" requrired>
+                <input type="password" name="UsuPassword" requrired>
                 <input type="hidden" value="<?php echo $today;?>" name="UsuFechaIngreso" requrired>
                 <input type="hidden" value="<?php echo '';?>" name="UsuFechaEgreso" requrired>
                 <input type="hidden" value="<?php echo 'Activo';?>" name="UsuEstado" requrired>
