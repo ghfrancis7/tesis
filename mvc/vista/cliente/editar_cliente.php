@@ -34,7 +34,7 @@
 		$cliente = $datosCliente->fetch();
 
 	 ?>
-<div class="backgroundTable">
+	<div class="backgroundTable">
     </div>
     <div class="header">
         <header>
@@ -86,7 +86,7 @@
 	<p>
 		<label>ClienteCuit</label>
 		<br>
-		<input type="text" name="ClienteCUIT" required="true" value="<?php echo $cliente['ClienteCUIT']; ?>">
+		<input type="text" name="ClienteCUIT" required="true" value="<?php echo $cliente['ClienteCUIT']; ?>" onkeypress="return valida(event)">
 	</p>
 	<p>
 		<label>ClienteDireccion</label>
@@ -96,7 +96,7 @@
 	<p>
 		<label>ClienteTelefono</label>
 		<br>
-		<input type="text" name="ClienteTelefono" placeholder="Fecha de Baja" value="<?php echo $cliente['ClienteTelefono']; ?>">
+		<input type="text" name="ClienteTelefono" placeholder="Fecha de Baja" value="<?php echo $cliente['ClienteTelefono']; ?>" onkeypress="return valida(event)">
 	</p>
 	<p>
 		<label>ClienteFechaAlta</label>
@@ -112,3 +112,20 @@
 </td></tr>
 </tbody></table>
 </form> 
+</body>
+<script>
+	function valida(e){
+		tecla = (document.all) ? e.keyCode : e.which;
+	
+		//Tecla de retroceso para borrar, siempre la permite
+		if (tecla==8){
+			return true;
+		}
+			
+		// Patron de entrada, en este caso solo acepta numeros
+		patron =/[0-9]/;
+		tecla_final = String.fromCharCode(tecla);
+		return patron.test(tecla_final);
+	}
+</script>
+</html>

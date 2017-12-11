@@ -9,8 +9,7 @@
 <body>
 	<?php
 
-include_once("validarcuil.php");
-
+	include_once("validarcuil.php");
     $usuario="";
     $idUsuario=1;
         session_start();
@@ -63,13 +62,13 @@ include_once("validarcuil.php");
             <input type="text" name="ClienteNombre">
 			<br/>
             <label>* C. U. I. T.</label><br/>
-			<input type="text" name="ClienteCUIT" id="cuit">
+			<input type="text" name="ClienteCUIT" id="cuit" onkeypress="return valida(event)">
             <br>
             <label>* Direccion</label><br/>
             <input type="text" name="ClienteDireccion">
             <br/>
             <label>Telefono</label><br/>
-            <input type="text" name="ClienteTelefono">
+            <input type="text" name="ClienteTelefono" onkeypress="return valida(event)">
             <input type="hidden" value="<?php echo $today;?>" name="ClienteFechaAlta" requrired>
             <input type="hidden" value="<?php echo NULL;?>" name="ClienteFechaBaja"requrired>
 			<input type="hidden" value="<?php echo "Activo";?>" name="ClienteEstado">
@@ -97,4 +96,19 @@ include_once("validarcuil.php");
     </table>
 	</div>
 </body>
+<script>
+	function valida(e){
+		tecla = (document.all) ? e.keyCode : e.which;
+	
+		//Tecla de retroceso para borrar, siempre la permite
+		if (tecla==8){
+			return true;
+		}
+			
+		// Patron de entrada, en este caso solo acepta numeros
+		patron =/[0-9]/;
+		tecla_final = String.fromCharCode(tecla);
+		return patron.test(tecla_final);
+	}
+</script>
 </html>

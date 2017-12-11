@@ -37,7 +37,7 @@
  			}elseif ($ClienteCUIT==$row['ClienteCUIT']){
  				$cuitused='true' ;
  			}
-}
+		}
 
 
 	if ($ClienteNombre=="") {
@@ -76,7 +76,7 @@
 
 		
 		}else {
-				echo"<script type=\"text/javascript\">alert('Cuit incorrecto'); window.location='../planta/crearCliente.php';</script>";
+				echo"<script type=\"text/javascript\">alert('Cuit incorrecto'); window.location='crearCliente.php';</script>";
 			}
 		
 		?>
