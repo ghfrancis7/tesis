@@ -19,6 +19,7 @@
 
 			$cuitused="false";
 			$ccused="false";
+			$nombrecliente="";
 
 			$pdo=new Conexion();
 
@@ -36,6 +37,7 @@
  				$ccused='true';
  			}elseif ($ClienteCUIT==$row['ClienteCUIT']){
  				$cuitused='true' ;
+ 				$usuario=$row['IDUsuario'] ;
  			}
 		}
 
@@ -48,7 +50,7 @@
 				echo"<script type=\"text/javascript\">alert('No ingreso la direccion del cliente'); window.location='crearCliente.php';</script>"; 
 			}elseif($ccused=="true"){
 				echo"<script type=\"text/javascript\">alert('Este cliente ya existe'); window.location='crearCliente.php';</script>"; 
-			}elseif ($cuitused=="true") {
+			}elseif ($cuitused=="true" && $usuario==$idUsuario) {
 				echo"<script type=\"text/javascript\">alert('CUIT ya utilizado'); window.location='crearCliente.php';</script>"; 
 			}elseif($sqlc==$ClienteCUIT) {
 
