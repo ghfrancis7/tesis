@@ -82,27 +82,27 @@
 <p>
 	<label>Nombre de Planta</label>
 	<br>
-	<input type="text" name="PlantaNombre" required="true" value="<?php echo $planta['PlantaNombre']; ?>">
+	<input type="text" name="PlantaNombre" required value="<?php echo $planta['PlantaNombre']; ?>">
 </p>
 <p>
 	<label>Localidad de la Panta</label>
 	<br>
-	<input type="text" name="PlantaLocalidad" required="true" value="<?php echo $planta['PlantaLocalidad']; ?>">
+	<input type="text" name="PlantaLocalidad" required value="<?php echo $planta['PlantaLocalidad']; ?>">
 </p>
 <p>
 	<label>Direccion de la Planta</label>
 	<br>
-	<input type="text" name="PlantaDireccion" required="true" placeholder="Direccion de la Planta" value="<?php echo $planta['PlantaDireccion']; ?>">
+	<input type="text" name="PlantaDireccion" required placeholder="Direccion de la Planta" value="<?php echo $planta['PlantaDireccion']; ?>">
 </p>
 <p>
 	<label>Telefono de la Panta</label>
 	<br>
-	<input type="text" name="PlantaTelefono" placeholder="Fecha de Baja" value="<?php echo $planta['PlantaTelefono']; ?>">
+	<input type="text" name="PlantaTelefono" placeholder="Fecha de Baja" value="<?php echo $planta['PlantaTelefono']; ?>" onkeypress="return valida(event)">
 </p>
 <p>
 	<label>Email de la Panta</label>
 	<br>
-	<input type="text" name="PlantaMail" required="true" placeholder="Estado" value="<?php echo $planta['PlantaMail']; ?>">
+	<input type="text" name="PlantaMail" required placeholder="Estado" value="<?php echo $planta['PlantaMail']; ?>">
 </p>
 
 <table width="60%" style="margin:0 auto;"><tbody>
@@ -122,4 +122,19 @@
     </table>
     </div>
 </body>
+<script>
+	function valida(e){
+		tecla = (document.all) ? e.keyCode : e.which;
+	
+		//Tecla de retroceso para borrar, siempre la permite
+		if (tecla==8){
+			return true;
+		}
+			
+		// Patron de entrada, en este caso solo acepta numeros
+		patron =/[0-9]/;
+		tecla_final = String.fromCharCode(tecla);
+		return patron.test(tecla_final);
+	}
+</script>
 </html>

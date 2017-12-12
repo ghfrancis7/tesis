@@ -66,7 +66,7 @@
 	</div>
     <div class="tablas">
 		<tr>
-        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Editar Planta</h2></td>
+        	<td><h2 style="font-size:24px; font-family:'Exo', sans-serif;">Editar Cliente</h2></td>
 		</tr>
     </div>
     <div class="tablas">
@@ -81,17 +81,17 @@
 	<p>
 		<label>ClienteNombre</label>
 		<br>
-		<input type="text" name="ClienteNombre" required="true" value="<?php echo $cliente['ClienteNombre']; ?>">
+		<input type="text" name="ClienteNombre" required value="<?php echo $cliente['ClienteNombre']; ?>">
 	</p>
 	<p>
 		<label>ClienteCuit</label>
 		<br>
-		<input type="text" name="ClienteCUIT" required="true" value="<?php echo $cliente['ClienteCUIT']; ?>" onkeypress="return valida(event)">
+		<input type="text" name="ClienteCUIT" required value="<?php echo $cliente['ClienteCUIT']; ?>" onkeypress="return valida(event)">
 	</p>
 	<p>
 		<label>ClienteDireccion</label>
 		<br>
-		<input type="text" name="ClienteDireccion" required="true" placeholder="Fecha de Alta" value="<?php echo $cliente['ClienteDireccion']; ?>">
+		<input type="text" name="ClienteDireccion" required placeholder="Fecha de Alta" value="<?php echo $cliente['ClienteDireccion']; ?>">
 	</p>
 	<p>
 		<label>ClienteTelefono</label>

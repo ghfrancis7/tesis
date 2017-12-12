@@ -91,7 +91,7 @@
                 <td><?php echo "{$row['ClienteEstado']}"; ?></td>
                 
                 <td><a href="editar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>"> Modificar Cliente</a></td>
-                <td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del cliente?');"> Cambiar Estado</a></td>
+                <td><a href="eliminar_cliente.php?IDCliente=<?php echo $row['IDCliente'] ?>&IDUsuario=<?php echo $idUsuario ?>" onclick="return confirm('Estas seguro de cambiar el estado del cliente?');"> Cambiar Estado</a></td>
             </tr>
             <?php } ?>
         </tbody>
