@@ -81,7 +81,7 @@ include_once("Conexion.php");
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM tratamiento WHERE IDUsuario=$idusuario AND IDTratamiento LIKE '%$buscar%' OR IDUsuario=$idusuario AND TrataNombre LIKE '%$buscar%' OR IDUsuario=$idusuario AND TrataNumAnalisis LIKE '%$buscar%'";
+				 $q="SELECT * FROM tratamiento WHERE IDUsuario=$idusuario AND IDTratamiento LIKE '%$buscar%' OR TrataNombre LIKE '%$buscar%' OR TrataFecha LIKE '%$buscar%' OR TrataNumAnalisis LIKE '%$buscar%'";
 
 					$tratamiento = $pdo->mysql->query($q);
 		
@@ -92,7 +92,7 @@ include_once("Conexion.php");
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM tratamiento WHERE IDUsuario=$idusuario AND IDPlanta=$idplanta";
+				 $q="SELECT * FROM tratamiento WHERE TrataNombre LIKE '%$buscar%' AND IDUsuario=$idusuario AND IDPlanta=$idplanta";
 
 					$tratamiento = $pdo->mysql->query($q);
 		

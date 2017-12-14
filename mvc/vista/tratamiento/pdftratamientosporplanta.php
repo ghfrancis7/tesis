@@ -30,18 +30,17 @@
 			$pdf->Cell(160,60,"",0);
 			$pdf->Cell(40,50,"Tecnico: ".$usuario.'',0);
 			$pdf->Ln(30);
-			$pdf->SetFont('Arial','B',11);
+			$pdf->SetFont('Arial','B',12);
 			$pdf->Cell(70,8,"",11);
 			$pdf->Cell(100,8,"Tratamientos de la Planta: ".$planta.'',0);
 			$pdf->Ln(23);
-			$pdf->SetFont('Arial','B',8);
-			$pdf->Cell(5,8,"ID",0);
-			$pdf->Cell(60,8,"Nombre de Tratamiento",0);
-			$pdf->Cell(30,8,"Numero de Analisis",0);
-			$pdf->Cell(30,8,"Fecha de Inicio",0);
-			$pdf->Cell(20,8,"Estado",0);
+			$pdf->SetFont('Arial','B',10);
+			$pdf->Cell(90,8,"Nombre de Tratamiento",'TRLB',0);
+			$pdf->Cell(40,8,"Numero de Analisis",'TRLB',0);
+			$pdf->Cell(30,8,"Fecha de Inicio",'TRLB',0);
+			$pdf->Cell(20,8,"Estado",'TRLB',0);
 			$pdf->Ln(15);
-			$pdf->SetFont("Arial",'',10);
+			$pdf->SetFont("Arial",'',12);
 			
 			
 
@@ -55,48 +54,48 @@
 
 		foreach($sql as $row){ 
 
-			$pdf->Cell(5,8,$idtratamiento,0);
+			
 
-					$pdf->Cell(60,8,$row['TrataNombre'],0);
-					$pdf->Cell(30,8,$row['TrataNumAnalisis'],0);
-					$pdf->Cell(30,8,$row['TrataFecha'],0);
-					$pdf->Cell(20,8,$row['TrataEstado'],0); 
+					$pdf->Cell(90,8,$row['TrataNombre'],'TRLB',0);
+					$pdf->Cell(40,8,$row['TrataNumAnalisis'],'TRLB',0);
+					$pdf->Cell(30,8,$row['TrataFecha'],'TRLB',0);
+					$pdf->Cell(20,8,$row['TrataEstado'],'TRLB',0); 
 					$pdf->Ln(8);
 	 				}
 				$pdf->Ln(12);
 	 			$pdf->SetFont("Arial",'B',12);
 	 			$pdf->Cell(70,12,"",11);
 				$pdf->Cell(110,12,"Productos requeridos",0);
-				$pdf->SetFont("Arial",'B',8);
+				$pdf->SetFont("Arial",'B',9);
 				$pdf->Ln(23);
-				$pdf->Cell(50,12,"Nombre del Producto",0);
-				$pdf->Cell(40,12,"Dosificacion Semanal",0);
-				$pdf->Cell(40,12,"Dosificacion Anual aprox.",0);
-				$pdf->Cell(40,12,"Precio Semanal",0);
-				$pdf->Cell(40,12,"Precio Anual aprox.",0);
+				$pdf->Cell(50,12,"Nombre del Producto",'TRLB',0);
+				$pdf->Cell(38,12,"Dosificacion Semanal",'TRLB',0);
+				$pdf->Cell(41,12,"Dosificacion Anual aprox.",'TRLB',0);
+				$pdf->Cell(30,12,"Precio Semanal",'TRLB',0);
+				$pdf->Cell(38,12,"Precio Anual aprox.",'TRLB',0);
 				$pdf->Ln(15);
-				$pdf->SetFont("Arial",'',10);
+				$pdf->SetFont("Arial",'',9);
 
 				$total=0;
 				$totalanual=0;
 
 				foreach($sqll as $row){ 
 
-					$pdf->Cell(50,8,$row['ProductoNombre'],0);
-					$pdf->Cell(40,8,$row['LoteCantidad'],0);
-					$pdf->Cell(40,8,$row['LoteCantidad']*52,0);
-					$pdf->Cell(40,8,'$'.$row['LoteCantidad']*$row['ProductoPrecio'],0);
-					$pdf->Cell(40,8,'$'.($row['LoteCantidad']*52)*$row['ProductoPrecio'],0);
+					$pdf->Cell(50,8,$row['ProductoNombre'],'TRLB',0);
+					$pdf->Cell(38,8,$row['LoteCantidad'],'TRLB',0);
+					$pdf->Cell(41,8,$row['LoteCantidad']*52,'TRLB',0);
+					$pdf->Cell(30,8,'$'.$row['LoteCantidad']*$row['ProductoPrecio'],'TRLB',0);
+					$pdf->Cell(38,8,'$'.($row['LoteCantidad']*52)*$row['ProductoPrecio'],'TRLB',0);
 					
 					$total+=$row['LoteCantidad']*$row['ProductoPrecio'];
 					$totalanual+=($row['LoteCantidad']*52)*$row['ProductoPrecio'];
 					$pdf->Ln(8);
 	 				}
 	 				$pdf->Ln(8);
-	 				$pdf->Cell(30,8,"Total Mensual",0);
-	 				$pdf->Cell(30,8,'$'.$total,0);
-	 				$pdf->Cell(30,8,"Total Anual",0);
-	 				$pdf->Cell(30,8,'$'.$totalanual,0);
+	 				$pdf->Cell(30,8,"Total Mensual",'TRLB',0);
+	 				$pdf->Cell(30,8,'$'.$total,'TRLB',0);
+	 				$pdf->Cell(30,8,"Total Anual",'TRLB',0);
+	 				$pdf->Cell(30,8,'$'.$totalanual,'TRLB',0);
 	 				$pdf->Cell(30,12,"",0);
 	 				$pdf->Ln(100);
 

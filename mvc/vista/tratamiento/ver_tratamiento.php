@@ -105,7 +105,7 @@
 	</table>
 
 </form>
-<td><a href="pdftratamientosporplanta.php?IDTratamiento=<?php echo $tratamiento['IDTratamiento'] ?> & PlantaNombre=<?php echo $tratamiento['PlantaNombre'] ?>"> Generar PDF </a></td>
+<td><a href="pdftratamientosporplanta.php?IDTratamiento=<?php echo $tratamiento['IDTratamiento'] ?> & PlantaNombre=<?php echo $tratamiento['PlantaNombre'] ?>" target="_blank"> Generar PDF </a></td>
     </div><br><br>
 <div class="header" style="text-align:center;">
 	<table width="60%" style="margin: 0 auto;"><tbody>

@@ -110,7 +110,7 @@
 	 			<td><?php echo "{$row['AgendaHora']}"; ?></td>
 	 			<td><?php echo "{$row['AgendaDescripcion']}"; ?></td>
 	 			
-	 			<td><a href="eliminar_agenda.php?IDAgenda=<?php echo $row['IDAgenda'] ?>" onclick="return confirm('Estas seguro de dar de baja esta cita?');"> Eliminar Cita</a></td>
+	 			<td><a href="eliminar_agenda.php?IDAgenda=<?php echo $row['IDAgenda'] ?>" onclick="return confirm('Estas seguro de dar de baja esta cita?');"> Cambiar Estado</a></td>
 	 			<td><a target="_blank" href="../tratamiento/ver_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Ver Tratamiento </a></td>
 		 		</tr>
  	<?php } } ?>

@@ -89,7 +89,9 @@
                 <td><?php echo "{$row['PlantaFechaBaja']}"; ?></td>
                 <td><?php echo "{$row['PlantaEstado']}"; ?></td>
  			<td><a href="editar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Modificar Planta</a></td>
- 			<td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>" onclick="return confirm('Estas seguro de cambiar el estado de la planta?');"> Eliminar Planta</a></td>
+ 			<td><a href="eliminar_planta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>" onclick="return confirm('Estas seguro de cambiar el estado de la planta?');"> Cambiar Estado</a></td>
+ 			<td><a href="../tratamiento/busquedaTratamientoporplanta.php?IDPlanta=<?php echo $row['IDPlanta'] ?>"> Ver Tratamientos</a></td>
+		 		
 	 		</tr>
  		<?php } ?>
 		</tbody>

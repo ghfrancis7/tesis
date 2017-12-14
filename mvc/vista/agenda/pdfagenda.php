@@ -9,50 +9,51 @@
             $idUsuario = $_SESSION['id'];
         }
 
-	include_once("../../modelo/pdf/fpdf.php");
+	require('../../modelo/pdf/mc_table.php');
 	include_once("../../modelo/Agenda.php");
 
-		$pdf=new FPDF();
+		$pdf=new PDF_MC_Table('L', 'mm', 'A4');
 			$pdf->AddPage();
-			$pdf->SetFont('Arial','B',10);
-			$pdf->Image('../../../Images/GrupoAcademico.jpg',22,20,18,'JPG');
-			$pdf->Cell(40,20,"",0);
-			$pdf->Cell(120,40,"Grupo AGUAS",0);
-			$pdf->SetFont("Arial",'',9);
+			$pdf->SetFont('Arial','B',14);
+			$pdf->Image('../../../Images/GrupoAcademico.jpg',28,24,20,'JPG');
+			$pdf->Cell(125,20,"",0);
+			$pdf->Cell(110,40,"Grupo AGUAS",0);
+			$pdf->SetFont("Arial",'',12);
 			$pdf->Cell(40,20,'Fecha:'.date('d-m-Y').'',0);
 			$pdf->Ln(2);
-			$pdf->SetFont('Arial','B',9);
-			$pdf->Cell(160,60,"",0);
+			$pdf->SetFont('Arial','B',12);
+			$pdf->Cell(230,60,"",0);
 			$pdf->Cell(40,50,"Tecnico: ".$usuario.'',0);
-			$pdf->Ln(30);
-			$pdf->SetFont('Arial','B',11);
-			$pdf->Cell(70,8,"",11);
-			$pdf->Cell(100,8,"Lista de Agenda ACTIVAS",0);
+			$pdf->Ln(50);
+			$pdf->SetFont('Arial','B',14);
+			$pdf->Cell(125,8,"",14);
+			$pdf->Cell(100,8,"Agenda",0);
 			$pdf->Ln(23);
-			$pdf->SetFont('Arial','B',8);
-			$pdf->Cell(30,8,"Nombre de cita",0);
-			$pdf->Cell(30,8,"Tratamiento",0);
-			$pdf->Cell(30,8,"Direccion de Planta",0);
-			$pdf->Cell(28,8,"Telefono de Planta",0);
-			$pdf->Cell(30,8,"Fecha",0);
-			$pdf->Cell(15,8,"Hora",0);
-			$pdf->Cell(20,8,"Descripcion",0);
+			$pdf->SetFont('Arial','B',12);
+
+		$pdf->SetWidths(array(40,30,60,40,30,25,35));
+
+			$pdf->Cell(40,8,"Nombre de cita",'TRLB',0);
+			$pdf->Cell(30,8,"Tratamiento",'TRLB',0);
+			$pdf->Cell(60,8,"Direccion de Planta",'TRLB',0);
+			$pdf->Cell(40,8,"Telefono",'TRLB',0);
+			$pdf->Cell(30,8,"Fecha",'TRLB',0);
+			$pdf->Cell(25,8,"Hora",'TRLB',0);
+			$pdf->Cell(35,8,"Descripcion",'TRLB',0);
 			$pdf->Ln(8);
-			$pdf->SetFont("Arial",'',8);
+			$pdf->SetFont("Arial",'',12);
 
 				$controlador = new Agenda();
 					$sql= $controlador->listarAgenda($idUsuario);
 
-		foreach($sql as $row){ 
+							srand(microtime()*1000000);
+		for($i=0;$i<1;$i++)
 
-				$pdf->Cell(30,8,$row['AgendaNombre'],0);
-				$pdf->Cell(30,8,$row['TrataNombre'],0);
-				$pdf->Cell(30,8,$row['PlantaDireccion'],0);
-				$pdf->Cell(28,8,$row['PlantaTelefono'],0);
-				$pdf->Cell(30,8,$row['AgendaFecha'],0);
-				$pdf->Cell(15,8,$row['AgendaHora'],0);
-				$pdf->Cell(20,8,$row['AgendaDescripcion'],0); 
-				$pdf->Ln(8);
+		foreach($sql as $row){ 
+			
+    $pdf->Row(array($row['AgendaNombre'],$row['TrataNombre'],$row['PlantaDireccion'],$row['PlantaTelefono'],$row['AgendaFecha'],$row['AgendaHora'],$row['AgendaDescripcion']));
+				
 	 				}
-			$pdf->Output();
-		?>
+
+$pdf->Output();
+?>

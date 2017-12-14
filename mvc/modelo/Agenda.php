@@ -26,7 +26,7 @@
 				 $pdo = new Conexion();
 
 
-				 $q="SELECT * FROM agenda A INNER JOIN Tratamiento T ON A.IDTratamiento=T.IDTratamiento INNER JOIN Planta P ON P.IDPlanta= T.IDPlanta WHERE A.IDUsuario = $idusuario";
+				 $q="SELECT * FROM agenda A INNER JOIN Tratamiento T ON A.IDTratamiento=T.IDTratamiento INNER JOIN Planta P ON P.IDPlanta= T.IDPlanta WHERE A.IDUsuario = $idusuario ORDER BY A.AgendaFecha ASC";
 
 					$agenda = $pdo->mysql->query($q);
 		

@@ -66,7 +66,7 @@ include_once("Conexion.php");
 				 $pdo = new Conexion();
 
 				 $q="SELECT * FROM planta P INNER JOIN cliente C ON P.IDCliente = C.IDCliente
-				 	INNER JOIN usuario U ON U.IDUsuario = P.IDUsuario WHERE P.IDUsuario = $idusuario AND IDPlanta LIKE '%$buscar%' OR PlantaNombre LIKE '%$buscar%' OR PlantaLocalidad LIKE '%$buscar%'OR ClienteNombre LIKE '%$buscar%'OR PlantaTelefono LIKE '%$buscar%'";
+				 	INNER JOIN usuario U ON U.IDUsuario = P.IDUsuario WHERE P.IDUsuario = $idusuario AND IDPlanta LIKE '%$buscar%' OR PlantaNombre LIKE '%$buscar%' OR PlantaLocalidad LIKE '%$buscar%'OR ClienteNombre LIKE '%$buscar%'OR PlantaTelefono LIKE '%$buscar%' OR PlantaFechaAlta LIKE '%$buscar%'";
 
 					$planta = $pdo->mysql->query($q);
 		

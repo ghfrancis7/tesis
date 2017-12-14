@@ -58,7 +58,7 @@ include_once("Conexion.php");
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM producto WHERE IDProducto LIKE '%$buscar%' OR ProductoNombre LIKE '%$buscar%'";
+				 $q="SELECT * FROM producto WHERE IDProducto LIKE '%$buscar%' OR ProductoNombre LIKE '%$buscar%'OR ProductoFechaAltaDB LIKE '%$buscar%'";
 
 					$producto = $pdo->mysql->query($q);
 		

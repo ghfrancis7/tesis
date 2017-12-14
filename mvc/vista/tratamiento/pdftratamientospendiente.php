@@ -9,51 +9,49 @@
             $idUsuario = $_SESSION['id'];
         }
 
-	include_once("../../modelo/Conexion.php");
-	include_once("../../modelo/pdf/fpdf.php");
+	require('../../modelo/pdf/mc_table.php');
 	include_once("../../modelo/Tratamiento.php");
 
-		$pdf=new FPDF();
+		$pdf=new PDF_MC_Table('L', 'mm', 'A4');
 			$pdf->AddPage();
-			$pdf->SetFont('Arial','B',10);
-			$pdf->Image('../../../Images/GrupoAcademico.jpg',22,20,18,'JPG');
-			$pdf->Cell(40,20,"",0);
-			$pdf->Cell(120,40,"Grupo AGUAS",0);
-			$pdf->SetFont("Arial",'',9);
+			$pdf->SetFont('Arial','B',14);
+			$pdf->Image('../../../Images/GrupoAcademico.jpg',28,24,20,'JPG');
+			$pdf->Cell(125,20,"",0);
+			$pdf->Cell(110,40,"Grupo AGUAS",0);
+			$pdf->SetFont("Arial",'',12);
 			$pdf->Cell(40,20,'Fecha:'.date('d-m-Y').'',0);
 			$pdf->Ln(2);
-			$pdf->SetFont('Arial','B',9);
-			$pdf->Cell(160,60,"",0);
+			$pdf->SetFont('Arial','B',12);
+			$pdf->Cell(230,60,"",0);
 			$pdf->Cell(40,50,"Tecnico: ".$usuario.'',0);
-			$pdf->Ln(30);
-			$pdf->SetFont('Arial','B',11);
-			$pdf->Cell(70,8,"",11);
-			$pdf->Cell(100,8,"Listado de Tratamientos",0);
+			$pdf->Ln(50);
+			$pdf->SetFont('Arial','B',14);
+			$pdf->Cell(125,8,"",11);
+			$pdf->Cell(100,8,"Lista de Tratamientos Pendientes",0);
 			$pdf->Ln(23);
-			$pdf->SetFont('Arial','B',8);
-			$pdf->Cell(5,8,"ID",0);
-			$pdf->Cell(50,8,"Nombre de Tratamiento",0);
-			$pdf->Cell(20,8,"Analisis",0);
-			$pdf->Cell(40,8,"Nombre de Planta",0);
-			$pdf->Cell(30,8,"Fecha de Inicio",0);
-			$pdf->Cell(30,8,"Fecha de Baja",0);
-			$pdf->Cell(20,8,"Estado",0);
+			$pdf->SetFont('Arial','B',12);
+
+		$pdf->SetWidths(array(65,35,35,45,35,22));
+			$pdf->Cell(65,8,"Nombre de Tratamiento",'TRLB',0);
+			$pdf->Cell(35,8,"Analisis",'TRLB',0);
+			$pdf->Cell(35,8,"Tecnico",'TRLB',0);
+			$pdf->Cell(45,8,"Nombre de Planta",'TRLB',0);
+			$pdf->Cell(35,8,"Fecha de Inicio",'TRLB',0);
+			$pdf->Cell(22,8,"Estado",'TRLB',0);
 			$pdf->Ln(8);
-			$pdf->SetFont("Arial",'',8);
+			$pdf->SetFont("Arial",'',12);
 
 				$controlador = new Tratamiento();
 					$sql= $controlador->listarTratamientoPendiente($idUsuario);
 
-		foreach($sql as $row){ 
+					srand(microtime()*1000000);
+		for($i=0;$i<1;$i++)
 
-				$pdf->Cell(5,8,$row['IDTratamiento'],0);
-				$pdf->Cell(50,8,$row['TrataNombre'],0);
-				$pdf->Cell(20,8,$row['TrataNumAnalisis'],0);
-				$pdf->Cell(40,8,$row['PlantaNombre'],0);
-				$pdf->Cell(30,8,$row['TrataFecha'],0);
-				$pdf->Cell(30,8,$row['TrataFechaBaja'],0);
-				$pdf->Cell(20,8,$row['TrataEstado'],0); 
-				$pdf->Ln(8);
+		foreach($sql as $row){ 
+				
+    $pdf->Row(array($row['TrataNombre'],$row['TrataNumAnalisis'],$row['UsuNombre'],$row['PlantaNombre'],$row['TrataFecha'],$row['TrataEstado']));
+				
 	 				}
-			$pdf->Output();
-	?>
+
+$pdf->Output();
+?>

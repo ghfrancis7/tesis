@@ -22,7 +22,7 @@
 		$controlador = new Tratamiento();
 		$IDTratamiento= $_GET['buscar'];
         $IDPlanta = $_GET['IDPlanta'];
-		$sql= $controlador->buscarTratamiento($IDTratamiento,$idUsuario,$IDPlanta);
+		$sql= $controlador->buscarTratamiento($IDTratamiento,$idUsuario);
 	?> 
  
 	<div class="backgroundTable">
