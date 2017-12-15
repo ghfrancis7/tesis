@@ -12,6 +12,8 @@
 	require('../../modelo/pdf/mc_table.php');
 	include_once("../../modelo/Tratamiento.php");
 
+	$buscar= $_POST['buscar'];
+
 		$pdf=new PDF_MC_Table('L', 'mm', 'A4');
 			$pdf->AddPage();
 			$pdf->SetFont('Arial','B',14);
@@ -27,7 +29,7 @@
 			$pdf->Ln(50);
 			$pdf->SetFont('Arial','B',14);
 			$pdf->Cell(125,8,"",11);
-			$pdf->Cell(100,8,"Lista de Tratamientos Activos",0);
+			$pdf->Cell(100,8,"Lista de Tratamientos por busqueda",0);
 			$pdf->Ln(23);
 			$pdf->SetFont('Arial','B',12);
 
@@ -40,8 +42,9 @@
 			$pdf->Ln(8);
 			$pdf->SetFont("Arial",'',12);
 
+
 				$controlador = new Tratamiento();
-					$sql= $controlador->listarTratamientoActivo($idUsuario);
+					$sql= $controlador->buscarTratamiento($buscar,$idUsuario);
 
 					srand(microtime()*1000000);
 		for($i=0;$i<1;$i++)

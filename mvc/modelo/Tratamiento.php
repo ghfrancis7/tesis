@@ -81,7 +81,7 @@ include_once("Conexion.php");
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM tratamiento WHERE IDUsuario=$idusuario AND IDTratamiento LIKE '%$buscar%' OR TrataNombre LIKE '%$buscar%' OR TrataFecha LIKE '%$buscar%' OR TrataNumAnalisis LIKE '%$buscar%'";
+				 $q="SELECT * FROM tratamiento T INNER JOIN planta P ON T.IDPlanta = P.IDPlanta INNER JOIN usuario U ON T.IDUsuario= U.IDUsuario WHERE T.IDUsuario=$idusuario AND IDTratamiento LIKE '%$buscar%' OR TrataNombre LIKE '%$buscar%' OR TrataFecha LIKE '%$buscar%' OR TrataNumAnalisis LIKE '%$buscar%'";
 
 					$tratamiento = $pdo->mysql->query($q);
 		

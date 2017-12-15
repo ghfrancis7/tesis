@@ -20,9 +20,9 @@
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 		include_once("../../modelo/Tratamiento.php");
 		$controlador = new Tratamiento();
-		$IDTratamiento= $_GET['buscar'];
-        $IDPlanta = $_GET['IDPlanta'];
-		$sql= $controlador->buscarTratamiento($IDTratamiento,$idUsuario);
+		$buscar= $_GET['buscar'];
+       // $IDPlanta = $_GET['IDPlanta'];
+		$sql= $controlador->buscarTratamiento($buscar,$idUsuario);
 	?> 
  
 	<div class="backgroundTable">
@@ -66,6 +66,7 @@
                 <th>ID</th>
                 <th>Nombre de Tratamiento</th>
                 <th>Numero de Analisis</th>
+                <th>Nombre de Planta</th>
                 <th>Fecha de Ingreso</th>
                 <th>Descripcion</th>
                 <th>Estado</th>
@@ -77,6 +78,7 @@
                         <td><?php echo "{$row['IDTratamiento']}"; ?></td>
                         <td><?php echo "{$row['TrataNombre']}"; ?></td>
                         <td><?php echo "{$row['TrataNumAnalisis']}"; ?></td>
+                        <td><?php echo "{$row['PlantaNombre']}"; ?></td>
                         <td><?php echo "{$row['TrataFecha']}"; ?></td>
                         <td><?php echo "{$row['TrataDescripcion']}"; ?></td>
                         <td><?php echo "{$row['TrataEstado']}"; ?></td>
@@ -103,6 +105,11 @@
         <form id="verinactivo" action="ver_inactivo.php" method="post">
 			<input style="width: 200px;" id="button" type="button" onClick="document.getElementById('verinactivo').submit()" value="Ver Tratamientos Inactivos"/>
 		</form>
+        </td><td>
+        <form id="pdftratamientoporbusqueda"  target="_blank" action="pdftratamientoporbusqueda.php" method="post">
+                <input style="width: 200px;" id="button" type="button" onClick="document.getElementById('pdftratamientoporbusqueda').submit()" value="Generar PDF"/>
+                <input type="hidden" value="<?php echo $buscar ?>" name="buscar">
+            </form>
         </td></tr>
 	</tbody></table>
     </div>
