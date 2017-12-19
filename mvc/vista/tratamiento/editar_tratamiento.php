@@ -37,7 +37,7 @@
         	<table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Tecnico <?php echo $usuario?>
+                    <td width="50%">Técnico <?php echo $usuario?>
                     <td width="25%">
                     <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -77,13 +77,13 @@
 			</tr>
             <tr>
                 <td colspan="2">
-                    <label>Numero de Analisis</label><br/>
+                    <label>Número de Analisis</label><br/>
                     <input type="text" name="TrataNumAnalisis" required value="<?php echo $tratamiento['TrataNumAnalisis']; ?>" onkeypress="return valida(event)">
 				</td>
 			</tr>
             <tr>
                 <td colspan="2">
-            		<label>Descripcion</label><br/>	
+            		<label>Descripción</label><br/>	
                     <input type="text" name="TrataDescripcion" required value="<?php echo $tratamiento['TrataDescripcion']; ?>">
 				</td>
 			</tr>

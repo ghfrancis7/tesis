@@ -51,7 +51,7 @@ if($_SESSION["recargarDeIndex"] != 1){
         	<table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Tecnico <?php echo $usuario?>
+                    <td width="50%">Técnico <?php echo $usuario?>
                     <td width="25%">
                     <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -79,14 +79,14 @@ if($_SESSION["recargarDeIndex"] != 1){
             <tr><td><label style="text-align:left">Planta: </label><?php echo $tratamiento['PlantaNombre']; ?></td></tr>
             <tr><td><label style="text-align:left">Nombre de Tratamiento: </label><?php echo $tratamiento['TrataNombre']; ?></td></tr>
             <tr><td><label style="text-align:left">Fecha de Inicio: </label><?php echo $tratamiento['TrataFecha']; ?></td></tr>
-            <tr><td><label style="text-align:left">Descripcion: </label><?php echo $tratamiento['TrataDescripcion']; ?></td></tr>
+            <tr><td><label style="text-align:left">Descripción: </label><?php echo $tratamiento['TrataDescripcion']; ?></td></tr>
         </table>
 		<br/>
         <table width="60%" border="1" style="margin: 0 auto;"> 
 		<thead>
 			<th>Producto</th>
-			<th>Dosificacion Semanal</th>
-			<th>Dosificacion Anual aprox.</th>
+			<th>Dosificación Semanal</th>
+			<th>Dosificación Anual aprox.</th>
 			<th>Precio</th>
 			<th>Precio Anual aprox.</th>
 		</thead>

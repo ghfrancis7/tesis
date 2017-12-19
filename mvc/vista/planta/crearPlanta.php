@@ -36,7 +36,7 @@
         	<table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Logueado como: <?php echo $usuario?><br>Rol: Tecnico</td>
+                    <td width="50%">Técnico <?php echo $usuario?>
                     <td width="25%">
                     <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -65,7 +65,7 @@
 			<td width="60%">
 			<form id="frmcreapla" action="guardarPlanta.php" method="post">
 
-    <label>Tecnico</label><br/>
+    <label>Técnico</label><br/>
     <input type="text" name="a" value="<?php echo "$usuario"; ?>"readonly=true > <br>
 
     
@@ -86,7 +86,7 @@
             <label>Localidad de la Panta</label><br/>
             <input type="text" name="PlantaLocalidad">
             <br/>
-            <label>*Direccion de la Planta</label><br/>
+            <label>*Dirección de la Planta</label><br/>
             <input type="text" name="PlantaDireccion">
             <br/>
             <label>Telefono de la Panta</label><br/>

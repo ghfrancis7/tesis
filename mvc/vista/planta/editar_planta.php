@@ -41,7 +41,7 @@
         	<table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Tecnico <?php echo $usuario?>
+                    <td width="50%">Técnico <?php echo $usuario?>
                     <td width="25%">
                     <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -90,12 +90,12 @@
 	<input type="text" name="PlantaLocalidad" required value="<?php echo $planta['PlantaLocalidad']; ?>">
 </p>
 <p>
-	<label>Direccion de la Planta</label>
+	<label>Dirección de la Planta</label>
 	<br>
 	<input type="text" name="PlantaDireccion" required placeholder="Direccion de la Planta" value="<?php echo $planta['PlantaDireccion']; ?>">
 </p>
 <p>
-	<label>Telefono de la Panta</label>
+	<label>Teléfono de la Panta</label>
 	<br>
 	<input type="text" name="PlantaTelefono" placeholder="Fecha de Baja" value="<?php echo $planta['PlantaTelefono']; ?>" onkeypress="return valida(event)">
 </p>

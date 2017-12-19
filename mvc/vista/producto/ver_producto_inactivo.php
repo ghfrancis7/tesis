@@ -68,7 +68,7 @@
  			<th>Precio</th>
  			<th>Fecha de Alta</th>
  			<th>Fecha de Baja</th>
- 			<th>Activo/Inactivo</th>
+ 			<th>Estado</th>
  			
 		</thead>
  		<tbody>

@@ -41,7 +41,7 @@
         	<table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Tecnico <?php echo $usuario?>
+                    <td width="50%">Técnico <?php echo $usuario?>
                     <td width="25%">
                     <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -79,27 +79,27 @@
 	<input type="text" name="IDCliente" value="<?php echo $IDCliente ?>" readonly=true >
 	</p>
 	<p>
-		<label>ClienteNombre</label>
+		<label>Cliente Nombre</label>
 		<br>
 		<input type="text" name="ClienteNombre" required value="<?php echo $cliente['ClienteNombre']; ?>">
 	</p>
 	<p>
-		<label>ClienteCuit</label>
+		<label>Cliente Cuit</label>
 		<br>
 		<input type="text" name="ClienteCUIT" required value="<?php echo $cliente['ClienteCUIT']; ?>" onkeypress="return valida(event)">
 	</p>
 	<p>
-		<label>ClienteDireccion</label>
+		<label>Cliente Dirección</label>
 		<br>
 		<input type="text" name="ClienteDireccion" required placeholder="Fecha de Alta" value="<?php echo $cliente['ClienteDireccion']; ?>">
 	</p>
 	<p>
-		<label>ClienteTelefono</label>
+		<label>Cliente Teléfono</label>
 		<br>
 		<input type="text" name="ClienteTelefono" placeholder="Fecha de Baja" value="<?php echo $cliente['ClienteTelefono']; ?>" onkeypress="return valida(event)">
 	</p>
 	<p>
-		<label>ClienteFechaAlta</label>
+		<label>Cliente Fecha de Alta</label>
 		<br>
 		<input type="date" name="ClienteFechaAlta" placeholder="Fecha de Baja" value="<?php echo $cliente['ClienteFechaAlta']; ?>">
 	</p>

@@ -32,7 +32,7 @@
         	<table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Tecnico <?php echo $usuario?>
+                    <td width="50%">Técnico <?php echo $usuario?>
                     <td width="25%">
                     <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -79,11 +79,11 @@
  	<thead>
  		<th>Nombre de Cita</th>
  		<th>Tratamiento</th>
- 		<th>Direccion de Planta</th>
+ 		<th>Dirección de Planta</th>
  		<th>Fecha</th>
  		<th>Hora</th>
  		<th>Fecha de Baja</th>
- 		<th>Descripcion</th>
+ 		<th>Descripción</th>
  		<th>Estado</th>
  	</thead>
  	<tbody>

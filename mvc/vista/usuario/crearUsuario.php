@@ -66,10 +66,10 @@
                 <label>DNI</label>
                 <input type="text" name="UsuDNI" onkeypress="return valida(event)" requrired>
                 <br />
-                <label>Direccion</label>
+                <label>Dirección</label>
                 <input type="text" name="UsuDireccion" requrired>
                 <br />
-                <label>Telefono</label>
+                <label>Teléfono</label>
                 <input type="text" name="UsuTelefono" onkeypress="return valida(event)" requrired>
                 <br />
             </td>

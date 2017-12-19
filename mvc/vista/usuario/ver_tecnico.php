@@ -56,8 +56,8 @@
 			<th>Nombre</th>
 			<th>Apellido</th>
 			<th>DNI</th>
-			<th>Direccion</th>
-			<th>Telefono</th>
+			<th>Dirección</th>
+			<th>Teléfono</th>
 			<th>Mail</th>
 			<th>Fecha Nac.</th>
 			<th>Zona Laboral</th>

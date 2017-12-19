@@ -34,7 +34,7 @@
 		$pdf->SetWidths(array(65,35,35,45,35,20));
 			$pdf->Cell(65,8,"Nombre de Tratamiento",'TRLB',0);
 			$pdf->Cell(35,8,"Analisis",'TRLB',0);
-			$pdf->Cell(35,8,"Tecnico",'TRLB',0);
+			$pdf->Cell(35,8,"Técnico",'TRLB',0);
 			$pdf->Cell(45,8,"Nombre de Planta",'TRLB',0);
 			$pdf->Cell(35,8,"Fecha de Inicio",'TRLB',0);
 			$pdf->Cell(20,8,"Estado",'TRLB',0);

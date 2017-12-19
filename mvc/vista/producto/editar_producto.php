@@ -34,7 +34,7 @@
         	<table width="100%">
                 <tr>
                     <td width="25%" align="left"><img src="../../../Images/GrupoAcademico.jpg" width="638" height="633" style="width:100px;height:100px;"></td>
-                    <td width="50%">Logueado como: <?php echo $_SESSION['nom']." ".$_SESSION['ape']?><br>Rol: Administrador</td>
+                    <td width="50%">Administrador <?php echo $_SESSION['nom']." ".$_SESSION['ape']?></td>
                     <td width="25%">
                     <form id="frmLogin" action="../../../Login PHP/logout.php" method="post">
                         <input name="return" type="hidden" value="<?php echo urlencode($_SERVER["PHP_SELF"]);?>" />
@@ -64,7 +64,7 @@
                 <br/>
 				<input type="text" name="IDProducto" value="<?php echo $IDProducto ?>" readonly=true >
 				<br/>
-				<label>Numero Serie</label>
+				<label>Número Serie</label>
                 <br/>
 				<input type="text" name="ProductoNumeroSerie" required placeholder="Numero Serie Producto" value="<?php echo $producto['ProductoNumeroSerie']; ?>">
 				<br/>

@@ -56,7 +56,7 @@
 	<table width="100%">
 		<tr><td><form id="frmnewprod" action="guardarProducto.php" method="post"></td></tr>
         <tr><td>
-        	<label>*Numero de Serie</label><br/>
+        	<label>*Número de Serie</label><br/>
             <input type="text" name="ProductoNumeroSerie">
 			<br/>
 			<label>*Nombre del Producto</label><br/>
@@ -65,7 +65,7 @@
             <label>Precio del Producto</label><br/>
             <input type="text" name="ProductoPrecio" onkeypress="return valida(event)">
             <br/>
-            <label>Descripcion de Producto</label><br/>
+            <label>Descripción de Producto</label><br/>
             <textarea name="ProductoDescripcion" style="height:150px"></textarea>
             <input type="hidden" value="<?php echo $today; ?>" name="ProductoFechaAltaDB">
             <input type="hidden" value="<?php echo NULL; ?>" name="ProductoFechaBajaDB" requrired>

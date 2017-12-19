@@ -73,10 +73,10 @@
                 <label>Documento</label>
                 <input type="text" name="UsuDNI" onkeypress="return valida(event)" required value="<?php echo $usuario['UsuDNI']; ?>">
 				<br/>
-                <label>Direccion</label>
+                <label>Dirección</label>
                 <input type="text" name="UsuDireccion" value="<?php echo $usuario['UsuDireccion']; ?>">
 				<br/>
-                <label>Telefono</label>
+                <label>Teléfono</label>
                 <input type="text" name="UsuTelefono" onkeypress="return valida(event)" required value="<?php echo $usuario['UsuTelefono']; ?>">
 			</td>
             <td width="20%">

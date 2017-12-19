@@ -64,7 +64,7 @@
 					$pdf->Ln(8);
 	 				}
 	 				$pdf->Ln(8);
-	 				$pdf->Cell(20,8,"Descripcion:".$descripcion,0);
+	 				$pdf->Cell(20,8,"Descripción:".$descripcion,0);
 	 				//$pdf->Cell(20,8,$descripcion,'TRLB',0); 
 				$pdf->Ln(12);
 	 			$pdf->SetFont("Arial",'B',12);
