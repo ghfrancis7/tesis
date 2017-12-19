@@ -29,7 +29,7 @@
 			$pdf->SetFont('Arial','B',12);
 			$pdf->Cell(230,60,"",0);
 			$pdf->Cell(40,50,"Tecnico: ".$usuario.'',0);
-			$pdf->Ln(50);
+			$pdf->Ln(30);
 			$pdf->SetFont('Arial','B',14);
 			$pdf->Cell(110,8,"",11);
 			$pdf->Cell(100,8,"Tratamientos de la Planta: ".$planta.'',0);
@@ -61,17 +61,17 @@
 					$pdf->Cell(30,8,$row['TrataFecha'],'TRLB',0);
 					$pdf->Cell(20,8,$row['TrataEstado'],'TRLB',0); 
 					$descripcion=$row['TrataDescripcion'];
-					$pdf->Ln(8);
+					$pdf->Ln(5);
 	 				}
-	 				$pdf->Ln(8);
-	 				$pdf->Cell(20,8,"Descripción:".$descripcion,0);
+	 				$pdf->Ln(2);
+	 				$pdf->Cell(20,8,"Descripcion:".$descripcion,0);
 	 				//$pdf->Cell(20,8,$descripcion,'TRLB',0); 
-				$pdf->Ln(12);
+				$pdf->Ln(8);
 	 			$pdf->SetFont("Arial",'B',12);
 	 			$pdf->Cell(125,8,"",11);
 				$pdf->Cell(110,12,"Productos requeridos",0);
 				$pdf->SetFont("Arial",'B',9);
-				$pdf->Ln(23);
+				$pdf->Ln(9);
 				$pdf->Cell(50,8,"",11);
 				$pdf->Cell(50,12,"Nombre del Producto",'TRLB',0);
 				$pdf->Cell(38,12,"Dosificacion Semanal",'TRLB',0);

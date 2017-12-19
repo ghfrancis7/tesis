@@ -61,7 +61,7 @@
 
 				 $pdo = new Conexion();
 
-				 $q="SELECT * FROM cliente WHERE IDUsuario=$idusuario AND IDCliente LIKE '%$buscar%' OR IDUsuario=$idusuario AND ClienteNombre LIKE '%$buscar%' OR IDUsuario=$idusuario AND ClienteCUIT LIKE '%$buscar%'";
+				 $q="SELECT * FROM cliente WHERE IDUsuario=$idusuario AND IDCliente LIKE '%$buscar%' OR IDUsuario=$idusuario AND ClienteNombre LIKE '%$buscar%' OR IDUsuario=$idusuario AND ClienteCUIT LIKE '%$buscar%' OR ClienteFechaAlta LIKE '%$buscar%' OR ClienteFechaBaja LIKE '%$buscar%'";
 
 					$producto = $pdo->mysql->query($q);
 		
