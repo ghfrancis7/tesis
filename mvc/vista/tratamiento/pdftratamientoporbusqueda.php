@@ -28,13 +28,13 @@
 			$pdf->Cell(40,50,"Tecnico: ".$usuario.'',0);
 			$pdf->Ln(50);
 			$pdf->SetFont('Arial','B',14);
-			$pdf->Cell(125,8,"",11);
+			$pdf->Cell(100,8,"",11);
 			$pdf->Cell(100,8,"Lista de Tratamientos por busqueda",0);
 			$pdf->Ln(23);
 			$pdf->SetFont('Arial','B',12);
 
-		$pdf->SetWidths(array(65,35,45,35,20));
-			$pdf->Cell(65,8,"Nombre de Tratamiento",'TRLB',0);
+		$pdf->SetWidths(array(100,35,45,35,20));
+			$pdf->Cell(100,8,"Nombre de Tratamiento",'TRLB',0);
 			$pdf->Cell(35,8,"Analisis",'TRLB',0);
 			$pdf->Cell(45,8,"Nombre de Planta",'TRLB',0);
 			$pdf->Cell(35,8,"Fecha de Inicio",'TRLB',0);
