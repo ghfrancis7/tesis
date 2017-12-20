@@ -52,7 +52,7 @@
         	<table>
                 <tr>
                     <td width="45%" align="center">
-                    <form id="nuevo" action="../mvc/vista/tratamiento/crearTratamiento" method="GET">
+                    <form id="nuevo" action="../mvc/vista/tratamiento/crearTratamiento.php" method="GET">
                     	<input  type="hidden" value="<?php ?>" />
                         <input id="button" type="button" onClick="document.getElementById('nuevo').submit()" value="Nuevo"/>
                     </form>
