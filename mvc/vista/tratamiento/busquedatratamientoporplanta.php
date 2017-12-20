@@ -66,6 +66,8 @@
                 <th>Nombre de Tratamiento</th>
                 <th>Número de Analisis</th>
                 <th>Fecha de Ingreso</th>
+                <th>Fecha de Baja</th>
+                <th>Estado</th>
                 <th>Descripción</th>
         	</thead>
 		<tbody>
@@ -76,6 +78,8 @@
                         <td><?php echo "{$row['TrataNombre']}"; ?></td>
                         <td><?php echo "{$row['TrataNumAnalisis']}"; ?></td>
                         <td><?php echo "{$row['TrataFecha']}"; ?></td>
+                        <td><?php echo "{$row['TrataFechaBaja']}"; ?></td>
+                        <td><?php echo "{$row['TrataEstado']}"; ?></td>
                         <td><?php echo "{$row['TrataDescripcion']}"; ?></td>
                         <td><a href="agregarproductos.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Agregar Productos </a></td>
                 <td><a href="eliminar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del tratamiento?');">Cambiar Estado</a></td>

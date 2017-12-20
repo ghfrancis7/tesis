@@ -79,8 +79,12 @@
                 <td><?php echo "{$row['AgendaHora']}"; ?></td>
                 <td><?php echo "{$row['AgendaDescripcion']}"; ?></td>
                 <?php if ($row['AgendaEstado']=="Activo"){ ?>
-                    <td><a href="eliminar_agenda.php?IDAgenda=<?php echo $row['IDAgenda'] ?>" onclick="return confirm('Estas seguro de dar de baja esta cita?');"> Eliminar Cita</a></td>
-               <?php } ?>   
+                    <td><a href="eliminar_agenda.php?IDAgenda=<?php echo $row['IDAgenda'] ?>" onclick="return confirm('Estas seguro de dar de baja esta cita?');"> Cambiar estado</a></td>
+                    
+               <?php }else{ ?>
+                <td></td>  
+               <?php } ?> 
+
                 <td><a target="_blank" href="../tratamiento/ver_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Ver Tratamiento </a></td>
 	 		</tr>
  		<?php } ?>
