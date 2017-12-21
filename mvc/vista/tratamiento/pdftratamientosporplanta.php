@@ -54,8 +54,6 @@
 
 		foreach($sql as $row){ 
 
-			
-
 					$pdf->Cell(160,8,$row['TrataNombre'],'TRLB',0);
 					$pdf->Cell(40,8,$row['TrataNumAnalisis'],'TRLB',0);
 					$pdf->Cell(30,8,$row['TrataFecha'],'TRLB',0);

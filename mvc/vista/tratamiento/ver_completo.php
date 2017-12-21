@@ -97,7 +97,7 @@
                 <td><?php echo "{$row['TrataEstado']}";?></td>
                 <td><a href="editar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Modificar Tratamiento</a></td>
                 <td><a href="agregarproductos.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>"> Agregar Productos </a></td>
-            <?php if ($row['TrataEstado']=="Activo"){ ?>
+            <?php if ($row['TrataEstado']=="Activo" OR $row['TrataEstado']=="Pendiente" ){ ?>
                 	<td><a href="eliminar_tratamiento.php?IDTratamiento=<?php echo $row['IDTratamiento'] ?>" onclick="return confirm('Estas seguro de cambiar el estado del tratamiento?');">Cambiar Estado</a></td>
                 
             <?php }else{?>
